@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomous CNC Programmer · Agent37</title>
+<style>
+  :root {
+    --bg:#06080d; --panel:rgba(17,22,33,.72); --panel2:#0c1018; --line:rgba(148,163,184,.14); --line2:rgba(148,163,184,.22);
+    --muted:#8b95a7; --dim:#5b6475; --text:#eef1f6; --red:#f43f5e; --red2:#fb7185; --green:#22c55e; --green2:#4ade80;
+    --amber:#f5b942; --blue:#60a5fa; --violet:#a78bfa; --mono:ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+    background: radial-gradient(900px 500px at 12% -10%, rgba(96,165,250,.13), transparent 60%),
+                radial-gradient(800px 500px at 100% 10%, rgba(34,197,94,.09), transparent 60%),
+                radial-gradient(700px 600px at 50% 120%, rgba(244,63,94,.06), transparent 60%); }
+  .wrap { max-width:1360px; margin:0 auto; padding:0 40px; }
+
+  /* nav */
+  nav { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(6,8,13,.72); border-bottom:1px solid var(--line); }
+  nav .wrap { display:flex; align-items:center; gap:14px; height:56px; }
+  .brand { display:flex; align-items:center; gap:10px; font-weight:650; letter-spacing:-.01em; }
+  .logo { width:22px; height:22px; border-radius:6px; background:conic-gradient(from 200deg, #60a5fa, #22c55e, #f5b942, #60a5fa); box-shadow:0 0 18px rgba(96,165,250,.45); }
+  .brand small { color:var(--muted); font-weight:500; }
+  .spacer { flex:1; }
+  .chip { display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line2); border-radius:999px; padding:5px 12px; color:#d4d9e3; font-size:12.5px; background:rgba(255,255,255,.03); white-space:nowrap; }
+  .chip i { width:7px; height:7px; border-radius:50%; display:inline-block; }
+  .chip b { font-weight:650; color:#fff; }
+
+  /* hero */
+  #hero { min-height:calc(100vh - 56px); display:flex; align-items:center; padding:40px 0 48px; }
+  #hero .wrap { display:grid; grid-template-columns:1.25fr 1fr; gap:56px; align-items:center; width:100%; }
+  .eyebrow { display:inline-flex; gap:8px; align-items:center; color:var(--amber); font:600 12.5px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; margin-bottom:22px; }
+  .eyebrow::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 12px var(--amber); }
+  h1 { margin:0; font-size:64px; line-height:1.02; letter-spacing:-.035em; font-weight:750; }
+  h1 .ok { background:linear-gradient(90deg,#4ade80,#22c55e); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .lede { color:#aeb6c4; font-size:19px; line-height:1.55; margin:22px 0 0; max-width:640px; }
+  .lede b { color:#fff; font-weight:600; }
+  .stats { display:grid; grid-template-columns:repeat(5, 1fr); gap:12px; margin-top:34px; }
+  .stat { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px 16px 14px; }
+  .stat b small { font-size:17px; font-weight:600; color:var(--muted); margin-left:3px; letter-spacing:0; }
+  .stat b { display:block; font-size:34px; line-height:1.05; letter-spacing:-.02em; font-weight:700; font-variant-numeric:tabular-nums; }
+  .stat span { display:block; margin-top:6px; color:var(--muted); font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; line-height:1.3; }
+  .stat.pass { border-color:rgba(34,197,94,.45); background:linear-gradient(180deg, rgba(34,197,94,.16), rgba(34,197,94,.04)); }
+  .stat.pass b { color:var(--green2); }
+  .stat.failc b { color:var(--red2); }
+  .stat.failfinal { border-color:rgba(244,63,94,.45); background:rgba(244,63,94,.1); } .stat.failfinal b { color:var(--red2); }
+  .sponsors { display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+
+  /* flow card */
+  .heroviz { position:relative; border-radius:16px; overflow:hidden; aspect-ratio:16/9; background:#0b0f17; border:2px solid rgba(34,197,94,.55); margin-bottom:22px; }
+  .heroviz video { width:100%; height:100%; object-fit:contain; display:block; }
+  .heroviz .badge { position:absolute; left:12px; bottom:12px; font:700 12px var(--mono); padding:6px 10px; border-radius:8px; background:rgba(34,197,94,.92); color:#04130a; letter-spacing:.05em; }
+  .heroviz.fail { border-color:rgba(244,63,94,.6); } .heroviz.fail .badge { background:var(--red); color:#fff; }
+  .flow { background:var(--panel); border:1px solid var(--line); border-radius:22px; padding:22px; box-shadow:0 30px 80px rgba(0,0,0,.45); }
+  .step { display:grid; grid-template-columns:34px 1fr; gap:14px; position:relative; padding-bottom:14px; }
+  .step:last-child { padding-bottom:0; }
+  .step:not(:last-child)::after { content:""; position:absolute; left:16px; top:36px; bottom:4px; width:2px; background:linear-gradient(var(--line2), transparent); }
+  .num { width:34px; height:34px; border-radius:10px; display:grid; place-items:center; font:700 13px var(--mono); background:#141a26; border:1px solid var(--line2); color:#c9d1dd; }
+  .step h4 { margin:5px 0 4px; font-size:15px; font-weight:650; }
+  .step p { margin:0; color:var(--muted); font-size:13.5px; }
+  .pills { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .pill { display:inline-flex; align-items:center; gap:7px; border-radius:10px; padding:7px 11px; font:650 12.5px var(--mono); }
+  .pill.fail { background:rgba(244,63,94,.12); border:1px solid rgba(244,63,94,.45); color:#fecdd3; }
+  .pill.pass { background:rgba(34,197,94,.14); border:1px solid rgba(34,197,94,.5); color:#bbf7d0; }
+  .arrow { color:var(--dim); align-self:center; }
+  .step.done .num { background:rgba(34,197,94,.16); border-color:rgba(34,197,94,.5); color:var(--green2); }
+
+  /* sections */
+  section.blk { padding:26px 0; scroll-margin-top:56px; }
+  .head { display:flex; align-items:baseline; gap:14px; margin-bottom:16px; }
+  h2 { margin:0; font-size:26px; letter-spacing:-.02em; font-weight:700; }
+  .head .k { font:600 12px var(--mono); color:var(--dim); letter-spacing:.08em; text-transform:uppercase; }
+  .head .hint { color:var(--muted); font-size:14px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; transition:box-shadow .5s, border-color .5s, opacity .5s; }
+  .card h3 { margin:0 0 12px; font:600 12px var(--mono); text-transform:uppercase; letter-spacing:.08em; color:var(--muted); display:flex; align-items:center; gap:10px; }
+  .card h3 .r { margin-left:auto; text-transform:none; letter-spacing:0; }
+
+  /* simulation */
+  .simgrid { display:grid; grid-template-columns:1.62fr 1fr; gap:18px; align-items:stretch; }
+  .tabs { display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
+  .tab { display:inline-flex; align-items:center; gap:9px; border-radius:12px; padding:9px 16px; cursor:pointer; font:650 14px -apple-system, system-ui, sans-serif; color:#cbd2dd; background:#0d121b; border:1px solid var(--line2); transition:all .25s; }
+  .tab .st { font:700 11.5px var(--mono); padding:2px 7px; border-radius:6px; letter-spacing:.04em; }
+  .tab.fail .st { background:rgba(244,63,94,.18); color:var(--red2); }
+  .tab.pass .st { background:rgba(34,197,94,.18); color:var(--green2); }
+  .tab.fail.active { background:rgba(244,63,94,.14); border-color:var(--red); color:#fff; box-shadow:0 0 0 3px rgba(244,63,94,.18); }
+  .tab.pass.active { background:rgba(34,197,94,.14); border-color:var(--green); color:#fff; box-shadow:0 0 0 3px rgba(34,197,94,.18); }
+  .tabsep { color:var(--dim); align-self:center; font-size:13px; }
+  .stage { position:relative; border-radius:14px; overflow:hidden; background:#0b0f17; aspect-ratio:16/9; border:2px solid var(--line); transition:border-color .3s; }
+  .stage.fail { border-color:rgba(244,63,94,.65); } .stage.pass { border-color:rgba(34,197,94,.65); }
+  .stage video { cursor:pointer; }
+  .stage video, .stage img { width:100%; height:100%; object-fit:contain; display:block; background:#0b0f17; }
+  .stage .badge { position:absolute; right:14px; bottom:14px; font:700 13px var(--mono); padding:7px 12px; border-radius:9px; letter-spacing:.05em; }
+  .stage.fail .badge { background:rgba(244,63,94,.9); color:#fff; } .stage.pass .badge { background:rgba(34,197,94,.92); color:#04130a; }
+  .stagenote { color:var(--dim); font-size:12.5px; margin-top:12px; line-height:1.5; }
+  .stage .empty { position:absolute; inset:0; display:grid; place-items:center; color:var(--muted); }
+  .verdict { height:100%; display:flex; flex-direction:column; }
+  .vhead { display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:14px; font-weight:700; font-size:20px; letter-spacing:-.01em; }
+  .vhead .ic { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-size:19px; flex:none; }
+  .vhead small { display:block; font:500 12.5px var(--mono); color:inherit; opacity:.75; letter-spacing:0; margin-top:2px; }
+  .verdict.fail .vhead { background:rgba(244,63,94,.12); border:1px solid rgba(244,63,94,.45); color:#ffe4e8; }
+  .verdict.fail .ic { background:var(--red); color:#fff; }
+  .verdict.pass .vhead { background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.45); color:#dcfce7; }
+  .verdict.pass .ic { background:var(--green); color:#04130a; }
+  .caught { list-style:none; margin:14px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .caught li { border:1px solid var(--line); border-left:3px solid var(--red); background:rgba(255,255,255,.02); border-radius:10px; padding:11px 13px; }
+  .caught li.second { border-left-color:#f59e0b; }
+  .caught .t { font-weight:650; font-size:15px; line-height:1.35; }
+  .caught .d { color:var(--muted); font-size:13px; margin-top:3px; }
+  .ncref { display:inline-flex; gap:8px; align-items:center; margin-top:8px; font:12.5px var(--mono); background:#05070b; border:1px solid var(--line2); border-radius:8px; padding:4px 9px; color:#fecdd3; }
+  .ncref em { color:var(--dim); font-style:normal; }
+  .checks { list-style:none; margin:14px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .checks li { font-size:13.5px; color:#d1fae5; display:flex; gap:8px; align-items:center; background:rgba(34,197,94,.05); border:1px solid rgba(34,197,94,.18); border-radius:9px; padding:8px 10px; }
+  .checks li::before { content:"✓"; color:var(--green2); font-weight:800; }
+  .facts { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+  .facts span { font:12.5px var(--mono); color:#c4ccd8; background:#0d121b; border:1px solid var(--line); border-radius:8px; padding:5px 9px; }
+  .evid { margin-top:auto; padding-top:12px; }
+  .evid img { width:100%; max-height:118px; object-fit:contain; border-radius:10px; background:#fff; display:block; border:1px solid var(--line); }
+  .evid .cap { color:var(--dim); font-size:11.5px; margin-top:6px; }
+  .raw { margin-top:10px; color:var(--dim); font:11.5px var(--mono); }
+
+  /* timeline + diff */
+  .twocol { display:grid; grid-template-columns:1fr 1.25fr; gap:18px; }
+  .timeline { height:560px; overflow:auto; padding-right:6px; }
+  .ev { display:grid; grid-template-columns:46px 74px minmax(0,1fr) auto; gap:10px; align-items:start; padding:7px 4px; border-bottom:1px solid rgba(148,163,184,.07); font-size:13px; }
+  .ev .tm { color:var(--dim); font:12px var(--mono); padding-top:2px; }
+  .tag { font:700 10.5px var(--mono); letter-spacing:.06em; text-align:center; border-radius:6px; padding:3px 0; background:#121826; color:#94a3b8; border:1px solid var(--line); }
+  .ev .lb { font:12.5px var(--mono); color:#cfd6e2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding-top:2px; }
+  .ev.write .tag { color:var(--blue); border-color:rgba(96,165,250,.35); }
+  .ev.run .tag { color:var(--violet); border-color:rgba(167,139,250,.35); }
+  .ev.attempt .tag, .ev.verify .tag { color:#1a1203; background:var(--amber); border-color:var(--amber); }
+  .ev.verify, .ev.attempt { background:rgba(245,185,66,.06); border-radius:8px; }
+  .ev.verify .lb, .ev.attempt .lb { color:#fff; }
+  .ev .res { display:inline-block; align-self:center; font:700 11px var(--mono); padding:1px 7px; border-radius:5px; }
+  .res.fail { background:var(--red); color:#fff; } .res.pass { background:var(--green); color:#04130a; }
+  .ev.reasoning .tag { color:#c4b5fd; background:transparent; border-color:transparent; font-style:italic; }
+  .ev.reasoning .lb { white-space:normal; font:italic 13px/1.45 -apple-system, system-ui, sans-serif; color:#a3acbb; }
+  .diffbar { display:flex; gap:8px; align-items:center; margin-bottom:10px; flex-wrap:wrap; }
+  .seg { display:inline-flex; background:#0d121b; border:1px solid var(--line2); border-radius:10px; padding:3px; }
+  .seg button { border:0; background:transparent; color:var(--muted); font:600 12.5px var(--mono); padding:6px 11px; border-radius:7px; cursor:pointer; }
+  .seg button.on { background:#1d2534; color:#fff; }
+  .counts { font:600 12.5px var(--mono); margin-left:auto; }
+  .counts .a { color:var(--green2); } .counts .r { color:var(--red2); margin-left:8px; }
+  .code { background:#05070b; border:1px solid var(--line); border-radius:12px; overflow:auto; font:12.5px/1.6 var(--mono); }
+  .diff { height:512px; }
+  .dl { display:grid; grid-template-columns:44px 18px 1fr; white-space:pre; }
+  .dl .n { color:#3d4555; text-align:right; padding-right:8px; user-select:none; }
+  .dl .s { color:#5b6475; }
+  .dl.add { background:rgba(34,197,94,.13); } .dl.add .s { color:var(--green2); } .dl.add .x { color:#d9fbe6; }
+  .dl.rem { background:rgba(244,63,94,.13); } .dl.rem .s { color:var(--red2); } .dl.rem .x { color:#ffd9df; text-decoration:line-through; text-decoration-color:rgba(244,63,94,.5); }
+  .dl.hunk { background:rgba(96,165,250,.08); color:#7aa7e6; } .dl.hunk .x { color:#7aa7e6; }
+  .dl.ctx .x { color:#8994a6; }
+
+  /* gcode + note */
+  .gcode { height:520px; }
+  .gl { display:grid; grid-template-columns:50px 1fr; white-space:pre; }
+  .gl .n { color:#3d4555; text-align:right; padding-right:12px; user-select:none; }
+  .gl .x { color:#c8d0dc; }
+  .gl.hot { background:rgba(245,185,66,.12); }
+  .hg { color:#7cc4ff; } .hm { color:#f5b942; } .hc { color:#566074; font-style:italic; } .hx { color:#e6edf6; } .hf { color:#c4b5fd; } .ht { color:#4ade80; }
+  .note { height:520px; overflow:auto; }
+  .result { display:inline-flex; gap:8px; align-items:center; font:700 13px var(--mono); padding:6px 11px; border-radius:9px; margin-bottom:12px; }
+  .result.pass { background:rgba(34,197,94,.14); color:var(--green2); border:1px solid rgba(34,197,94,.45); }
+  .result.fail { background:rgba(244,63,94,.12); color:var(--red2); border:1px solid rgba(244,63,94,.45); }
+  .md { color:#cfd5df; font-size:14.5px; line-height:1.6; }
+  .md h1, .md h2, .md h3 { font-size:15px; margin:16px 0 6px; letter-spacing:0; color:#fff; font-weight:650; }
+  .md h1 { font-size:18px; margin-top:4px; }
+  .md p { margin:6px 0; } .md ul, .md ol { margin:6px 0; padding-left:20px; } .md li { margin:3px 0; }
+  .md code { font:12.5px var(--mono); background:#0d121b; border:1px solid var(--line); padding:1px 5px; border-radius:5px; color:#e5e9f0; }
+  .md pre { background:#05070b; border:1px solid var(--line); border-radius:10px; padding:10px; overflow:auto; }
+  .md strong { color:#fff; }
+  .spec h1 { font-size:20px; margin:0 0 10px; }
+  .spec ul { columns:2; column-gap:44px; margin:0; }
+  .spec li { break-inside:avoid; }
+  .md li.sub { margin-left:18px; list-style:circle; }
+
+  footer { border-top:1px solid var(--line); margin-top:30px; padding:26px 0 40px; color:var(--muted); font-size:13.5px; }
+  footer .wrap { display:flex; gap:28px; align-items:center; }
+  #runid { white-space:nowrap; }
+  footer b { color:#e5e7eb; }
+
+  /* tour */
+  body.tour { cursor:none; }
+  body.tour .card.dim { opacity:.35; }
+  body.tour { --tone:245,185,66; } body.tour.tone-pass { --tone:34,197,94; } body.tour.tone-fail { --tone:244,63,94; }
+  body.tour .card.spot { border-color:rgba(var(--tone),.75); box-shadow:0 0 0 4px rgba(var(--tone),.15), 0 30px 80px rgba(0,0,0,.5); }
+  #caption { position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px); opacity:0; z-index:40; background:rgba(8,11,17,.92); border:1px solid var(--line2); backdrop-filter:blur(12px); padding:13px 22px; border-radius:14px; font-size:19px; font-weight:600; letter-spacing:-.01em; box-shadow:0 20px 60px rgba(0,0,0,.6); transition:all .45s; max-width:1100px; text-align:center; }
+  #caption.on { opacity:1; transform:translateX(-50%); }
+  #caption .k { color:var(--amber); font:700 13px var(--mono); margin-right:10px; }
+  #prog { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg, var(--blue), var(--green)); z-index:50; width:0; transition:width .4s linear; }
+  ::-webkit-scrollbar { width:8px; height:8px; } ::-webkit-scrollbar-thumb { background:#1f2735; border-radius:8px; } ::-webkit-scrollbar-track { background:transparent; }
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav><div class="wrap">
+  <div class="brand"><span class="logo"></span>Autonomous CNC Programmer <small>· Helios One</small></div>
+  <div class="spacer"></div>
+  <span class="chip"><i style="background:#60a5fa"></i>Runs on <b>Agent37</b></span>
+  <span class="chip" id="modelchip"><i style="background:#e5e7eb"></i>Model <b>OpenAI</b></span>
+  <span class="chip"><i style="background:#f5b942"></i>Helios stock-removal verifier</span>
+</div></nav>
+
+<section id="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Agent37 hackathon · RFQ to verified G-code</div>
+    <h1>An RFQ in.<br><span class="ok">A verified CNC</span><br><span class="ok">program</span> out.</h1>
+    <p class="lede">An agent on its own <b>Agent37</b> cloud computer reads the customer's drawing and 3D model, writes <b>Haas G-code</b>, runs a <b>stock-removal simulator</b> on every attempt, fixes what it got wrong and only hands back a program that passes. No human in the loop.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="flow" id="flow"></div>
+</div></section>
+
+<section class="blk" id="sim"><div class="wrap">
+  <div class="head"><span class="k">01</span><h2>Every attempt, simulated</h2><span class="hint">Real material-removal sweep of the agent's own G-code</span></div>
+  <div class="simgrid">
+    <div class="card" id="simcard">
+      <div class="tabs" id="tabs"></div>
+      <div class="stage" id="stage"></div>
+      <div class="stagenote">Each frame is the simulated stock after the agent's moves so far, swept with the real tool shapes. <span style="color:var(--red2)">Red</span> = cut into the part, <span style="color:var(--blue)">blue</span> = material left behind.</div>
+    </div>
+    <div class="card" id="verdictcard"><div id="verdict" class="verdict"></div></div>
+  </div>
+</div></section>
+
+<section class="blk" id="work"><div class="wrap">
+  <div class="head"><span class="k">02</span><h2>How it got there</h2><span class="hint">Live event stream from the Agent37 computer, and the fix it made</span></div>
+  <div class="twocol">
+    <div class="card" id="tlcard"><h3>Agent timeline <span class="r" id="tlmeta"></span></h3><div class="timeline" id="timeline"></div></div>
+    <div class="card" id="diffcard"><h3>What the agent changed <span class="r" id="diffmeta"></span></h3>
+      <div class="diffbar" id="diffbar"><div class="seg" id="diffpair"></div><div class="seg" id="difffile"></div><span class="counts" id="diffcounts"></span></div>
+      <div class="code diff" id="diff"></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="blk" id="out"><div class="wrap">
+  <div class="head"><span class="k">03</span><h2>What it handed back</h2><span class="hint">The verified program and the agent's note for the machinist</span></div>
+  <div class="twocol" style="grid-template-columns:1.25fr 1fr">
+    <div class="card" id="gcodecard"><h3>1001.nc · verified program <span class="r" id="ncmeta"></span></h3><div class="code gcode" id="nc"></div></div>
+    <div class="card" id="notecard"><h3>Agent's hand-off note</h3><div class="note"><div id="result"></div><div class="md" id="summary"></div></div></div>
+  </div>
+</div></section>
+
+<section class="blk" id="rfq"><div class="wrap">
+  <div class="head"><span class="k">04</span><h2>The RFQ it was given</h2><span class="hint">the customer's drawing + STEP model, the shop's job sheet and tool crib</span></div>
+  <div class="card" id="drawcard" style="display:none;padding:14px;margin-bottom:16px"><img id="drawing" alt="customer drawing" style="width:100%;border-radius:10px;background:#fff;display:block"></div>
+  <div class="card" id="monidcard" style="display:none;margin-bottom:16px"></div>
+  <div class="card" id="speccard"><div class="hint" style="margin-bottom:8px">spec.md the agent wrote from the drawing</div><div class="md spec" id="spec"></div></div>
+</div></section>
+
+<footer><div class="wrap">
+  <div><b>Simulation only.</b> Every frame and verdict is the verifier's real result for the agent's program (Z-map and voxel stock removal with the real tool shapes). Nothing on this page has been cut on a machine.</div>
+  <div class="spacer"></div><div id="runid" style="font:12px var(--mono);color:var(--dim)"></div>
+</div></footer>
+<div id="caption"></div>
+
+<script>
+const D = {"attempts": [{"n": "01", "status": "pass", "fails": [], "caught": [], "warnings": ["nc_lint program_end: no Z retract to home (G28 G91 Z0. / G53 Z0.) before end (1001.nc:457)"], "video": "media/attempt_01.mp4", "maps": ["media/attempt_01_OP1_maps.png", "media/attempt_01_voxel_final.png"], "nc": "%\nO1001 (PLATE-104 REV A)\nG00 G17 G40 G49 G80 G90\nG20 G54 G94\n(FACE ROUGH AND SPRING FINISH)\nT1 M06\nS6000 M03\nG00 G43 H1 Z1.\nM08\nG00 Z0.1500\nG00 X-0.5000 Y0.0000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y0.2000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y0.4000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y0.6000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y0.8000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y1.0000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y1.2000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y1.4000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y1.6000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y1.8000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y2.0000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y2.2000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y2.4000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y2.6000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y2.8000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y3.0000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y3.2000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y3.4000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y3.6000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 X6.5000 Y3.8000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F35.0000\nG00 Z0.1500\nG00 X-0.5000 Y4.0000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F35.0000\nG00 Z0.1500\nG00 Z0.1500\nG00 X-0.5000 Y0.0000\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y0.1481\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y0.2963\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y0.4444\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y0.5926\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y0.7407\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y0.8889\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y1.0370\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y1.1852\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y1.3333\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y1.4815\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y1.6296\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y1.7778\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y1.9259\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y2.0741\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y2.2222\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y2.3704\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y2.5185\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y2.6667\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y2.8148\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y2.9630\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y3.1111\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y3.2593\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y3.4074\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y3.5556\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y3.7037\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\nG00 X-0.5000 Y3.8519\nG01 Z0.0000 F12.0000\nG01 X6.5000 F25.0000\nG00 Z0.1500\nG00 X6.5000 Y4.0000\nG01 Z0.0000 F12.0000\nG01 X-0.5000 F25.0000\nG00 Z0.1500\n(POCKET RAMP RASTER AND WALL FINISH)\nG00 Z0.1500\nG00 X2.5000 Y2.0000\nG01 Z0.0000 F12.0000\nG01 X3.5000 Z-0.0250 F12.0000\nG01 X2.5000 Z-0.0500 F12.0000\nG01 X3.5000 Z-0.0750 F12.0000\nG01 X2.5000 Z-0.1000 F12.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.9167 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.0833 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.2500 Z-0.1000 F18.0000\nG02 X1.7500 Y1.3125 I0.0000 J0.0625 F18.0000\nG01 Y2.6875\nG02 X1.8125 Y2.7500 I0.0625 J0.0000\nG01 X4.1875\nG02 X4.2500 Y2.6875 I0.0000 J-0.0625\nG01 Y1.3125\nG02 X4.1875 Y1.2500 I-0.0625 J0.0000\nG01 X1.8125\nG00 Z0.1500\nG00 X2.5000 Y2.0000\nG01 Z-0.1000 F12.0000\nG01 X3.5000 Z-0.1250 F12.0000\nG01 X2.5000 Z-0.1500 F12.0000\nG01 X3.5000 Z-0.1750 F12.0000\nG01 X2.5000 Z-0.2000 F12.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.9167 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.0833 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.2500 Z-0.2000 F18.0000\nG02 X1.7500 Y1.3125 I0.0000 J0.0625 F18.0000\nG01 Y2.6875\nG02 X1.8125 Y2.7500 I0.0625 J0.0000\nG01 X4.1875\nG02 X4.2500 Y2.6875 I0.0000 J-0.0625\nG01 Y1.3125\nG02 X4.1875 Y1.2500 I-0.0625 J0.0000\nG01 X1.8125\nG00 Z0.1500\nG00 X2.5000 Y2.0000\nG01 Z-0.2000 F12.0000\nG01 X3.5000 Z-0.2250 F12.0000\nG01 X2.5000 Z-0.2500 F12.0000\nG01 X3.5000 Z-0.2750 F12.0000\nG01 X2.5000 Z-0.3000 F12.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.9167 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.0833 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.2500 Z-0.3000 F18.0000\nG02 X1.7500 Y1.3125 I0.0000 J0.0625 F18.0000\nG01 Y2.6875\nG02 X1.8125 Y2.7500 I0.0625 J0.0000\nG01 X4.1875\nG02 X4.2500 Y2.6875 I0.0000 J-0.0625\nG01 Y1.3125\nG02 X4.1875 Y1.2500 I-0.0625 J0.0000\nG01 X1.8125\nG00 Z0.1500\nG00 X2.5000 Y2.0000\nG01 Z-0.3000 F12.0000\nG01 X3.5000 Z-0.3250 F12.0000\nG01 X2.5000 Z-0.3500 F12.0000\nG01 X3.5000 Z-0.3750 F12.0000\nG01 X2.5000 Z-0.4000 F12.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.9167 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.0833 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.2500 Z-0.4000 F18.0000\nG02 X1.7500 Y1.3125 I0.0000 J0.0625 F18.0000\nG01 Y2.6875\nG02 X1.8125 Y2.7500 I0.0625 J0.0000\nG01 X4.1875\nG02 X4.2500 Y2.6875 I0.0000 J-0.0625\nG01 Y1.3125\nG02 X4.1875 Y1.2500 I-0.0625 J0.0000\nG01 X1.8125\nG00 Z0.1500\nG00 X2.5000 Y2.0000\nG01 Z-0.4000 F12.0000\nG01 X3.5000 Z-0.4225 F12.0000\nG01 X2.5000 Z-0.4450 F12.0000\nG01 X3.5000 Z-0.4675 F12.0000\nG01 X2.5000 Z-0.4900 F12.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X1.8125 Y1.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y1.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.9167 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.0833 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.2500 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.4167 F30.0000\nG01 X1.8125\nG01 X1.8125 Y2.5833 F30.0000\nG01 X4.1875\nG01 X4.1875 Y2.7500 F30.0000\nG01 X1.8125\nG01 X1.8125 Y1.2500 Z-0.4900 F18.0000\nG02 X1.7500 Y1.3125 I0.0000 J0.0625 F18.0000\nG01 Y2.6875\nG02 X1.8125 Y2.7500 I0.0625 J0.0000\nG01 X4.1875\nG02 X4.2500 Y2.6875 I0.0000 J-0.0625\nG01 Y1.3125\nG02 X4.1875 Y1.2500 I-0.0625 J0.0000\nG01 X1.8125\nG00 Z0.1500\nG00 X2.5000 Y2.0000\nG01 Z-0.4900 F12.0000\nG01 X3.5000 Z-0.5000 F12.0000\nG01 X1.8125 Y1.2500 F20.0000\nG01 X1.8125 Y1.2500 F20.0000\nG01 X4.1875\nG01 X4.1875 Y1.4167 F20.0000\nG01 X1.8125\nG01 X1.8125 Y1.5833 F20.0000\nG01 X4.1875\nG01 X4.1875 Y1.7500 F20.0000\nG01 X1.8125\nG01 X1.8125 Y1.9167 F20.0000\nG01 X4.1875\nG01 X4.1875 Y2.0833 F20.0000\nG01 X1.8125\nG01 X1.8125 Y2.2500 F20.0000\nG01 X4.1875\nG01 X4.1875 Y2.4167 F20.0000\nG01 X1.8125\nG01 X1.8125 Y2.5833 F20.0000\nG01 X4.1875\nG01 X4.1875 Y2.7500 F20.0000\nG01 X1.8125\nG01 X1.8125 Y1.2500 Z-0.5000 F18.0000\nG02 X1.7500 Y1.3125 I0.0000 J0.0625 F18.0000\nG01 Y2.6875\nG02 X1.8125 Y2.7500 I0.0625 J0.0000\nG01 X4.1875\nG02 X4.2500 Y2.6875 I0.0000 J-0.0625\nG01 Y1.3125\nG02 X4.1875 Y1.2500 I-0.0625 J0.0000\nG01 X1.8125\nG01 X1.8125 Y1.2500 Z-0.5000 F18.0000\nG02 X1.7500 Y1.3125 I0.0000 J0.0625 F18.0000\nG01 Y2.6875\nG02 X1.8125 Y2.7500 I0.0625 J0.0000\nG01 X4.1875\nG02 X4.2500 Y2.6875 I0.0000 J-0.0625\nG01 Y1.3125\nG02 X4.1875 Y1.2500 I-0.0625 J0.0000\nG01 X1.8125\nG00 Z1.\nM09\nM05\nG49\n(FOUR QUARTER INCH PLAIN THROUGH HOLES NO TAP)\nT2 M06\nS2500 M03\nG00 G43 H2 Z1.\nM08\nG00 X0.5000 Y0.5000\nG00 Z0.1500\nG98 G83 X0.5000 Y0.5000 Z-1.1000 R0.1500 Q0.1250 F10.0000\nX5.5000 Y0.5000\nX5.5000 Y3.5000\nX0.5000 Y3.5000\nG80\nG00 Z1.\nM09\nM05\nG49\nM30\n%\n", "gen": "\"\"\"PLATE-104 drawing geometry; explicit Haas tool-center paths in inches.\"\"\"\nfrom pathlib import Path\nimport math\n\nROOT = Path(__file__).resolve().parent\nlines = ['%', 'O1001 (PLATE-104 REV A)', 'G00 G17 G40 G49 G80 G90',\n         'G20 G54 G94']\n\ndef emit(s):\n    lines.append(s)\n\ndef move(g, x=None, y=None, z=None, f=None, i=None, j=None):\n    s = g\n    for k, v in [('X', x), ('Y', y), ('Z', z), ('I', i), ('J', j), ('F', f)]:\n        if v is not None:\n            s += f' {k}{v:.4f}'\n    emit(s)\n\ndef tool(n, rpm):\n    emit(f'T{n} M06')\n    emit(f'S{rpm} M03')\n    emit(f'G00 G43 H{n} Z1.')\n    emit('M08')\n\ndef finish_tool():\n    emit('G00 Z1.')\n    emit('M09')\n    emit('M05')\n    emit('G49')\n\ndef face(step, feed):\n    # Full cutter runs outside edges before descending or traversing Y.\n    count = math.ceil(4 / step)\n    for k in range(count + 1):\n        y = 4 * k / count\n        x0, x1 = (-.5, 6.5) if k % 2 == 0 else (6.5, -.5)\n        move('G00', z=.15)\n        move('G00', x=x0, y=y)\n        move('G01', z=0, f=12)\n        move('G01', x=x1, f=feed)\n    move('G00', z=.15)\n\ndef perimeter(z, feed):\n    # Clockwise internal climb contour, tool-center corner radius .0625.\n    r = .3125 - .5 / 2\n    move('G01', x=1.8125, y=1.25, z=z, f=feed)\n    move('G02', x=1.75, y=1.3125, i=0, j=r, f=feed)\n    move('G01', y=2.6875)\n    move('G02', x=1.8125, y=2.75, i=r, j=0)\n    move('G01', x=4.1875)\n    move('G02', x=4.25, y=2.6875, i=0, j=-r)\n    move('G01', y=1.3125)\n    move('G02', x=4.1875, y=1.25, i=-r, j=0)\n    move('G01', x=1.8125)\n\nemit('(FACE ROUGH AND SPRING FINISH)')\ntool(1, 6000)\nface(.2, 35)\nface(.15, 25)\nemit('(POCKET RAMP RASTER AND WALL FINISH)')\nprev = 0.0\nfor depth in [-.1, -.2, -.3, -.4, -.49, -.5]:\n    move('G00', z=.15)\n    move('G00', x=2.5, y=2.0)\n    move('G01', z=prev, f=12)\n    # Repeated zig-zag ramps: <= .025 axial drop over 1 inch.\n    n = math.ceil(abs(depth - prev) / .025 - 1e-9)\n    for k in range(1, n + 1):\n        x = 3.5 if k % 2 else 2.5\n        move('G01', x=x, z=prev + (depth - prev) * k / n, f=12)\n    cut_feed = 20 if depth == -.5 else 30\n    move('G01', x=1.8125, y=1.25, f=cut_feed)\n    count = math.ceil(1.5 / .18)\n    for k in range(count + 1):\n        y = 1.25 + 1.5 * k / count\n        x0, x1 = (1.8125, 4.1875) if k % 2 == 0 else (4.1875, 1.8125)\n        move('G01', x=x0, y=y, f=cut_feed)\n        move('G01', x=x1)\n    perimeter(depth, 18)\n    prev = depth\nperimeter(-.5, 18)\nfinish_tool()\nemit('(FOUR QUARTER INCH PLAIN THROUGH HOLES NO TAP)')\ntool(2, 2500)\nmove('G00', x=.5, y=.5)\nmove('G00', z=.15)\nemit('G98 G83 X0.5000 Y0.5000 Z-1.1000 R0.1500 Q0.1250 F10.0000')\nfor x, y in [(5.5, .5), (5.5, 3.5), (.5, 3.5)]:\n    emit(f'X{x:.4f} Y{y:.4f}')\nemit('G80')\nfinish_tool()\nemit('M30')\nemit('%')\n(ROOT / 'job/1001.nc').write_text('\\n'.join(lines) + '\\n')\nprint(f'Generated job/1001.nc: {len(lines)} lines')\n", "time": 24.55, "moves": 552, "tools": [1, 2], "runtime": 9.79}], "events": [{"t": 756, "kind": "started", "name": "vision_analyze", "arg": "Read all drawing dimensions, tolerances, geometry, material, quantity, and machining notes precisely. Identify coordinate relationships.", "res": "", "cls": "run"}, {"t": 808, "kind": "started", "name": "read_file", "arg": "~/cnc/job/shop.md", "res": "", "cls": "read"}, {"t": 808, "kind": "started", "name": "read_file", "arg": "~/cnc/AGENT_BRIEF.md", "res": "", "cls": "read"}, {"t": 808, "kind": "started", "name": "skill_view", "arg": "test-driven-development", "res": "", "cls": "read"}, {"t": 808, "kind": "started", "name": "search_files", "arg": "~/cnc", "res": "", "cls": "read"}, {"t": 812, "kind": "started", "name": "read_file", "arg": "~/cnc/job/job.json", "res": "", "cls": "read"}, {"t": 812, "kind": "started", "name": "read_file", "arg": "~/cnc/job/part.step", "res": "", "cls": "read"}, {"t": 812, "kind": "started", "name": "read_file", "arg": "~/cnc/verify.sh", "res": "", "cls": "read"}, {"t": 812, "kind": "started", "name": "read_file", "arg": "~/cnc/attempt.sh", "res": "", "cls": "read"}, {"t": 816, "kind": "started", "name": "read_file", "arg": "~/cnc/vendor/checks/part_model.py", "res": "", "cls": "read"}, {"t": 816, "kind": "started", "name": "read_file", "arg": "~/cnc/vendor/checks/process_lint.py", "res": "", "cls": "read"}, {"t": 816, "kind": "started", "name": "terminal", "arg": ".venv/bin/python -c \"import importlib.util; print({m: bool(importlib.util.find_spec(m)) for m in ['OCP','cadquery','numpy']})\"", "res": "", "cls": "run"}, {"t": 819, "kind": "reasoning", "name": "thinking", "arg": "Inspecting vendor relevance: I need to make sure I stop overreading vendor-related information that isn't relevant.", "res": ""}, {"t": 824, "kind": "started", "name": "terminal", "arg": ".venv/bin/python -c \"from OCP.STEPControl import STEPControl_Reader; from OCP.TopExp import TopExp_Explorer; from OCP.TopAbs import TopAbs_FACE; from OCP.TopoDS import TopoDS; from OCP.BRepAdaptor import BRepAdaptor_Surface; from OCP.Bnd import Bnd_Box; from OCP.BRepBndLib import BRepBndLib; r=STEPControl_Reader(); r.ReadFile('job/part.step'); r.TransferRoots(); s=r.OneShape(); b=Bnd_Box(); BRepBn", "res": "", "cls": "run"}, {"t": 830, "kind": "started", "name": "terminal", "arg": ".venv/bin/python -c \"from OCP.STEPControl import STEPControl_Reader; from OCP.TopExp import TopExp_Explorer; from OCP.TopAbs import TopAbs_FACE; from OCP.TopoDS import TopoDS; from OCP.BRepAdaptor import BRepAdaptor_Surface; from OCP.Bnd import Bnd_Box; from OCP.BRepBndLib import BRepBndLib; r=STEPControl_Reader(); r.ReadFile('job/part.step'); r.TransferRoots(); s=r.OneShape(); b=Bnd_Box(); BRepBn", "res": "", "cls": "run"}, {"t": 836, "kind": "started", "name": "terminal", "arg": ".venv/bin/python -c \"from OCP.STEPControl import STEPControl_Reader; from OCP.TopExp import TopExp_Explorer; from OCP.TopAbs import TopAbs_FACE; from OCP.TopoDS import TopoDS; from OCP.BRepAdaptor import BRepAdaptor_Surface; from OCP.Bnd import Bnd_Box; from OCP.BRepBndLib import BRepBndLib; r=STEPControl_Reader(); r.ReadFile('job/part.step'); r.TransferRoots(); s=r.OneShape(); b=Bnd_Box(); BRepBn", "res": "", "cls": "run"}, {"t": 843, "kind": "started", "name": "execute_code", "arg": "from hermes_tools import terminal print(terminal(command=\".venv/bin/python -c \\\"from OCP.STEPControl import STEPControl_Reader; from OCP.TopExp import TopExp_Explorer; from OCP.TopAbs import TopAbs_FACE; from OCP.TopoDS import TopoDS; from OCP.BRepAdaptor import BRepAdaptor_Surface; from OCP.Bnd import Bnd_Box; from OCP.BRepBndLib import BRepBndLib; r=STEPControl_Reader(); r.ReadFile('job/part.ste", "res": "", "cls": "run"}, {"t": 847, "kind": "reasoning", "name": "thinking", "arg": "Identifying vision requirements: I\u2019m looking into whether actual vision is necessary.", "res": ""}, {"t": 862, "kind": "started", "name": "write_file", "arg": "~/cnc/job/spec.md", "res": "", "cls": "write"}, {"t": 870, "kind": "started", "name": "read_file", "arg": "~/cnc/job/tools.json", "res": "", "cls": "read"}, {"t": 870, "kind": "started", "name": "read_file", "arg": "~/cnc/vendor/checks/run.py", "res": "", "cls": "read"}, {"t": 870, "kind": "started", "name": "read_file", "arg": "~/cnc/vendor/checks/nc_lint.py", "res": "", "cls": "read"}, {"t": 885, "kind": "started", "name": "write_file", "arg": "~/cnc/test_generator.py", "res": "", "cls": "write"}, {"t": 888, "kind": "started", "name": "execute_code", "arg": "python test_generator.py", "res": "", "cls": "run"}, {"t": 891, "kind": "started", "name": "execute_code", "arg": ".venv/bin/python test_generator.py", "res": "", "cls": "run"}, {"t": 913, "kind": "started", "name": "write_file", "arg": "~/cnc/job/process_plan.md", "res": "", "cls": "write"}, {"t": 918, "kind": "reasoning", "name": "thinking", "arg": "Implementing geometry raster limits: I need to implement safe corner limits for the geometry raster at the y-ends using x1.8125 to 4.1875, while ensuring it addresses the strips of .0625 for contour.", "res": ""}, {"t": 937, "kind": "started", "name": "write_file", "arg": "~/cnc/gen.py", "res": "", "cls": "write"}, {"t": 939, "kind": "started", "name": "execute_code", "arg": ".venv/bin/python gen.py && .venv/bin/python test_generator.py", "res": "", "cls": "run"}, {"t": 942, "kind": "started", "name": "execute_code", "arg": "bash /home/node/cnc/attempt.sh && bash /home/node/cnc/verify.sh", "res": "", "cls": "run"}, {"t": 958, "kind": "reasoning", "name": "thinking", "arg": "Summarizing machine safety: I need to read the report closely to write an accurate summary.", "res": ""}, {"t": 961, "kind": "started", "name": "read_file", "arg": "~/cnc/attempts/01/check_out/report.json", "res": "", "cls": "read"}, {"t": 961, "kind": "started", "name": "read_file", "arg": "~/cnc/attempts/01/check_out/report.md", "res": "", "cls": "read"}, {"t": 983, "kind": "started", "name": "write_file", "arg": "~/cnc/out/summary.md", "res": "", "cls": "write"}], "summary": "# PLATE-104 Rev A \u2014 simulation-verified NC package\n\n**Shop verifier PASS, attempt 01.** Reports: `attempts/01/check_out/report.md` and `report.json`. Nominal model geometry and programmed moves passed; this is not certification of every drawing note or permission for unattended machine execution.\n\n## Drawing and cross-check\n6061-T6, 25 pieces. Plate 6.000 x 4.000 x 1.000; centered 3.000 x 2.000 pocket, .500 deep, 4X R.3125; four diameter .250 through holes. G54 finished top lower-left: pocket X1.500..4.500/Y1.000..3.000/Z-.500; holes (.500,.500), (5.500,.500), (.500,3.500), (5.500,3.500). Three-decimal dimensions +/- .005. Shop raw top Z+.050, finished top Z0, bottom Z-1.000. OpenCascade STEP geometry agrees. Full feature/specification table is `job/spec.md`.\n\n## Programmed operations\n- T1 .500 flat 3FL: face .050 allowance to Z0, 6000 rpm, 35 ipm, .200 stepover; spring finish 25 ipm/.150 stepover.\n- T1 pocket: linear ramps 12 ipm, at most .025 drop per inch; layers Z-.100/-.200/-.300/-.400/-.490/-.500. Raster .167 actual stepover (bounded by .180), 30 ipm rough/20 ipm final floor. Rounded walls and final spring contour 18 ipm, computed centerline radius .0625. Floor Z-.500.\n- T2 .250 118-degree drill: four G98 G83 holes, 2500 rpm/10 ipm, Q.125, R.150, tip Z-1.100 (full-diameter breakthrough; limit Z-1.150). T3 tap unused: drawing specifies plain holes.\n- Haas G20/G54/G90/G17/G94; required safe start, tool changes, G43 H1/H2, coolant, G80, M30. Tool diameter compensation is explicitly computed; no G41/G42.\n\n## Attempts and measured result\n01: PASS first run; no failed simulator attempts or corrective changes. Required NC acceptance test failed before generation (missing NC) and passed afterward.\n- Estimated programmed cycle: **24.55 min per part**, excluding handling/inspection/deburring.\n- Z-map resolution .010: zero gouge, zero leftover, zero stock-crossing rapids, zero holder/shank hits, zero flute-length violations.\n- Independent 3D voxel result: PASS, zero gouge/leftover voxels, no warnings.\n- One NC lint warning: no machine-home Z retract before M30, line 457. Program retracts to G54 Z1.000; machine-specific home/fixture clearance must be checked before release.\n\n## Machinist/customer release checks \u2014 not certified by simulator\n- Upper-row hole positions are taken from STEP/symmetry; drawing lacks explicit upper-row location dimensions. R.3125 has no four-decimal general tolerance. Clarify these with customer before production acceptance.\n- **All-edge .005-.015 breaks and complete burr removal are NOT programmed.** Crib has no chamfer/deburr tool, and bottom edges cannot be reached in the prescribed single setup. Arrange an approved downstream deburr operation; this package alone is not a fully finished drawing-compliant part.\n- Verify 125 Ra surfaces/63 Ra floor (units unstated), flat floor/vertical walls, and no visible top-face tool marks. Simulation cannot prove roughness, burrs, deflection or finish.\n- Confirm real T1/T2 diameters, H offsets, G54, vise/jaw/parallels geometry and breakthrough clearance. Job simulator checks the stated Z limit and tool holders, not a complete physical fixture model.\n\nDeliverables: `gen.py`, `job/1001.nc`, `job/spec.md`, `job/process_plan.md`, unit acceptance test, immutable attempt 01 snapshot, and original verifier reports. Protected job inputs and vendor code were not edited.\n", "final": "\n\nRESULT: PASS after 1 attempts", "model": "openai/gpt-6.1-sol", "seconds": 986, "instance": "ne2c92yrxg", "tool_calls": 30, "spec": "# PLATE-104 Rev A \u2014 drawing-governed specification\n\nDrawing: Bayline Automation mounting plate, J. Ortega 10/02/26, inch, third-angle, sheet 1/1. Material AL 6061-T6 plate; quantity 25; finish as machined. Interpret per ASME Y14.5-2018.\n\nG54: lower-left finished top corner, X right, Y back, Z up. Finished top Z0; bottom Z-1.000.\n\n| Feature | Nominal geometry and G54 location | Tolerance |\n|---|---|---|\n| Plate | X0..6.000, Y0..4.000, Z-1.000..0; 6.000 x 4.000 x 1.000 | Each dimension +/- .005 |\n| Pocket | 3.000 x 2.000, X1.500..4.500, Y1.000..3.000; center (3,2); floor Z-.500 | Size, 1.500/1.000 location dimensions and .500 depth +/- .005 |\n| Pocket corners | 4X R.3125; arc centers (1.8125,1.3125), (4.1875,1.3125), (4.1875,2.6875), (1.8125,2.6875) | Four-decimal tolerance not stated |\n| Lower-left hole | Diameter .250 THRU, center (.500,.500), Z0..-1.000 | Diameter and shown .500 offsets +/- .005 |\n| Lower-right hole | Diameter .250 THRU, center (5.500,.500), Z0..-1.000 | Diameter and shown .500 offsets +/- .005 |\n| Upper-left hole | Diameter .250 THRU, center (.500,3.500), Z0..-1.000 | Diameter +/- .005; upper-row location not explicitly dimensioned in drawing |\n| Upper-right hole | Diameter .250 THRU, center (5.500,3.500), Z0..-1.000 | Diameter +/- .005; upper-row location not explicitly dimensioned in drawing |\n\nGeneral tolerances: .XXX +/- .005, .XX +/- .010, angles +/- 0.5 degree. All surfaces 125 Ra maximum; pocket floor 63 Ra (roughness units not printed; conventionally microinch). Pocket walls vertical, floor flat; no separate numeric geometric tolerance. Break ALL sharp edges .005-.015; remove ALL burrs; NO TOOL MARKS ON TOP FACE. STEP reference only; drawing governs.\n\n## Cross-check and unresolved requirements\n- Read STEP with OpenCascade, converting native millimetres to inches. Envelope 0..6 x 0..4 x 0..1. Transform Z by -1 as job.json prescribes: matches shop zero and drawing thickness.\n- STEP pocket walls X1.5/4.5 and Y1/3, floor model Z.5 (G54 Z-.5), corner cylindrical radii .3125 and centers listed above: match drawing.\n- STEP four hole radii .125 at the listed XY coordinates: matches hole size and symmetric pattern. Upper-row coordinates are taken from reference STEP consistent with the drawing illustration, not independently dimensioned customer requirements.\n- Shop stock 6 x 4 x 1.050, extra .050 on top only: G54 raw top +.050, bottom -1.000. Sides already square/to size; facing required, no exterior profile milling needed.\n- Haas VF-2 limits 8100 rpm, 650 ipm; one vise/parallels setup; absolute tool-tip floor Z-1.150. job.json agrees.\n- No dimensional/model conflicts found. Drawing omissions: upper-hole location dimensions, four-decimal radius tolerance, roughness units, numeric flatness/perpendicularity. Edge breaks and burr removal (especially bottom edges) cannot be claimed from nominal STEP stock-removal alone. No-tool-marks and Ra require physical inspection.\n\nOperation/tool plan follows crib review in process_plan.md.\n", "drawing": "media/drawing.png", "monid": {"per_part_material_usd": 48.44, "qty_total_material_usd": 1210.88, "qty": 25, "source_url": "https://www.onlinemetals.com/en/buy/aluminum/1-25-aluminum-plate-6061-t651/pid/4534", "source_title": "1 1/4\" Aluminum Plate 6061-T651 | ASTM-B209 | AMS-4027", "fetched_at": "2026-10-07T14:56:45-0700", "monid_spend_usd": 0.00399, "query": "1-1/4\" 6061-T651 aluminum plate price", "tool": "Firecrawl"}, "claims": {}};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const att = D.attempts || [];
+const isPass = a => a && a.status === "pass";
+const passIdx = att.findIndex(isPass);
+const finalA = passIdx >= 0 ? att[passIdx] : att[att.length - 1];
+const nFail = att.filter(a => !isPass(a)).length;
+// distinct problems per failed attempt (the voxel re-check of the same gouge is not counted twice)
+const caughtCount = att.filter(a => !isPass(a)).reduce((s, a) => s + Math.max(1, new Set((a.caught || []).filter(c => !c.voxel).map(c => c.kind + c.line)).size), 0);
+const toolCalls = D.tool_calls ?? (D.events || []).filter(e => e.kind === "started").length;
+const fmtMin = s => s == null ? "–" : s < 60 ? s + " s" : (s / 60 < 10 ? (s / 60).toFixed(1) : Math.round(s / 60)) + " min";
+const finalLine = (D.final || "").split("\n").map(l => l.trim()).filter(l => /^RESULT:/i.test(l)).pop() || "";
+
+// ---------- hero
+if (D.model) { const [prov, name] = D.model.includes("/") ? D.model.split("/") : ["", D.model];
+  const P = {openai: "OpenAI", anthropic: "Anthropic"}[prov] || prov;
+  $("modelchip").innerHTML = `<i style="background:#e5e7eb"></i>${esc(P)} <b>${esc(name)}</b>`; }
+$("stats").innerHTML = [
+  [att.length, "attempts", ""],
+  [caughtCount, "mistakes caught in sim", caughtCount ? "failc" : ""],
+  [passIdx >= 0 ? "PASS" : (att.length ? "FAIL" : "–"), "final verification", passIdx >= 0 ? "pass" : "failfinal"],
+  [fmtMin(D.seconds).replace(/ (min|s)$/, "<small>$1</small>"), "unattended", ""],
+  [toolCalls, "agent tool calls", ""],
+].map(([v, k, c]) => `<div class="stat ${c}"><b>${v}</b><span>${k}</span></div>`).join("");
+const specTitle = ((D.spec || "").match(/^#\s*(.+)$/m) || [])[1] || "Customer RFQ";
+const specBits = [(D.spec.match(/Material:\s*([^.\n]+)/) || [])[1], (D.spec.match(/Quantity:\s*([^.\n]+)/) || [])[1] && "qty " + D.spec.match(/Quantity:\s*([^.\n]+)/)[1], (D.spec.match(/Machine:\s*([^(,\n]+)/) || [])[1]].filter(Boolean);
+$("flow").innerHTML = (finalA && finalA.video ? `<div class="heroviz ${isPass(finalA) ? "" : "fail"}"><video src="${finalA.video}" muted playsinline autoplay loop></video><span class="badge">${isPass(finalA) ? "✓ VERIFIED" : "✗ NOT VERIFIED"} · ATTEMPT ${esc(finalA.n)}</span></div>` : "") + `
+  <div class="step done"><div class="num">1</div><div><h4>${esc(specTitle.replace(/^Customer RFQ:\s*/i, "RFQ: "))}</h4><p>${esc(specBits.join(" · ") || "customer drawing + STEP model + tool crib")}</p>${D.drawing ? `<img src="${D.drawing}" alt="customer drawing" style="margin-top:8px;width:100%;max-width:340px;border-radius:8px;background:#fff;border:1px solid #1f2937">` : ""}</div></div>
+  <div class="step done"><div class="num">2</div><div><h4>Write G-code, simulate, fix, repeat</h4><p>Every attempt goes through the stock-removal verifier</p>
+    <div class="pills">${att.map((a, i) => `${i ? '<span class="arrow">→</span>' : ""}<span class="pill ${isPass(a) ? "pass" : "fail"}">${isPass(a) ? "✓" : "✗"} ${a.n} ${isPass(a) ? "PASS" : "FAIL"}</span>`).join("")}</div></div></div>
+  <div class="step ${passIdx >= 0 ? "done" : ""}"><div class="num">3</div><div><h4>${passIdx >= 0 ? "Hand back a verified program" : "No verified program yet"}</h4><p>${finalA ? esc([finalA.moves && finalA.moves + " moves", finalA.tools?.length && "tools " + finalA.tools.map(t => "T" + t).join(", "), finalA.time && "est. cycle " + finalA.time + " min"].filter(Boolean).join(" · ")) : ""}</p></div></div>`;
+
+// ---------- simulation
+function plainPass(a) {
+  return `<div class="vhead"><span class="ic">✓</span><div>Attempt ${esc(a.n)}: PASS<small>verifier status: pass${a.runtime ? " · checked in " + a.runtime + " s" : ""}</small></div></div>
+    <ul class="checks"><li>No gouges in the part</li><li>No leftover material</li><li>No rapids through stock</li><li>No holder collisions</li><li>Within flute length</li><li>G-code lint clean</li></ul>
+    <div class="facts">${[a.moves && a.moves + " moves", a.tools?.length && "T" + a.tools.join(", T"), a.time && "est. cycle " + a.time + " min"].filter(Boolean).map(f => `<span>${esc(f)}</span>`).join("")}</div>`;
+}
+function plainFail(a) {
+  const items = (a.caught || []);
+  return `<div class="vhead"><span class="ic">✗</span><div>The simulator caught it<small>attempt ${esc(a.n)} · status ${esc(a.status).toUpperCase()}</small></div></div>
+    <ul class="caught">${items.map(c => `<li class="${c.voxel ? "second" : ""}"><div class="t">${esc(c.title)}</div>${c.detail ? `<div class="d">${esc(c.detail)}</div>` : ""}${c.line ? `<div class="ncref"><em>1001.nc line ${c.line}</em>${esc(c.code)}</div>` : ""}</li>`).join("") || "<li><div class='t'>Verification failed</div></li>"}</ul>`;
+}
+let cur = -1;
+function show(i, play = true) {
+  const a = att[i]; if (!a) return; cur = i;
+  document.querySelectorAll(".tab").forEach((t, j) => t.classList.toggle("active", i === j));
+  const cls = isPass(a) ? "pass" : "fail";
+  const st = $("stage"); st.className = "stage " + cls;
+  const poster = a.maps.find(m => /_maps\.png$/.test(m)) || a.maps[0];
+  st.innerHTML = a.video ? `<video id="video" src="${a.video}" muted playsinline ${play ? "autoplay" : ""} onclick="this.currentTime=0;this.play()" title="click to replay"></video><span class="badge">${cls.toUpperCase()}</span>`
+    : poster ? `<img src="${poster}" alt="verifier result"><span class="badge">${cls.toUpperCase()}</span>` : `<div class="empty">No simulation video for this attempt</div>`;
+  const v = $("verdict"); v.className = "verdict " + cls;
+  const maps = a.maps.find(m => /_maps\.png$/.test(m));
+  v.innerHTML = (isPass(a) ? plainPass(a) : plainFail(a)) +
+    (maps ? `<div class="evid"><img src="${maps}" alt="verifier maps"><div class="cap">Verifier output: simulated stock depth, gouge map, leftover map</div></div>` : "");
+}
+$("tabs").innerHTML = att.map((a, i) => `${i ? '<span class="tabsep">→</span>' : ""}<button class="tab ${isPass(a) ? "pass" : "fail"}" onclick="show(${i})">Attempt ${esc(a.n)} <span class="st">${isPass(a) ? "✓ PASS" : "✗ FAIL"}</span></button>`).join("");
+if (att.length) show(0, false); else $("stage").innerHTML = `<div class="empty">No attempts in this run</div>`;
+
+// ---------- timeline
+(function timeline() {
+  const ev = D.events || [];
+  let k = 0;
+  const attemptOfCall = new Map();
+  ev.forEach((e, i) => { if (e.kind === "started" && (e.cls === "attempt" || e.cls === "verify") && /attempt\.sh/.test(e.arg)) { k++; attemptOfCall.set(i, k); } });
+  // verify results: verify call follows (or is) the attempt.sh call
+  let lastAtt = 0;
+  const rows = [];
+  // reasoning: keep sparse, only snippets with a title, at most 8
+  const think = ev.map((e, i) => [e, i]).filter(([e]) => e.kind === "reasoning");
+  const keep = new Set(think.filter(([e]) => /:/.test(e.arg)).slice(0, 8).map(([, i]) => i));
+  ev.forEach((e, i) => {
+    if (attemptOfCall.has(i)) lastAtt = attemptOfCall.get(i);
+    const t = `${Math.floor(e.t / 60)}:${String(e.t % 60).padStart(2, "0")}`;
+    if (e.kind === "reasoning") { if (keep.has(i)) rows.push(`<div class="ev reasoning"><span class="tm">${t}</span><span class="tag">thinks</span><span class="lb" style="grid-column:3 / 5">${esc(e.arg)}</span></div>`); return; }
+    if (e.kind !== "started") return;
+    const cls = e.cls || "run";
+    let res = "";
+    if (cls === "verify" && lastAtt && att[lastAtt - 1]) { const a = att[lastAtt - 1]; res = `<span class="res ${isPass(a) ? "pass" : "fail"}">#${a.n} ${isPass(a) ? "PASS" : "FAIL"}</span>`; }
+    const tag = { read: "READ", write: "WRITE", run: "RUN", attempt: "SAVE", verify: "VERIFY" }[cls] || "RUN";
+    rows.push(`<div class="ev ${cls}"><span class="tm">${t}</span><span class="tag">${tag}</span><span class="lb" title="${esc(e.arg)}">${esc(e.arg)}</span>${res || "<span></span>"}</div>`);
+  });
+  $("timeline").innerHTML = rows.join("") || `<div style="color:var(--muted)">No events recorded</div>`;
+  $("tlmeta").innerHTML = `<span style="color:var(--dim)">${toolCalls} tool calls · ${fmtMin(D.seconds)}</span>`;
+})();
+
+// ---------- diff
+let dPair = Math.max(1, passIdx >= 1 ? passIdx : att.length - 1), dFile = "gen";
+function renderDiff() {
+  const a = att[dPair];
+  if (att.length < 2 || !a) { $("diff").innerHTML = `<div style="padding:16px;color:var(--muted)">${att.length === 1 ? "Passed on the first attempt: nothing to compare." : "No attempts."}</div>`; $("diffbar")?.remove(); return; }
+  const files = [["gen", "gen.py", a.diff_gen], ["nc", "1001.nc", a.diff_nc]].filter(f => f[2] && f[2].rows.length);
+  if (!files.find(f => f[0] === dFile) && files.length) dFile = files[0][0];
+  $("diffpair").innerHTML = att.slice(1).map((b, j) => `<button class="${j + 1 === dPair ? "on" : ""}" onclick="dPair=${j + 1};renderDiff()">${att[j].n} → ${b.n}</button>`).join("");
+  $("difffile").innerHTML = files.map(f => `<button class="${f[0] === dFile ? "on" : ""}" onclick="dFile='${f[0]}';renderDiff()">${f[1]}</button>`).join("");
+  const d = (files.find(f => f[0] === dFile) || [])[2];
+  $("diffcounts").innerHTML = d ? `<span class="a">+${d.add}</span><span class="r">−${d.rem}</span>` : "";
+  $("diffmeta").innerHTML = `<span style="color:var(--dim)">attempt ${esc(att[dPair - 1].n)} <span style="color:var(--red2)">FAIL</span> → ${esc(a.n)} <span style="color:${isPass(a) ? "var(--green2)" : "var(--red2)"}">${isPass(a) ? "PASS" : "FAIL"}</span></span>`;
+  $("diff").innerHTML = d ? d.rows.map(r => {
+    const c = { "+": "add", "-": "rem", "@": "hunk", " ": "ctx" }[r.t];
+    return `<div class="dl ${c}"><span class="n">${r.n ?? ""}</span><span class="s">${r.t === "@" ? "" : r.t === " " ? "" : r.t === "-" ? "−" : "+"}</span><span class="x">${r.t === "@" ? "@@ " + esc(r.s) : (dFile === "nc" ? hlNC(r.s) : esc(r.s)) || " "}</span></div>`;
+  }).join("") + (d.truncated ? `<div class="dl hunk"><span></span><span></span><span class="x">… diff truncated</span></div>` : "") : `<div style="padding:16px;color:var(--muted)">No file changes recorded between these attempts.</div>`;
+}
+
+// ---------- gcode
+function hlNC(line) {
+  const m = line.match(/^([^(;]*)([(;].*)?$/) || [line, line, ""];
+  const code = esc(m[1]).replace(/\b([GM])(\d+(?:\.\d+)?)/g, (_, k, n) => `<span class="${k === "G" ? "hg" : "hm"}">${k}${n}</span>`)
+    .replace(/\b([XYZIJKRQ])(-?[\d.]+)/g, '<span class="hx">$1$2</span>').replace(/\b([FS])([\d.]+)/g, '<span class="hf">$1$2</span>')
+    .replace(/\b([TH])(\d+)/g, '<span class="ht">$1$2</span>');
+  return code + (m[2] ? `<span class="hc">${esc(m[2])}</span>` : "");
+}
+const caughtLines = new Set(att.flatMap(a => (a.caught || []).map(c => c.line)));
+if (finalA) {
+  const lines = (finalA.nc || "").split("\n");
+  if (lines[lines.length - 1] === "") lines.pop();
+  $("nc").innerHTML = lines.map((l, i) => `<div class="gl"><span class="n">${i + 1}</span><span class="x">${hlNC(l) || " "}</span></div>`).join("");
+  $("ncmeta").innerHTML = `<span style="color:${isPass(finalA) ? "var(--green2)" : "var(--red2)"}">attempt ${esc(finalA.n)} · ${isPass(finalA) ? "PASS" : finalA.status.toUpperCase()}</span> <span style="color:var(--dim)">· ${lines.length} lines</span>`;
+}
+
+// ---------- markdown + note + spec
+function md(src) {
+  const inline = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/(^|[^*])\*([^*]+)\*/g, "$1<em>$2</em>");
+  const out = []; let list = null, code = null;
+  const close = () => { if (list) { out.push(`</${list}>`); list = null; } };
+  for (const raw of (src || "").split("\n")) {
+    if (/^```/.test(raw)) { if (code) { out.push(`<pre><code>${esc(code.join("\n"))}</code></pre>`); code = null; } else { close(); code = []; } continue; }
+    if (code) { code.push(raw); continue; }
+    let m;
+    if ((m = raw.match(/^(#{1,4})\s+(.*)/))) { close(); out.push(`<h${Math.min(m[1].length, 3)}>${inline(m[2])}</h${Math.min(m[1].length, 3)}>`); }
+    else if ((m = raw.match(/^(\s*)[-*]\s+(.*)/))) { if (list !== "ul") { close(); out.push("<ul>"); list = "ul"; } out.push(`<li${m[1].length ? ' class="sub"' : ""}>${inline(m[2])}</li>`); }
+    else if ((m = raw.match(/^\s*\d+[.)]\s+(.*)/))) { if (list !== "ol") { close(); out.push("<ol>"); list = "ol"; } out.push(`<li>${inline(m[1])}</li>`); }
+    else if (!raw.trim()) close();
+    else { close(); out.push(`<p>${inline(raw)}</p>`); }
+  }
+  close(); if (code) out.push(`<pre><code>${esc(code.join("\n"))}</code></pre>`);
+  return out.join("");
+}
+if (finalLine) $("result").innerHTML = `<span class="result ${/PASS/i.test(finalLine) ? "pass" : "fail"}">${esc(finalLine)}</span>`;
+$("summary").innerHTML = md(D.summary || D.final || "_No hand-off note written._");
+$("spec").innerHTML = md(D.spec || "");
+{ const C = D.claims || {}; const chips = [];
+  if (D.monid && D.monid.per_part_material_usd) chips.push(["#a78bfa", "Monid", "live material price"]);
+  if (C.supabase) chips.push(["#3ecf8e", "Supabase", C.supabase]);
+  if (C.instacloud) chips.push(["#f472b6", "InstaCloud", C.instacloud]);
+  const host = $("modelchip").parentElement;
+  chips.forEach(([c, n, d]) => { const s = document.createElement("span"); s.className = "chip";
+    s.innerHTML = `<i style="background:${c}"></i>${esc(n)} <b>${esc(d)}</b>`; host.appendChild(s); }); }
+if (D.drawing) { $("drawing").src = D.drawing; $("drawcard").style.display = "block"; }
+if (D.monid && D.monid.per_part_material_usd) {
+  const m = D.monid;
+  $("monidcard").style.display = "block";
+  $("monidcard").innerHTML = `<div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><b style="font-size:22px">$${Number(m.per_part_material_usd).toFixed(2)}</b><span>material per part, priced live through <b>Monid</b> → ${esc(m.tool || "")} from <a href="${esc(m.source_url || "#")}" style="color:#38bdf8">${esc(m.source_title || "supplier")}</a></span><span class="hint">$${Number(m.qty_total_material_usd || 0).toFixed(2)} for ${esc(m.qty || "")} parts · Monid cost $${Number(m.monid_spend_usd || 0).toFixed(4)} · ${esc((m.fetched_at || "").slice(0, 16))}</span></div>`;
+}
+$("runid").textContent = [D.instance && "Agent37 instance " + D.instance, D.model].filter(Boolean).join(" · ");
+renderDiff();
+
+// ---------- tour mode (?autoplay): hero → attempt 1 → verdict → final attempt → diff → G-code → end
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+function caption(k, text) { const c = $("caption"); if (!text) { c.classList.remove("on"); return; } c.innerHTML = (k ? `<span class="k">${k}</span>` : "") + esc(text); c.classList.add("on"); }
+function tone(t) { document.body.classList.remove("tone-pass", "tone-fail"); if (t) document.body.classList.add("tone-" + t); }
+function spot(ids) { document.querySelectorAll(".card").forEach(c => { c.classList.toggle("spot", ids.includes(c.id)); c.classList.toggle("dim", ids.length > 0 && !ids.includes(c.id)); }); }
+function go(id) { const el = document.getElementById(id); window.scrollTo({ top: id === "hero" ? 0 : el.getBoundingClientRect().top + scrollY - 56 + 4, behavior: "smooth" }); }
+async function playVideo(i, maxMs) {
+  show(i, false); const v = $("video");
+  if (!v) { await sleep(Math.min(maxMs, 8000)); return; }
+  v.currentTime = 0;
+  try { await v.play(); } catch (e) {}
+  const t0 = Date.now();
+  while (!v.ended && Date.now() - t0 < maxMs) await sleep(200);
+  await sleep(Math.max(0, 8000 - (Date.now() - t0)) + 1500);
+}
+async function scrollInside(el, ms) {
+  const steps = Math.ceil(ms / 50), max = el.scrollHeight - el.clientHeight;
+  if (max <= 0) return sleep(ms);
+  for (let s = 0; s <= steps; s++) { el.scrollTop = max * Math.min(1, s / steps) * 0.85; await sleep(50); }
+}
+async function tour() {
+  document.body.classList.add("tour"); document.documentElement.style.scrollBehavior = "smooth";
+  const P = $("prog"), total = 90000, t0 = Date.now();
+  const tick = setInterval(() => P.style.width = Math.min(100, (Date.now() - t0) / total * 100) + "%", 300);
+  const firstFail = att.findIndex(a => !isPass(a));
+  const last = passIdx >= 0 ? passIdx : att.length - 1;
+  go("hero"); spot([]); await sleep(1200);
+  caption("RFQ", `${specTitle.replace(/^Customer RFQ:\s*/i, "")}: the customer's drawing, 3D model and tool crib go to an agent on Agent37.`); await sleep(9000);
+  if (firstFail >= 0) {
+    go("sim"); tone("fail"); spot(["simcard"]); caption(`ATTEMPT ${att[firstFail].n}`, "The agent's first program, swept through the stock-removal simulator.");
+    await sleep(900); await playVideo(firstFail, 16000);
+    const c = (att[firstFail].caught || [])[0];
+    spot(["verdictcard"]); caption("CAUGHT", c ? c.title + (c.line ? ` (NC line ${c.line})` : "") : "The simulator rejects it.");
+    await sleep(11000);
+  }
+  if (last >= 0 && last !== firstFail) {
+    tone(isPass(att[last]) ? "pass" : "fail"); spot(["simcard"]); caption(`ATTEMPT ${att[last].n}`, isPass(att[last]) ? "It reads the report, fixes its generator and re-runs the simulator." : "Last attempt.");
+    await sleep(400); await playVideo(last, 16000);
+    spot(["verdictcard"]); caption(isPass(att[last]) ? "PASS" : "FAIL", isPass(att[last]) ? `Verified after ${att.length} attempts. No gouge, no leftover, no collisions.` : "Still failing; nothing is handed back as verified.");
+    await sleep(8000);
+  }
+  if (att.length > 1) {
+    go("work"); tone(""); spot(["diffcard", "tlcard"]); caption("THE FIX", `What the agent changed between attempt ${att[dPair - 1].n} and ${att[dPair].n}, and every step it took on its own.`);
+    await sleep(1200); await Promise.all([scrollInside($("diff"), 11000), scrollInside($("timeline"), 11000)]); await sleep(1500);
+  }
+  go("out"); spot(["gcodecard", "notecard"]); caption("HAND-OFF", `The verified Haas program, with a note for the machinist. ${toolCalls} tool calls, ${fmtMin(D.seconds)} unattended.`);
+  await sleep(1200); await scrollInside($("nc"), 10000); await sleep(1500);
+  go("hero"); spot([]); caption("", "Simulation only: nothing has been cut on a machine yet."); await sleep(7000);
+  caption(""); clearInterval(tick); P.style.width = "100%";
+  document.body.classList.remove("tour"); document.body.dataset.tourDone = "1";
+}
+if (/[?&]autoplay\b/.test(location.search)) { setTimeout(tour, 800); addEventListener("keydown", e => { if (e.key === "Escape") location.search = ""; }); }
+</script>
+</body>
+</html>
