@@ -1,0 +1,145 @@
+{
+  "job": "/home/node/cnc/job",
+  "units": "inch",
+  "status": "pass",
+  "resolution": 0.01,
+  "grid": {
+    "origin": [
+      -0.02,
+      -0.02,
+      -0.02
+    ],
+    "shape": [
+      604,
+      404,
+      109
+    ],
+    "voxels": 26597744,
+    "memory_mb_per_grid": 25.4
+  },
+  "stock_volume": 25.2,
+  "setups": [
+    {
+      "setup": "OP1",
+      "wcs": "G54",
+      "nc_files": [
+        "1001.nc"
+      ],
+      "frame": "exact (tool axis = part +Z)",
+      "tool_axis_part": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "moves": 277,
+      "segments": 518,
+      "removed_volume": 4.3514,
+      "missing_tools": [],
+      "rapid_through_stock": {
+        "count": 0,
+        "worst": [],
+        "what": "rapid removes material (rapid into stock); max = material thickness in one column"
+      },
+      "holder_collision": {
+        "count": 0,
+        "worst": [],
+        "what": "shank or holder inside remaining material"
+      },
+      "beyond_flute_length": {
+        "count": 0,
+        "worst": [],
+        "what": "material above the flute length (cut deeper than the flutes)"
+      },
+      "thread_tool_in_solid": {
+        "count": 0,
+        "worst": [],
+        "what": "tap/thread mill cut material inside 0.75 x its diameter (hole not drilled?)"
+      },
+      "per_tool": {
+        "T1": {
+          "removed_volume": 4.1578,
+          "feed_length": 136.291,
+          "air_feed_pct": 8.7
+        },
+        "T2": {
+          "removed_volume": 0.1936,
+          "feed_length": 5.24,
+          "air_feed_pct": 7.6
+        }
+      },
+      "tools_not_simulated": [],
+      "tools_without_holder": [],
+      "in_part_removals_recorded": 0,
+      "timing_s": {
+        "parse": 0.002,
+        "frame": 0.005,
+        "sweep": 0.031,
+        "map_back": 0.001,
+        "total": 0.041
+      },
+      "gouge_lines": [],
+      "edge_break_lines": []
+    }
+  ],
+  "config": {
+    "resolution": 0.01,
+    "pad_voxels": 2,
+    "edge_break_dist": 0.035,
+    "edge_break_depth": 0.025,
+    "sharp_edge_deg": 30.0,
+    "distance_cap": 0.05,
+    "leftover_max": 0.02,
+    "leftover_min_region_voxels": 20,
+    "leftover_volume_pct_max": 0.5,
+    "gouge_min_voxels": 1,
+    "edt_margin": 1.0,
+    "buffer_capacity": 4000000
+  },
+  "timing_s": {
+    "voxelize_part": 0.2
+  },
+  "final": {
+    "gouge": {
+      "voxels": 0,
+      "max_depth": 0.0,
+      "volume": 0.0,
+      "volume_pct": 0.0,
+      "regions": [],
+      "lines": [],
+      "ignored_below_tol": 0
+    },
+    "edge_break": {
+      "voxels": 0,
+      "max_depth": 0.0,
+      "regions": [],
+      "lines": []
+    },
+    "leftover": {
+      "voxels": 0,
+      "max_thickness": 0.0,
+      "max_local_thickness": 0.0,
+      "volume": 0.0,
+      "volume_pct": 0.0,
+      "regions": [],
+      "ignored_below_tol": 0
+    },
+    "part_voxels": 20848600,
+    "part_volume": 20.8486,
+    "part_outside_stock_voxels": 0,
+    "mesh_edges": {
+      "edges": 3858,
+      "manifold_pairs": 3858,
+      "boundary_edges": 0,
+      "sharp_convex": 1152
+    },
+    "distance_cap": 0.05,
+    "timing_s": {
+      "fields": 0.016,
+      "total": 0.156
+    }
+  },
+  "failures": [],
+  "warnings": [],
+  "runtime_s": 0.43,
+  "png": "attempts/03/check_out/voxel_final.png"
+}

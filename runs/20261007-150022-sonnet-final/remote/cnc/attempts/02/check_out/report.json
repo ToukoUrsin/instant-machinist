@@ -1,0 +1,181 @@
+{
+  "job": "/home/node/cnc/job",
+  "units": "inch",
+  "status": "fail",
+  "runtime_s": 9.1,
+  "setups": [
+    {
+      "setup": "OP1",
+      "wcs": "G54",
+      "nc_files": [
+        "1001.nc"
+      ],
+      "status": "fail",
+      "failures": [
+        "stock_sim leftover: max 0.5000 inch, 9.033% of part area, worst at XY [1.985, 1.215]"
+      ],
+      "warnings": [],
+      "nc_lint": [
+        {
+          "file": "1001.nc",
+          "findings": [],
+          "stats": {
+            "moves": 259,
+            "feed_length": 120.74,
+            "rapid_length": 99.516,
+            "cycle_time_min_est": 2.62,
+            "tools_used": [
+              1,
+              2
+            ]
+          }
+        }
+      ],
+      "stock_sim": {
+        "setup": "OP1",
+        "resolution": 0.01,
+        "grid": [
+          750,
+          550
+        ],
+        "segments": 412,
+        "initial_stock": "raw stock box",
+        "missing_tools": [],
+        "rapid_through_stock": {
+          "count": 0,
+          "worst": [],
+          "what": "rapid removes material (rapid through stock)"
+        },
+        "holder_collision": {
+          "count": 0,
+          "worst": [],
+          "what": "shank or holder below the top of remaining material"
+        },
+        "beyond_flute_length": {
+          "count": 0,
+          "worst": [],
+          "what": "cut deeper than the tool's flute length"
+        },
+        "thread_tool_in_solid": {
+          "count": 0,
+          "worst": [],
+          "what": "tap/thread mill cut material inside 0.75 x its diameter (hole not drilled?)"
+        },
+        "per_tool": {
+          "T1": {
+            "removed_volume": 3.0328,
+            "feed_length": 115.489,
+            "air_feed_pct": 9.3
+          },
+          "T2": {
+            "removed_volume": 0.2033,
+            "feed_length": 5.24,
+            "air_feed_pct": 7.6
+          }
+        },
+        "tools_not_simulated": [],
+        "tools_without_holder": [],
+        "gouge": {
+          "max": 0.0,
+          "area_pct": 0.0,
+          "cells": 0,
+          "regions": [],
+          "lines": []
+        },
+        "leftover": {
+          "max": 0.5,
+          "area_pct": 9.033,
+          "cells": 21504,
+          "regions": [
+            {
+              "max": 0.5,
+              "area": 2.1504,
+              "cells": 21504,
+              "worst_xy": [
+                1.985,
+                1.215
+              ]
+            }
+          ],
+          "floor_z": -1.0
+        },
+        "part_cells": 238064,
+        "timing_s": {
+          "sweep": 0.154,
+          "raster": 0.015,
+          "total": 1.909
+        }
+      }
+    }
+  ],
+  "voxel": {
+    "status": "fail",
+    "failures": [
+      "leftover: max 0.3400 inch thick (+-0.005), 5.2819% of part volume, 1 region(s) over 0.02; worst at part XYZ [1.845, 2.665, 0.995]"
+    ],
+    "warnings": [],
+    "final": {
+      "gouge": {
+        "voxels": 0,
+        "max_depth": 0.0,
+        "volume": 0.0,
+        "volume_pct": 0.0,
+        "regions": [],
+        "lines": [],
+        "ignored_below_tol": 0
+      },
+      "edge_break": {
+        "voxels": 0,
+        "max_depth": 0.0,
+        "regions": [],
+        "lines": []
+      },
+      "leftover": {
+        "voxels": 1101200,
+        "max_thickness": 0.34,
+        "max_local_thickness": 0.34384,
+        "volume": 1.1012,
+        "volume_pct": 5.2819,
+        "regions": [
+          {
+            "max": 0.34,
+            "voxels": 1101200,
+            "volume": 1.1012,
+            "worst_xyz": [
+              1.845,
+              2.665,
+              0.995
+            ],
+            "bbox_min": [
+              1.5,
+              1.0,
+              0.5
+            ],
+            "bbox_max": [
+              4.49,
+              2.99,
+              1.0
+            ],
+            "local_thickness": 0.34384
+          }
+        ],
+        "ignored_below_tol": 23800
+      },
+      "part_voxels": 20848600,
+      "part_volume": 20.8486,
+      "part_outside_stock_voxels": 0,
+      "mesh_edges": {
+        "edges": 3858,
+        "manifold_pairs": 3858,
+        "boundary_edges": 0,
+        "sharp_convex": 1152
+      },
+      "distance_cap": 0.05,
+      "timing_s": {
+        "fields": 0.016,
+        "total": 5.353
+      }
+    },
+    "runtime_s": 5.65
+  }
+}

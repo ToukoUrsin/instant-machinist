@@ -1,0 +1,40 @@
+{
+  "units": "inch",
+  "part": "part.step",
+  "tools": "tools.json",
+  "stock": {
+    "min": [
+      0,
+      0,
+      0
+    ],
+    "max": [
+      6,
+      4,
+      1.05
+    ]
+  },
+  "setups": [
+    {
+      "name": "OP1",
+      "wcs": "G54",
+      "nc": [
+        "1001.nc"
+      ],
+      "translation": [
+        0,
+        0,
+        -1
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "min_tool_z": -1.15
+    }
+  ],
+  "sim": {
+    "resolution": 0.01
+  }
+}

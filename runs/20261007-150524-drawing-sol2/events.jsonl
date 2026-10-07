@@ -1,0 +1,2 @@
+{"t": 1791410769.591307, "event": "response.created", "data": {"id": "6b38937ecdd74c07839592d68ed9bc83", "session_id": "2ee1087d9f3d4ae5ad4afc2e1b551409"}}
+{"t": 1791410784.589049, "event": "response.tool_call.generating", "data": {"tool": "vision_analyze"}}

@@ -1,0 +1,18 @@
+{
+  "instance": "y33av4cjq7",
+  "model": "anthropic/claude-sonnet-5.5",
+  "seconds": 139,
+  "agent_final": {
+    "output_text": "\n\nRESULT: PASS after 3 attempts\n\nThe simulator report for attempt 3 shows PASS: 0 gouge, 0 leftover, 0 holder hits, 0 rapids through stock and 0 beyond flute length. Estimated cycle time is 3.03 min. I wrote the summary to `~/cnc/out/summary.md`.\n\nOne change outside the program: the simulator crashed on its first run because the venv's OCP 8.0 has no `TopoDS.Face_s`. I installed cadquery-ocp 7.8.1 into `~/cnc/.venv` to fix that. That also downgraded vtk from 9.6.2 to 9.3.1. `verify.sh` and the vendor files are untouched.\n\n**Attempts**\n1. FAIL: 0.5 in of material left in the pocket centre, from my loops skipping an island there. The no-decimal lint warnings also showed up, so I fixed the number formatting.\n2. FAIL: I tried fewer, larger loops, which made it worse (9% leftover).\n3. PASS: loops every 0.2 in from the wall inward cleared the whole pocket.\n\n**Program** (T1 0.5 flat end mill at 8000 rpm, T2 0.25 drill at 4000 rpm)\n- Face: 0.050 in down to Z0 at F60.\n- Pocket: two 0.25 in ramped levels, then a finishing wall pass at full depth.\n- Holes: the four 0.25 in holes with `G83` to Z-1.1, which clears the Z-1.150 limit.\n\n**Machinist should check**\n- The drill goes 0.1 in below the part bottom, so make sure the parallels aren't under the holes.\n- Tool length offsets H1 and H2.\n- Pocket size and hole positions on the first part.\n- Chip clearing in the pocket.\n- The feeds are conservative and untuned.",
+    "usage": {
+      "input_tokens": 30,
+      "output_tokens": 10332,
+      "cost_usd": 0
+    },
+    "context": {
+      "used_tokens": 33388,
+      "window_tokens": 1000000
+    },
+    "reasoning_effort": "medium"
+  }
+}

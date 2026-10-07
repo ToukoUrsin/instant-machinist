@@ -1,0 +1,159 @@
+{
+  "job": "/home/node/cnc/job",
+  "units": "inch",
+  "status": "pass",
+  "runtime_s": 14.01,
+  "setups": [
+    {
+      "setup": "OP1",
+      "wcs": "G54",
+      "nc_files": [
+        "1001.nc"
+      ],
+      "status": "pass",
+      "failures": [],
+      "warnings": [
+        "nc_lint program_end: no Z retract to home (G28 G91 Z0. / G53 Z0.) before end (1001.nc:196)"
+      ],
+      "nc_lint": [
+        {
+          "file": "1001.nc",
+          "findings": [
+            {
+              "severity": "warning",
+              "rule": "program_end",
+              "message": "no Z retract to home (G28 G91 Z0. / G53 Z0.) before end",
+              "file": "1001.nc",
+              "line": 196,
+              "count": 1,
+              "lines": [
+                "1001.nc:196"
+              ]
+            }
+          ],
+          "stats": {
+            "moves": 244,
+            "feed_length": 244.347,
+            "rapid_length": 75.233,
+            "cycle_time_min_est": 8.58,
+            "tools_used": [
+              1,
+              2
+            ]
+          }
+        }
+      ],
+      "stock_sim": {
+        "setup": "OP1",
+        "resolution": 0.01,
+        "grid": [
+          750,
+          550
+        ],
+        "segments": 318,
+        "initial_stock": "raw stock box",
+        "missing_tools": [],
+        "rapid_through_stock": {
+          "count": 0,
+          "worst": [],
+          "what": "rapid removes material (rapid through stock)"
+        },
+        "holder_collision": {
+          "count": 0,
+          "worst": [],
+          "what": "shank or holder below the top of remaining material"
+        },
+        "beyond_flute_length": {
+          "count": 0,
+          "worst": [],
+          "what": "cut deeper than the tool's flute length"
+        },
+        "thread_tool_in_solid": {
+          "count": 0,
+          "worst": [],
+          "what": "tap/thread mill cut material inside 0.75 x its diameter (hole not drilled?)"
+        },
+        "per_tool": {
+          "T1": {
+            "removed_volume": 4.1578,
+            "feed_length": 239.339,
+            "air_feed_pct": 5.9
+          },
+          "T2": {
+            "removed_volume": 0.2033,
+            "feed_length": 5.0,
+            "air_feed_pct": 0.0
+          }
+        },
+        "tools_not_simulated": [],
+        "tools_without_holder": [],
+        "gouge": {
+          "max": 0.0,
+          "area_pct": 0.0,
+          "cells": 0,
+          "regions": [],
+          "lines": []
+        },
+        "leftover": {
+          "max": 0.0,
+          "area_pct": 0.0,
+          "cells": 0,
+          "regions": [],
+          "floor_z": -1.0
+        },
+        "part_cells": 238064,
+        "timing_s": {
+          "sweep": 0.325,
+          "raster": 0.298,
+          "total": 4.755
+        }
+      }
+    }
+  ],
+  "voxel": {
+    "status": "pass",
+    "failures": [],
+    "warnings": [],
+    "final": {
+      "gouge": {
+        "voxels": 0,
+        "max_depth": 0.0,
+        "volume": 0.0,
+        "volume_pct": 0.0,
+        "regions": [],
+        "lines": [],
+        "ignored_below_tol": 0
+      },
+      "edge_break": {
+        "voxels": 0,
+        "max_depth": 0.0,
+        "regions": [],
+        "lines": []
+      },
+      "leftover": {
+        "voxels": 0,
+        "max_thickness": 0.0,
+        "max_local_thickness": 0.0,
+        "volume": 0.0,
+        "volume_pct": 0.0,
+        "regions": [],
+        "ignored_below_tol": 0
+      },
+      "part_voxels": 20848600,
+      "part_volume": 20.8486,
+      "part_outside_stock_voxels": 0,
+      "mesh_edges": {
+        "edges": 3858,
+        "manifold_pairs": 3858,
+        "boundary_edges": 0,
+        "sharp_convex": 1152
+      },
+      "distance_cap": 0.05,
+      "timing_s": {
+        "fields": 0.721,
+        "total": 1.107
+      }
+    },
+    "runtime_s": 7.52
+  }
+}

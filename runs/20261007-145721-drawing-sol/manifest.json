@@ -1,0 +1,61 @@
+{
+  "instance": "ne2c92yrxg",
+  "started": "2026-10-07T14:57:30-0700",
+  "model": "openai/gpt-6.1-sol",
+  "models_available": [
+    "default",
+    "aion-labs/aion-3.5",
+    "aion-labs/aion-3.5-mini",
+    "aion-labs/aion-2.0",
+    "aion-labs/aion-3.0",
+    "aion-labs/aion-3.0-mini",
+    "amazon/nova-2-lite-v1",
+    "amazon/nova-lite-v1",
+    "amazon/nova-micro-v1",
+    "amazon/nova-premier-v1",
+    "amazon/nova-pro-v1",
+    "anthropic/claude-fable-5",
+    "anthropic/claude-fable-5:batch",
+    "anthropic/claude-fable-5.1",
+    "anthropic/claude-fable-5.1:batch",
+    "~anthropic/claude-fable-latest",
+    "anthropic/claude-haiku-4.5",
+    "anthropic/claude-haiku-4.5:batch",
+    "anthropic/claude-haiku-5.5",
+    "anthropic/claude-haiku-5.5:batch",
+    "~anthropic/claude-haiku-latest",
+    "anthropic/claude-opus-4.1",
+    "anthropic/claude-opus-4.1:batch",
+    "anthropic/claude-opus-4.5",
+    "anthropic/claude-opus-4.5:batch",
+    "anthropic/claude-opus-4.6",
+    "anthropic/claude-opus-4.6:batch",
+    "anthropic/claude-opus-4.7",
+    "anthropic/claude-opus-4.7:batch",
+    "anthropic/claude-opus-4.8",
+    "anthropic/claude-opus-4.8:batch",
+    "anthropic/claude-opus-5",
+    "anthropic/claude-opus-5:batch",
+    "anthropic/claude-opus-5.5",
+    "anthropic/claude-opus-5.5:batch",
+    "~anthropic/claude-opus-latest",
+    "anthropic/claude-sonnet-4",
+    "anthropic/claude-sonnet-4.5",
+    "anthropic/claude-sonnet-4.5:batch",
+    "anthropic/claude-sonnet-4.6"
+  ],
+  "agent_final": {
+    "output_text": "\n\nRESULT: PASS after 1 attempts",
+    "usage": {
+      "input_tokens": 60,
+      "output_tokens": 72737,
+      "cost_usd": 0
+    },
+    "context": {
+      "used_tokens": 50001,
+      "window_tokens": 256000
+    },
+    "reasoning_effort": "medium"
+  },
+  "seconds": 1185
+}

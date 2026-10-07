@@ -1,0 +1,37 @@
+{
+  "units": "inch",
+  "tools": [
+    {
+      "number": 1,
+      "type": "flat",
+      "diameter": 0.5,
+      "corner_radius": 0.0,
+      "flute_length": 1.0,
+      "stickout": 1.5,
+      "holder_diameter": 1.5,
+      "holder_length": 1.8,
+      "name": "0.5 flat 3FL"
+    },
+    {
+      "number": 2,
+      "type": "drill",
+      "diameter": 0.25,
+      "point_angle": 118,
+      "flute_length": 1.5,
+      "stickout": 2.2,
+      "holder_diameter": 1.0,
+      "holder_length": 2.0,
+      "name": "0.25 jobber drill"
+    },
+    {
+      "number": 3,
+      "type": "tap",
+      "diameter": 0.3125,
+      "flute_length": 0.75,
+      "stickout": 1.5,
+      "holder_diameter": 1.2,
+      "holder_length": 2.0,
+      "name": "5/16-18 spiral point tap"
+    }
+  ]
+}

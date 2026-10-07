@@ -1,0 +1,662 @@
+{"t": 1791410180.61151, "event": "response.created", "data": {"id": "0b8065f623c04756ad04e8b3a1caf023", "session_id": "2c586e392c5b47c9ab8f746819df8cc3"}}
+{"t": 1791410187.824194, "event": "response.tool_call.generating", "data": {"tool": "vision_analyze"}}
+{"t": 1791410189.174174, "event": "response.tool_call.started", "data": {"tool": "vision_analyze", "label": "Read this engineering drawing precisely. Transcribe every visible dimension, hole callout, radius, tolerance block value, material, quantity and title-block field. Do not infer unreadable text; identify uncertainties.", "arguments": {"image_url": "/home/node/cnc/job/drawing.png", "question": "Read this engineering drawing precisely. Transcribe every visible dimension, hole callout, radius, tolerance block value, material, quantity and title-block field. Do not infer unreadable text; identify uncertainties.", "region": [0, 0, 1, 1]}}}
+{"t": 1791410194.141742, "event": "response.tool_call.completed", "data": {"tool": "vision_analyze", "duration_ms": 4.911174058914185}}
+{"t": 1791410195.833641, "event": "response.tool_call.generating", "data": {"tool": "vision_analyze"}}
+{"t": 1791410197.544631, "event": "response.tool_call.started", "data": {"tool": "vision_analyze", "label": "Transcribe every readable dimension, hole callout, radius, tolerance block value, material, qty and title-block field from the full engineering drawing. Mark uncertain text explicitly.", "arguments": {"image_url": "/home/node/cnc/job/drawing.png", "question": "Transcribe every readable dimension, hole callout, radius, tolerance block value, material, qty and title-block field from the full engineering drawing. Mark uncertain text explicitly.", "region": [0, 0, 20000, 20000]}}}
+{"t": 1791410223.688355, "event": "response.tool_call.completed", "data": {"tool": "vision_analyze", "duration_ms": 26.14224123954773}}
+{"t": 1791410225.689478, "event": "response.output_text.delta", "data": {"text": "\n\n##"}}
+{"t": 1791410225.692052, "event": "response.output_text.delta", "data": {"text": " Dimensions"}}
+{"t": 1791410225.692183, "event": "response.output_text.delta", "data": {"text": " and"}}
+{"t": 1791410225.8435478, "event": "response.output_text.delta", "data": {"text": " feature"}}
+{"t": 1791410225.856862, "event": "response.output_text.delta", "data": {"text": " call"}}
+{"t": 1791410225.8570209, "event": "response.output_text.delta", "data": {"text": "outs"}}
+{"t": 1791410225.85707, "event": "response.output_text.delta", "data": {"text": "\n\n"}}
+{"t": 1791410225.933989, "event": "response.output_text.delta", "data": {"text": "All"}}
+{"t": 1791410225.940575, "event": "response.output_text.delta", "data": {"text": " linear"}}
+{"t": 1791410225.940732, "event": "response.output_text.delta", "data": {"text": " dimensions"}}
+{"t": 1791410225.940786, "event": "response.output_text.delta", "data": {"text": " are"}}
+{"t": 1791410225.948854, "event": "response.output_text.delta", "data": {"text": " in"}}
+{"t": 1791410225.9490209, "event": "response.output_text.delta", "data": {"text": " **"}}
+{"t": 1791410226.005922, "event": "response.output_text.delta", "data": {"text": "in"}}
+{"t": 1791410226.006048, "event": "response.output_text.delta", "data": {"text": "ches"}}
+{"t": 1791410226.0929532, "event": "response.output_text.delta", "data": {"text": "**"}}
+{"t": 1791410226.093107, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410226.093151, "event": "response.output_text.delta", "data": {"text": " Printed"}}
+{"t": 1791410226.0932631, "event": "response.output_text.delta", "data": {"text": " formatting"}}
+{"t": 1791410226.116758, "event": "response.output_text.delta", "data": {"text": " is"}}
+{"t": 1791410226.1232939, "event": "response.output_text.delta", "data": {"text": " preserved"}}
+{"t": 1791410226.123522, "event": "response.output_text.delta", "data": {"text": ".\n\n"}}
+{"t": 1791410226.12357, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.1261399, "event": "response.output_text.delta", "data": {"text": " Location"}}
+{"t": 1791410226.12623, "event": "response.output_text.delta", "data": {"text": " /"}}
+{"t": 1791410226.130259, "event": "response.output_text.delta", "data": {"text": " feature"}}
+{"t": 1791410226.130338, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410226.211733, "event": "response.output_text.delta", "data": {"text": " Printed"}}
+{"t": 1791410226.21186, "event": "response.output_text.delta", "data": {"text": " value"}}
+{"t": 1791410226.211892, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410226.211919, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.2155662, "event": "response.output_text.delta", "data": {"text": "---"}}
+{"t": 1791410226.215635, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.215668, "event": "response.output_text.delta", "data": {"text": "---"}}
+{"t": 1791410226.2156951, "event": "response.output_text.delta", "data": {"text": "|\n"}}
+{"t": 1791410226.317703, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.317924, "event": "response.output_text.delta", "data": {"text": " Overall"}}
+{"t": 1791410226.3179939, "event": "response.output_text.delta", "data": {"text": " plate"}}
+{"t": 1791410226.3180559, "event": "response.output_text.delta", "data": {"text": " length"}}
+{"t": 1791410226.3180969, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410226.3181329, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410226.3182871, "event": "response.output_text.delta", "data": {"text": "6"}}
+{"t": 1791410226.3183239, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410226.409018, "event": "response.output_text.delta", "data": {"text": "000"}}
+{"t": 1791410226.409166, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410226.4092002, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410226.409236, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.40926, "event": "response.output_text.delta", "data": {"text": " Overall"}}
+{"t": 1791410226.4092832, "event": "response.output_text.delta", "data": {"text": " plate"}}
+{"t": 1791410226.4093928, "event": "response.output_text.delta", "data": {"text": " width"}}
+{"t": 1791410226.4094179, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410226.4761012, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410226.4798698, "event": "response.output_text.delta", "data": {"text": "4"}}
+{"t": 1791410226.4800189, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410226.4800792, "event": "response.output_text.delta", "data": {"text": "000"}}
+{"t": 1791410226.4937658, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410226.4939032, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410226.4939551, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.4940019, "event": "response.output_text.delta", "data": {"text": " Plate"}}
+{"t": 1791410226.619295, "event": "response.output_text.delta", "data": {"text": " thickness"}}
+{"t": 1791410226.619443, "event": "response.output_text.delta", "data": {"text": ","}}
+{"t": 1791410226.6195168, "event": "response.output_text.delta", "data": {"text": " section"}}
+{"t": 1791410226.6195998, "event": "response.output_text.delta", "data": {"text": " view"}}
+{"t": 1791410226.619648, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410226.619703, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410226.61984, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410226.619893, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410226.6455932, "event": "response.output_text.delta", "data": {"text": "000"}}
+{"t": 1791410226.6563442, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410226.6564732, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410226.656563, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.7464802, "event": "response.output_text.delta", "data": {"text": " Pocket"}}
+{"t": 1791410226.7583208, "event": "response.output_text.delta", "data": {"text": " length"}}
+{"t": 1791410226.758496, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410226.758555, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410226.7586088, "event": "response.output_text.delta", "data": {"text": "3"}}
+{"t": 1791410226.75866, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410226.758707, "event": "response.output_text.delta", "data": {"text": "000"}}
+{"t": 1791410226.758742, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410226.826616, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410226.833699, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.833819, "event": "response.output_text.delta", "data": {"text": " Pocket"}}
+{"t": 1791410226.833858, "event": "response.output_text.delta", "data": {"text": " width"}}
+{"t": 1791410226.8441641, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410226.844276, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410226.844311, "event": "response.output_text.delta", "data": {"text": "2"}}
+{"t": 1791410226.844342, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410226.931215, "event": "response.output_text.delta", "data": {"text": "000"}}
+{"t": 1791410226.931421, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410226.931469, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410226.931505, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410226.931676, "event": "response.output_text.delta", "data": {"text": " Left"}}
+{"t": 1791410226.931712, "event": "response.output_text.delta", "data": {"text": " plate"}}
+{"t": 1791410226.931745, "event": "response.output_text.delta", "data": {"text": " edge"}}
+{"t": 1791410226.931777, "event": "response.output_text.delta", "data": {"text": " to"}}
+{"t": 1791410227.017356, "event": "response.output_text.delta", "data": {"text": " left"}}
+{"t": 1791410227.017538, "event": "response.output_text.delta", "data": {"text": " pocket"}}
+{"t": 1791410227.0211132, "event": "response.output_text.delta", "data": {"text": " edge"}}
+{"t": 1791410227.0212522, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410227.040822, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410227.040958, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410227.040992, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410227.041019, "event": "response.output_text.delta", "data": {"text": "500"}}
+{"t": 1791410227.140943, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410227.1410592, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410227.141077, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410227.1410902, "event": "response.output_text.delta", "data": {"text": " Bottom"}}
+{"t": 1791410227.141102, "event": "response.output_text.delta", "data": {"text": " plate"}}
+{"t": 1791410227.141114, "event": "response.output_text.delta", "data": {"text": " edge"}}
+{"t": 1791410227.141131, "event": "response.output_text.delta", "data": {"text": " to"}}
+{"t": 1791410227.141141, "event": "response.output_text.delta", "data": {"text": " bottom"}}
+{"t": 1791410227.2447019, "event": "response.output_text.delta", "data": {"text": " pocket"}}
+{"t": 1791410227.244768, "event": "response.output_text.delta", "data": {"text": " edge"}}
+{"t": 1791410227.24479, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410227.244809, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410227.244826, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410227.244896, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410227.2449138, "event": "response.output_text.delta", "data": {"text": "000"}}
+{"t": 1791410227.24493, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410227.293639, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410227.293698, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410227.2937222, "event": "response.output_text.delta", "data": {"text": " Left"}}
+{"t": 1791410227.299137, "event": "response.output_text.delta", "data": {"text": " edge"}}
+{"t": 1791410227.369796, "event": "response.output_text.delta", "data": {"text": " to"}}
+{"t": 1791410227.384369, "event": "response.output_text.delta", "data": {"text": " lower"}}
+{"t": 1791410227.384576, "event": "response.output_text.delta", "data": {"text": "-left"}}
+{"t": 1791410227.384654, "event": "response.output_text.delta", "data": {"text": " hole"}}
+{"t": 1791410227.394551, "event": "response.output_text.delta", "data": {"text": " center"}}
+{"t": 1791410227.394735, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410227.394801, "event": "response.output_text.delta", "data": {"text": " `."}}
+{"t": 1791410227.400224, "event": "response.output_text.delta", "data": {"text": "500"}}
+{"t": 1791410227.400332, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410227.544328, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410227.554732, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410227.554899, "event": "response.output_text.delta", "data": {"text": " Lower"}}
+{"t": 1791410227.55494, "event": "response.output_text.delta", "data": {"text": "-right"}}
+{"t": 1791410227.577062, "event": "response.output_text.delta", "data": {"text": " hole"}}
+{"t": 1791410227.586998, "event": "response.output_text.delta", "data": {"text": " center"}}
+{"t": 1791410227.58715, "event": "response.output_text.delta", "data": {"text": " to"}}
+{"t": 1791410227.58719, "event": "response.output_text.delta", "data": {"text": " right"}}
+{"t": 1791410227.5872278, "event": "response.output_text.delta", "data": {"text": " edge"}}
+{"t": 1791410228.23843, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410228.238754, "event": "response.output_text.delta", "data": {"text": " `."}}
+{"t": 1791410228.246169, "event": "response.output_text.delta", "data": {"text": "500"}}
+{"t": 1791410228.2585769, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410228.294836, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410228.299419, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410228.2995431, "event": "response.output_text.delta", "data": {"text": " Bottom"}}
+{"t": 1791410228.2996092, "event": "response.output_text.delta", "data": {"text": " edge"}}
+{"t": 1791410228.324736, "event": "response.output_text.delta", "data": {"text": " to"}}
+{"t": 1791410228.3338702, "event": "response.output_text.delta", "data": {"text": " lower"}}
+{"t": 1791410228.333975, "event": "response.output_text.delta", "data": {"text": "-right"}}
+{"t": 1791410228.334031, "event": "response.output_text.delta", "data": {"text": " hole"}}
+{"t": 1791410228.343727, "event": "response.output_text.delta", "data": {"text": " center"}}
+{"t": 1791410228.343859, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410228.3440251, "event": "response.output_text.delta", "data": {"text": " `."}}
+{"t": 1791410228.351115, "event": "response.output_text.delta", "data": {"text": "500"}}
+{"t": 1791410228.366571, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410228.3666592, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410228.3667688, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410228.366821, "event": "response.output_text.delta", "data": {"text": " Pocket"}}
+{"t": 1791410228.372749, "event": "response.output_text.delta", "data": {"text": " depth"}}
+{"t": 1791410228.375036, "event": "response.output_text.delta", "data": {"text": ","}}
+{"t": 1791410228.3750982, "event": "response.output_text.delta", "data": {"text": " inside"}}
+{"t": 1791410228.375144, "event": "response.output_text.delta", "data": {"text": " pocket"}}
+{"t": 1791410228.386963, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410228.404157, "event": "response.output_text.delta", "data": {"text": " `."}}
+{"t": 1791410228.4042292, "event": "response.output_text.delta", "data": {"text": "500"}}
+{"t": 1791410228.404275, "event": "response.output_text.delta", "data": {"text": " DE"}}
+{"t": 1791410228.407626, "event": "response.output_text.delta", "data": {"text": "EP"}}
+{"t": 1791410228.407677, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410228.413884, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410228.413954, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410228.474418, "event": "response.output_text.delta", "data": {"text": " Pocket"}}
+{"t": 1791410228.474595, "event": "response.output_text.delta", "data": {"text": " depth"}}
+{"t": 1791410228.4746492, "event": "response.output_text.delta", "data": {"text": ","}}
+{"t": 1791410228.4746912, "event": "response.output_text.delta", "data": {"text": " section"}}
+{"t": 1791410228.474748, "event": "response.output_text.delta", "data": {"text": " view"}}
+{"t": 1791410228.474787, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410228.474823, "event": "response.output_text.delta", "data": {"text": " `."}}
+{"t": 1791410228.474859, "event": "response.output_text.delta", "data": {"text": "500"}}
+{"t": 1791410228.474907, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410228.4749591, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410228.474997, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410228.475034, "event": "response.output_text.delta", "data": {"text": " Hole"}}
+{"t": 1791410228.47507, "event": "response.output_text.delta", "data": {"text": " call"}}
+{"t": 1791410228.475107, "event": "response.output_text.delta", "data": {"text": "out"}}
+{"t": 1791410228.475141, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410228.4751759, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410228.475225, "event": "response.output_text.delta", "data": {"text": "4"}}
+{"t": 1791410228.47526, "event": "response.output_text.delta", "data": {"text": "X"}}
+{"t": 1791410228.475297, "event": "response.output_text.delta", "data": {"text": " \u00d8"}}
+{"t": 1791410228.475331, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410228.475378, "event": "response.output_text.delta", "data": {"text": "250"}}
+{"t": 1791410228.475412, "event": "response.output_text.delta", "data": {"text": " TH"}}
+{"t": 1791410228.475445, "event": "response.output_text.delta", "data": {"text": "RU"}}
+{"t": 1791410228.475478, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410228.4882472, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410228.488381, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410228.488443, "event": "response.output_text.delta", "data": {"text": " Pocket"}}
+{"t": 1791410228.488492, "event": "response.output_text.delta", "data": {"text": " corner"}}
+{"t": 1791410228.502442, "event": "response.output_text.delta", "data": {"text": " radi"}}
+{"t": 1791410228.5025868, "event": "response.output_text.delta", "data": {"text": "i"}}
+{"t": 1791410228.502657, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410228.50271, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410228.5027578, "event": "response.output_text.delta", "data": {"text": "4"}}
+{"t": 1791410228.515609, "event": "response.output_text.delta", "data": {"text": "X"}}
+{"t": 1791410228.51572, "event": "response.output_text.delta", "data": {"text": " R"}}
+{"t": 1791410228.515809, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410228.515925, "event": "response.output_text.delta", "data": {"text": "312"}}
+{"t": 1791410228.548347, "event": "response.output_text.delta", "data": {"text": "5"}}
+{"t": 1791410228.548508, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410228.548577, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410228.548629, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410228.555136, "event": "response.output_text.delta", "data": {"text": " Pocket"}}
+{"t": 1791410228.555251, "event": "response.output_text.delta", "data": {"text": " labels"}}
+{"t": 1791410228.5553112, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410228.555362, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410228.555409, "event": "response.output_text.delta", "data": {"text": "PO"}}
+{"t": 1791410228.555455, "event": "response.output_text.delta", "data": {"text": "CKET"}}
+{"t": 1791410228.555498, "event": "response.output_text.delta", "data": {"text": "`,"}}
+{"t": 1791410228.555539, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410228.620158, "event": "response.output_text.delta", "data": {"text": "FL"}}
+{"t": 1791410228.627488, "event": "response.output_text.delta", "data": {"text": "AT"}}
+{"t": 1791410228.627619, "event": "response.output_text.delta", "data": {"text": " FLOOR"}}
+{"t": 1791410228.627681, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410228.716514, "event": "response.output_text.delta", "data": {"text": " |\n\n"}}
+{"t": 1791410228.71683, "event": "response.output_text.delta", "data": {"text": "View"}}
+{"t": 1791410228.7626119, "event": "response.output_text.delta", "data": {"text": " labels"}}
+{"t": 1791410228.9072, "event": "response.output_text.delta", "data": {"text": ":"}}
+{"t": 1791410228.90737, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410228.907437, "event": "response.output_text.delta", "data": {"text": "TOP"}}
+{"t": 1791410228.9074938, "event": "response.output_text.delta", "data": {"text": " VIEW"}}
+{"t": 1791410228.908447, "event": "response.output_text.delta", "data": {"text": "`,"}}
+{"t": 1791410228.908525, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410228.908591, "event": "response.output_text.delta", "data": {"text": "SECTION"}}
+{"t": 1791410228.9086552, "event": "response.output_text.delta", "data": {"text": " A"}}
+{"t": 1791410228.908714, "event": "response.output_text.delta", "data": {"text": "-A"}}
+{"t": 1791410228.908764, "event": "response.output_text.delta", "data": {"text": "`,"}}
+{"t": 1791410228.9088142, "event": "response.output_text.delta", "data": {"text": " and"}}
+{"t": 1791410228.908868, "event": "response.output_text.delta", "data": {"text": " two"}}
+{"t": 1791410228.90892, "event": "response.output_text.delta", "data": {"text": " section"}}
+{"t": 1791410228.9089751, "event": "response.output_text.delta", "data": {"text": "-arrow"}}
+{"t": 1791410228.909029, "event": "response.output_text.delta", "data": {"text": " labels"}}
+{"t": 1791410228.909079, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410228.909132, "event": "response.output_text.delta", "data": {"text": "A"}}
+{"t": 1791410228.909187, "event": "response.output_text.delta", "data": {"text": "`.\n\n"}}
+{"t": 1791410228.90924, "event": "response.output_text.delta", "data": {"text": "##"}}
+{"t": 1791410228.909288, "event": "response.output_text.delta", "data": {"text": " T"}}
+{"t": 1791410228.9093351, "event": "response.output_text.delta", "data": {"text": "oler"}}
+{"t": 1791410228.9093828, "event": "response.output_text.delta", "data": {"text": "ances"}}
+{"t": 1791410229.006621, "event": "response.output_text.delta", "data": {"text": " and"}}
+{"t": 1791410229.00683, "event": "response.output_text.delta", "data": {"text": " manufacturing"}}
+{"t": 1791410229.006923, "event": "response.output_text.delta", "data": {"text": " notes"}}
+{"t": 1791410229.006973, "event": "response.output_text.delta", "data": {"text": "\n\n"}}
+{"t": 1791410229.1439948, "event": "response.output_text.delta", "data": {"text": "```"}}
+{"t": 1791410229.146229, "event": "response.output_text.delta", "data": {"text": "text"}}
+{"t": 1791410229.146326, "event": "response.output_text.delta", "data": {"text": "\n"}}
+{"t": 1791410229.146365, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410229.153811, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.158709, "event": "response.output_text.delta", "data": {"text": " MATERIAL"}}
+{"t": 1791410229.324358, "event": "response.output_text.delta", "data": {"text": ":"}}
+{"t": 1791410229.3245509, "event": "response.output_text.delta", "data": {"text": " AL"}}
+{"t": 1791410229.324621, "event": "response.output_text.delta", "data": {"text": "UMIN"}}
+{"t": 1791410229.324672, "event": "response.output_text.delta", "data": {"text": "UM"}}
+{"t": 1791410229.3247218, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410229.324768, "event": "response.output_text.delta", "data": {"text": "606"}}
+{"t": 1791410229.324814, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410229.3248582, "event": "response.output_text.delta", "data": {"text": "-T"}}
+{"t": 1791410229.324903, "event": "response.output_text.delta", "data": {"text": "6"}}
+{"t": 1791410229.324949, "event": "response.output_text.delta", "data": {"text": " PL"}}
+{"t": 1791410229.324995, "event": "response.output_text.delta", "data": {"text": "ATE"}}
+{"t": 1791410229.32504, "event": "response.output_text.delta", "data": {"text": ".\n"}}
+{"t": 1791410229.325085, "event": "response.output_text.delta", "data": {"text": "2"}}
+{"t": 1791410229.325135, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.3624141, "event": "response.output_text.delta", "data": {"text": " QU"}}
+{"t": 1791410229.362557, "event": "response.output_text.delta", "data": {"text": "ANTITY"}}
+{"t": 1791410229.419544, "event": "response.output_text.delta", "data": {"text": ":"}}
+{"t": 1791410229.4196842, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410229.419748, "event": "response.output_text.delta", "data": {"text": "25"}}
+{"t": 1791410229.419798, "event": "response.output_text.delta", "data": {"text": " PCS"}}
+{"t": 1791410229.4198458, "event": "response.output_text.delta", "data": {"text": ".\n"}}
+{"t": 1791410229.41989, "event": "response.output_text.delta", "data": {"text": "3"}}
+{"t": 1791410229.4270499, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.427146, "event": "response.output_text.delta", "data": {"text": " INTER"}}
+{"t": 1791410229.4272058, "event": "response.output_text.delta", "data": {"text": "PRE"}}
+{"t": 1791410229.427257, "event": "response.output_text.delta", "data": {"text": "T"}}
+{"t": 1791410229.4912481, "event": "response.output_text.delta", "data": {"text": " PER"}}
+{"t": 1791410229.4914298, "event": "response.output_text.delta", "data": {"text": " AS"}}
+{"t": 1791410229.491497, "event": "response.output_text.delta", "data": {"text": "ME"}}
+{"t": 1791410229.4915462, "event": "response.output_text.delta", "data": {"text": " Y"}}
+{"t": 1791410229.5147798, "event": "response.output_text.delta", "data": {"text": "14"}}
+{"t": 1791410229.526337, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.5284212, "event": "response.output_text.delta", "data": {"text": "5"}}
+{"t": 1791410229.5285199, "event": "response.output_text.delta", "data": {"text": "-"}}
+{"t": 1791410229.5773902, "event": "response.output_text.delta", "data": {"text": "201"}}
+{"t": 1791410229.588869, "event": "response.output_text.delta", "data": {"text": "8"}}
+{"t": 1791410229.588968, "event": "response.output_text.delta", "data": {"text": ".\n"}}
+{"t": 1791410229.5890172, "event": "response.output_text.delta", "data": {"text": "4"}}
+{"t": 1791410229.597236, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.5973482, "event": "response.output_text.delta", "data": {"text": " UN"}}
+{"t": 1791410229.597383, "event": "response.output_text.delta", "data": {"text": "LESS"}}
+{"t": 1791410229.597416, "event": "response.output_text.delta", "data": {"text": " OTHERWISE"}}
+{"t": 1791410229.718679, "event": "response.output_text.delta", "data": {"text": " SPEC"}}
+{"t": 1791410229.71889, "event": "response.output_text.delta", "data": {"text": "IFIED"}}
+{"t": 1791410229.719111, "event": "response.output_text.delta", "data": {"text": ":\n"}}
+{"t": 1791410229.719166, "event": "response.output_text.delta", "data": {"text": "  "}}
+{"t": 1791410229.719216, "event": "response.output_text.delta", "data": {"text": " ."}}
+{"t": 1791410229.719262, "event": "response.output_text.delta", "data": {"text": "XXX"}}
+{"t": 1791410229.7193081, "event": "response.output_text.delta", "data": {"text": " \u00b1"}}
+{"t": 1791410229.719352, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.818068, "event": "response.output_text.delta", "data": {"text": "005"}}
+{"t": 1791410229.818215, "event": "response.output_text.delta", "data": {"text": "    "}}
+{"t": 1791410229.818291, "event": "response.output_text.delta", "data": {"text": " ."}}
+{"t": 1791410229.818325, "event": "response.output_text.delta", "data": {"text": "XX"}}
+{"t": 1791410229.818371, "event": "response.output_text.delta", "data": {"text": " \u00b1"}}
+{"t": 1791410229.8200378, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.820099, "event": "response.output_text.delta", "data": {"text": "010"}}
+{"t": 1791410229.8201442, "event": "response.output_text.delta", "data": {"text": "    "}}
+{"t": 1791410229.850348, "event": "response.output_text.delta", "data": {"text": " ANG"}}
+{"t": 1791410229.855649, "event": "response.output_text.delta", "data": {"text": "LES"}}
+{"t": 1791410229.8557491, "event": "response.output_text.delta", "data": {"text": " \u00b1"}}
+{"t": 1791410229.8558028, "event": "response.output_text.delta", "data": {"text": "0"}}
+{"t": 1791410229.868584, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.8687081, "event": "response.output_text.delta", "data": {"text": "5"}}
+{"t": 1791410229.868775, "event": "response.output_text.delta", "data": {"text": "\u00b0\n"}}
+{"t": 1791410229.8688278, "event": "response.output_text.delta", "data": {"text": "5"}}
+{"t": 1791410229.9294012, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410229.9337149, "event": "response.output_text.delta", "data": {"text": " ALL"}}
+{"t": 1791410229.933801, "event": "response.output_text.delta", "data": {"text": " SUR"}}
+{"t": 1791410229.9350002, "event": "response.output_text.delta", "data": {"text": "F"}}
+{"t": 1791410230.0070348, "event": "response.output_text.delta", "data": {"text": "ACES"}}
+{"t": 1791410230.007211, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410230.007276, "event": "response.output_text.delta", "data": {"text": "125"}}
+{"t": 1791410230.007326, "event": "response.output_text.delta", "data": {"text": " Ra"}}
+{"t": 1791410230.017523, "event": "response.output_text.delta", "data": {"text": " MAX"}}
+{"t": 1791410230.027678, "event": "response.output_text.delta", "data": {"text": ";"}}
+{"t": 1791410230.027777, "event": "response.output_text.delta", "data": {"text": " PO"}}
+{"t": 1791410230.027829, "event": "response.output_text.delta", "data": {"text": "CKET"}}
+{"t": 1791410230.036567, "event": "response.output_text.delta", "data": {"text": " FLOOR"}}
+{"t": 1791410230.036685, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410230.036751, "event": "response.output_text.delta", "data": {"text": "63"}}
+{"t": 1791410230.036801, "event": "response.output_text.delta", "data": {"text": " Ra"}}
+{"t": 1791410230.1028538, "event": "response.output_text.delta", "data": {"text": ".\n"}}
+{"t": 1791410230.115362, "event": "response.output_text.delta", "data": {"text": "6"}}
+{"t": 1791410230.1155899, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410230.118347, "event": "response.output_text.delta", "data": {"text": " PO"}}
+{"t": 1791410230.143801, "event": "response.output_text.delta", "data": {"text": "CKET"}}
+{"t": 1791410230.144001, "event": "response.output_text.delta", "data": {"text": " WALL"}}
+{"t": 1791410230.144085, "event": "response.output_text.delta", "data": {"text": "S"}}
+{"t": 1791410230.144243, "event": "response.output_text.delta", "data": {"text": " V"}}
+{"t": 1791410230.1896179, "event": "response.output_text.delta", "data": {"text": "ERTICAL"}}
+{"t": 1791410230.189962, "event": "response.output_text.delta", "data": {"text": ";"}}
+{"t": 1791410230.190065, "event": "response.output_text.delta", "data": {"text": " FLOOR"}}
+{"t": 1791410230.1983628, "event": "response.output_text.delta", "data": {"text": " FL"}}
+{"t": 1791410230.214297, "event": "response.output_text.delta", "data": {"text": "AT"}}
+{"t": 1791410230.214464, "event": "response.output_text.delta", "data": {"text": ".\n"}}
+{"t": 1791410230.3152509, "event": "response.output_text.delta", "data": {"text": "7"}}
+{"t": 1791410230.315456, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410230.315545, "event": "response.output_text.delta", "data": {"text": " BREAK"}}
+{"t": 1791410230.315625, "event": "response.output_text.delta", "data": {"text": " ALL"}}
+{"t": 1791410230.3156748, "event": "response.output_text.delta", "data": {"text": " SH"}}
+{"t": 1791410230.315721, "event": "response.output_text.delta", "data": {"text": "ARP"}}
+{"t": 1791410230.380818, "event": "response.output_text.delta", "data": {"text": " ED"}}
+{"t": 1791410230.390903, "event": "response.output_text.delta", "data": {"text": "GES"}}
+{"t": 1791410230.391037, "event": "response.output_text.delta", "data": {"text": " ."}}
+{"t": 1791410230.391136, "event": "response.output_text.delta", "data": {"text": "005"}}
+{"t": 1791410230.4017558, "event": "response.output_text.delta", "data": {"text": "-."}}
+{"t": 1791410230.401817, "event": "response.output_text.delta", "data": {"text": "015"}}
+{"t": 1791410230.401852, "event": "response.output_text.delta", "data": {"text": ".\n"}}
+{"t": 1791410230.40188, "event": "response.output_text.delta", "data": {"text": "8"}}
+{"t": 1791410230.536077, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410230.546947, "event": "response.output_text.delta", "data": {"text": " REMOVE"}}
+{"t": 1791410230.547028, "event": "response.output_text.delta", "data": {"text": " ALL"}}
+{"t": 1791410230.547071, "event": "response.output_text.delta", "data": {"text": " BUR"}}
+{"t": 1791410230.650413, "event": "response.output_text.delta", "data": {"text": "RS"}}
+{"t": 1791410230.6506171, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410230.650681, "event": "response.output_text.delta", "data": {"text": " NO"}}
+{"t": 1791410230.65073, "event": "response.output_text.delta", "data": {"text": " TOOL"}}
+{"t": 1791410230.661227, "event": "response.output_text.delta", "data": {"text": " MARK"}}
+{"t": 1791410230.661397, "event": "response.output_text.delta", "data": {"text": "S"}}
+{"t": 1791410230.661464, "event": "response.output_text.delta", "data": {"text": " ON"}}
+{"t": 1791410230.661516, "event": "response.output_text.delta", "data": {"text": " TOP"}}
+{"t": 1791410230.738366, "event": "response.output_text.delta", "data": {"text": " FACE"}}
+{"t": 1791410230.814286, "event": "response.output_text.delta", "data": {"text": ".\n"}}
+{"t": 1791410230.814455, "event": "response.output_text.delta", "data": {"text": "9"}}
+{"t": 1791410230.814521, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410230.8145542, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410230.8145971, "event": "response.output_text.delta", "data": {"text": "3"}}
+{"t": 1791410230.814625, "event": "response.output_text.delta", "data": {"text": "D"}}
+{"t": 1791410230.8146508, "event": "response.output_text.delta", "data": {"text": " MODEL"}}
+{"t": 1791410230.833923, "event": "response.output_text.delta", "data": {"text": " PL"}}
+{"t": 1791410230.836399, "event": "response.output_text.delta", "data": {"text": "ATE"}}
+{"t": 1791410230.836458, "event": "response.output_text.delta", "data": {"text": "-"}}
+{"t": 1791410230.8377888, "event": "response.output_text.delta", "data": {"text": "104"}}
+{"t": 1791410230.847829, "event": "response.output_text.delta", "data": {"text": ".ST"}}
+{"t": 1791410230.84798, "event": "response.output_text.delta", "data": {"text": "EP"}}
+{"t": 1791410230.848017, "event": "response.output_text.delta", "data": {"text": " SUP"}}
+{"t": 1791410230.848045, "event": "response.output_text.delta", "data": {"text": "PLIED"}}
+{"t": 1791410230.936557, "event": "response.output_text.delta", "data": {"text": " FOR"}}
+{"t": 1791410230.9367292, "event": "response.output_text.delta", "data": {"text": " RE"}}
+{"t": 1791410230.936772, "event": "response.output_text.delta", "data": {"text": "FERENCE"}}
+{"t": 1791410230.9368079, "event": "response.output_text.delta", "data": {"text": ";\n"}}
+{"t": 1791410230.9368699, "event": "response.output_text.delta", "data": {"text": "  "}}
+{"t": 1791410230.9370081, "event": "response.output_text.delta", "data": {"text": " THIS"}}
+{"t": 1791410230.9370408, "event": "response.output_text.delta", "data": {"text": " DRAW"}}
+{"t": 1791410230.9370701, "event": "response.output_text.delta", "data": {"text": "ING"}}
+{"t": 1791410231.0115058, "event": "response.output_text.delta", "data": {"text": " G"}}
+{"t": 1791410231.01457, "event": "response.output_text.delta", "data": {"text": "OVER"}}
+{"t": 1791410231.014724, "event": "response.output_text.delta", "data": {"text": "NS"}}
+{"t": 1791410231.014793, "event": "response.output_text.delta", "data": {"text": ".\n"}}
+{"t": 1791410231.020004, "event": "response.output_text.delta", "data": {"text": "``"}}
+{"t": 1791410231.0201511, "event": "response.output_text.delta", "data": {"text": "`\n\n"}}
+{"t": 1791410231.028745, "event": "response.output_text.delta", "data": {"text": "No"}}
+{"t": 1791410231.0288692, "event": "response.output_text.delta", "data": {"text": " four"}}
+{"t": 1791410231.163726, "event": "response.output_text.delta", "data": {"text": "-dec"}}
+{"t": 1791410231.168073, "event": "response.output_text.delta", "data": {"text": "imal"}}
+{"t": 1791410231.16816, "event": "response.output_text.delta", "data": {"text": "-place"}}
+{"t": 1791410231.168206, "event": "response.output_text.delta", "data": {"text": " general"}}
+{"t": 1791410231.239116, "event": "response.output_text.delta", "data": {"text": " tolerance"}}
+{"t": 1791410231.239279, "event": "response.output_text.delta", "data": {"text": " is"}}
+{"t": 1791410231.239325, "event": "response.output_text.delta", "data": {"text": " shown"}}
+{"t": 1791410231.2393548, "event": "response.output_text.delta", "data": {"text": " for"}}
+{"t": 1791410231.253134, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410231.253432, "event": "response.output_text.delta", "data": {"text": "R"}}
+{"t": 1791410231.2534752, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410231.253505, "event": "response.output_text.delta", "data": {"text": "312"}}
+{"t": 1791410231.335073, "event": "response.output_text.delta", "data": {"text": "5"}}
+{"t": 1791410231.335325, "event": "response.output_text.delta", "data": {"text": "`."}}
+{"t": 1791410231.335388, "event": "response.output_text.delta", "data": {"text": " The"}}
+{"t": 1791410231.335438, "event": "response.output_text.delta", "data": {"text": " rough"}}
+{"t": 1791410231.429717, "event": "response.output_text.delta", "data": {"text": "ness"}}
+{"t": 1791410231.429857, "event": "response.output_text.delta", "data": {"text": " units"}}
+{"t": 1791410231.429912, "event": "response.output_text.delta", "data": {"text": " for"}}
+{"t": 1791410231.429962, "event": "response.output_text.delta", "data": {"text": " the"}}
+{"t": 1791410231.449568, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410231.459035, "event": "response.output_text.delta", "data": {"text": "Ra"}}
+{"t": 1791410231.4664478, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410231.466539, "event": "response.output_text.delta", "data": {"text": " values"}}
+{"t": 1791410231.516737, "event": "response.output_text.delta", "data": {"text": " are"}}
+{"t": 1791410231.520857, "event": "response.output_text.delta", "data": {"text": " not"}}
+{"t": 1791410231.521078, "event": "response.output_text.delta", "data": {"text": " explicitly"}}
+{"t": 1791410231.521116, "event": "response.output_text.delta", "data": {"text": " stated"}}
+{"t": 1791410231.5386188, "event": "response.output_text.delta", "data": {"text": ".\n\n"}}
+{"t": 1791410231.543156, "event": "response.output_text.delta", "data": {"text": "##"}}
+{"t": 1791410231.543254, "event": "response.output_text.delta", "data": {"text": " Title"}}
+{"t": 1791410231.543286, "event": "response.output_text.delta", "data": {"text": " block"}}
+{"t": 1791410231.6076632, "event": "response.output_text.delta", "data": {"text": "\n\n"}}
+{"t": 1791410231.607861, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410231.607923, "event": "response.output_text.delta", "data": {"text": " Field"}}
+{"t": 1791410231.6079721, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410231.628696, "event": "response.output_text.delta", "data": {"text": " Read"}}
+{"t": 1791410231.628905, "event": "response.output_text.delta", "data": {"text": "able"}}
+{"t": 1791410231.628962, "event": "response.output_text.delta", "data": {"text": " value"}}
+{"t": 1791410231.629212, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410231.6875362, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410231.698425, "event": "response.output_text.delta", "data": {"text": "---"}}
+{"t": 1791410231.698613, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410231.698673, "event": "response.output_text.delta", "data": {"text": "---"}}
+{"t": 1791410231.718132, "event": "response.output_text.delta", "data": {"text": "|\n"}}
+{"t": 1791410231.718415, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410231.718488, "event": "response.output_text.delta", "data": {"text": " Company"}}
+{"t": 1791410231.718616, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410231.771468, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410231.77163, "event": "response.output_text.delta", "data": {"text": "B"}}
+{"t": 1791410231.7717, "event": "response.output_text.delta", "data": {"text": "AY"}}
+{"t": 1791410231.7718568, "event": "response.output_text.delta", "data": {"text": "LINE"}}
+{"t": 1791410231.860961, "event": "response.output_text.delta", "data": {"text": " AUTOM"}}
+{"t": 1791410231.861207, "event": "response.output_text.delta", "data": {"text": "ATION"}}
+{"t": 1791410231.861266, "event": "response.output_text.delta", "data": {"text": ","}}
+{"t": 1791410231.861312, "event": "response.output_text.delta", "data": {"text": " INC"}}
+{"t": 1791410231.8613682, "event": "response.output_text.delta", "data": {"text": ".`"}}
+{"t": 1791410231.8614101, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410231.868604, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410231.868741, "event": "response.output_text.delta", "data": {"text": " Location"}}
+{"t": 1791410231.878641, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410231.878749, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410231.887597, "event": "response.output_text.delta", "data": {"text": "F"}}
+{"t": 1791410231.88768, "event": "response.output_text.delta", "data": {"text": "rem"}}
+{"t": 1791410231.9463449, "event": "response.output_text.delta", "data": {"text": "ont"}}
+{"t": 1791410231.974435, "event": "response.output_text.delta", "data": {"text": ","}}
+{"t": 1791410231.9745998, "event": "response.output_text.delta", "data": {"text": " CA"}}
+{"t": 1791410231.975015, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410231.975075, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410231.9751198, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410231.975162, "event": "response.output_text.delta", "data": {"text": " TITLE"}}
+{"t": 1791410231.975212, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410232.0419981, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410232.042141, "event": "response.output_text.delta", "data": {"text": "M"}}
+{"t": 1791410232.0422049, "event": "response.output_text.delta", "data": {"text": "OUNT"}}
+{"t": 1791410232.0422668, "event": "response.output_text.delta", "data": {"text": "ING"}}
+{"t": 1791410232.078382, "event": "response.output_text.delta", "data": {"text": " PL"}}
+{"t": 1791410232.078558, "event": "response.output_text.delta", "data": {"text": "ATE"}}
+{"t": 1791410232.078621, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410232.078763, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410232.1623108, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410232.162478, "event": "response.output_text.delta", "data": {"text": " Projection"}}
+{"t": 1791410232.16255, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410232.1626, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410232.1626601, "event": "response.output_text.delta", "data": {"text": "TH"}}
+{"t": 1791410232.162704, "event": "response.output_text.delta", "data": {"text": "IRD"}}
+{"t": 1791410232.162762, "event": "response.output_text.delta", "data": {"text": " ANG"}}
+{"t": 1791410232.1628869, "event": "response.output_text.delta", "data": {"text": "LE"}}
+{"t": 1791410232.21788, "event": "response.output_text.delta", "data": {"text": " PRO"}}
+{"t": 1791410232.218082, "event": "response.output_text.delta", "data": {"text": "JECTION"}}
+{"t": 1791410232.218148, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410232.2182012, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410232.228939, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410232.237387, "event": "response.output_text.delta", "data": {"text": " MATERIAL"}}
+{"t": 1791410232.237511, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410232.2375638, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410232.298378, "event": "response.output_text.delta", "data": {"text": "AL"}}
+{"t": 1791410232.310575, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410232.310814, "event": "response.output_text.delta", "data": {"text": "606"}}
+{"t": 1791410232.310878, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410232.3882408, "event": "response.output_text.delta", "data": {"text": "-T"}}
+{"t": 1791410232.388486, "event": "response.output_text.delta", "data": {"text": "6"}}
+{"t": 1791410232.388551, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410232.3886359, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410232.388701, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410232.403605, "event": "response.output_text.delta", "data": {"text": " FIN"}}
+{"t": 1791410232.4037151, "event": "response.output_text.delta", "data": {"text": "ISH"}}
+{"t": 1791410232.403764, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410232.484705, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410232.497621, "event": "response.output_text.delta", "data": {"text": "AS"}}
+{"t": 1791410232.497813, "event": "response.output_text.delta", "data": {"text": " MACH"}}
+{"t": 1791410232.497874, "event": "response.output_text.delta", "data": {"text": "IN"}}
+{"t": 1791410232.503419, "event": "response.output_text.delta", "data": {"text": "ED"}}
+{"t": 1791410232.560779, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410232.560863, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410232.5608919, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410232.56092, "event": "response.output_text.delta", "data": {"text": " DW"}}
+{"t": 1791410232.566564, "event": "response.output_text.delta", "data": {"text": "G"}}
+{"t": 1791410232.576042, "event": "response.output_text.delta", "data": {"text": " NO"}}
+{"t": 1791410232.576169, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410232.57905, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410232.586459, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410232.58655, "event": "response.output_text.delta", "data": {"text": "PL"}}
+{"t": 1791410232.586606, "event": "response.output_text.delta", "data": {"text": "ATE"}}
+{"t": 1791410232.5906408, "event": "response.output_text.delta", "data": {"text": "-"}}
+{"t": 1791410232.6542668, "event": "response.output_text.delta", "data": {"text": "104"}}
+{"t": 1791410232.6749609, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410232.675075, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410232.675204, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410232.683435, "event": "response.output_text.delta", "data": {"text": " REV"}}
+{"t": 1791410232.6834939, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410232.683538, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410232.68358, "event": "response.output_text.delta", "data": {"text": "A"}}
+{"t": 1791410232.7766669, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410232.7767649, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410232.776831, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410232.7768672, "event": "response.output_text.delta", "data": {"text": " Q"}}
+{"t": 1791410232.7768981, "event": "response.output_text.delta", "data": {"text": "TY"}}
+{"t": 1791410232.776927, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410232.776955, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410232.777066, "event": "response.output_text.delta", "data": {"text": "25"}}
+{"t": 1791410232.9133902, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410232.913536, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410232.915294, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410232.915467, "event": "response.output_text.delta", "data": {"text": " UN"}}
+{"t": 1791410232.9155798, "event": "response.output_text.delta", "data": {"text": "ITS"}}
+{"t": 1791410232.915632, "event": "response.output_text.delta", "data": {"text": " /"}}
+{"t": 1791410232.915673, "event": "response.output_text.delta", "data": {"text": " SCALE"}}
+{"t": 1791410232.91571, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410232.915746, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410232.9288, "event": "response.output_text.delta", "data": {"text": "IN"}}
+{"t": 1791410232.9289181, "event": "response.output_text.delta", "data": {"text": "CH"}}
+{"t": 1791410232.965728, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410232.965821, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410232.9719732, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410233.017646, "event": "response.output_text.delta", "data": {"text": ":"}}
+{"t": 1791410233.01773, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410233.017778, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410233.0178401, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410233.01789, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410233.017963, "event": "response.output_text.delta", "data": {"text": " DRAW"}}
+{"t": 1791410233.078318, "event": "response.output_text.delta", "data": {"text": "N"}}
+{"t": 1791410233.078429, "event": "response.output_text.delta", "data": {"text": " /"}}
+{"t": 1791410233.0886898, "event": "response.output_text.delta", "data": {"text": " DATE"}}
+{"t": 1791410233.09517, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410233.095277, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410233.095316, "event": "response.output_text.delta", "data": {"text": "J"}}
+{"t": 1791410233.113485, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410233.113611, "event": "response.output_text.delta", "data": {"text": " OR"}}
+{"t": 1791410233.113653, "event": "response.output_text.delta", "data": {"text": "TE"}}
+{"t": 1791410233.1136901, "event": "response.output_text.delta", "data": {"text": "GA"}}
+{"t": 1791410233.117364, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.1174452, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.1174788, "event": "response.output_text.delta", "data": {"text": "10"}}
+{"t": 1791410233.117584, "event": "response.output_text.delta", "data": {"text": "/"}}
+{"t": 1791410233.192677, "event": "response.output_text.delta", "data": {"text": "02"}}
+{"t": 1791410233.202456, "event": "response.output_text.delta", "data": {"text": "/"}}
+{"t": 1791410233.202573, "event": "response.output_text.delta", "data": {"text": "26"}}
+{"t": 1791410233.202633, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410233.2600582, "event": "response.output_text.delta", "data": {"text": " |\n"}}
+{"t": 1791410233.260194, "event": "response.output_text.delta", "data": {"text": "|"}}
+{"t": 1791410233.276129, "event": "response.output_text.delta", "data": {"text": " SHE"}}
+{"t": 1791410233.276313, "event": "response.output_text.delta", "data": {"text": "ET"}}
+{"t": 1791410233.276478, "event": "response.output_text.delta", "data": {"text": " |"}}
+{"t": 1791410233.2765272, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410233.276574, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410233.276615, "event": "response.output_text.delta", "data": {"text": " OF"}}
+{"t": 1791410233.2891269, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.289258, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410233.2944489, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410233.294594, "event": "response.output_text.delta", "data": {"text": " |\n\n"}}
+{"t": 1791410233.5287611, "event": "response.output_text.delta", "data": {"text": "Border"}}
+{"t": 1791410233.528936, "event": "response.output_text.delta", "data": {"text": " markings"}}
+{"t": 1791410233.976091, "event": "response.output_text.delta", "data": {"text": ":"}}
+{"t": 1791410233.976256, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410233.97632, "event": "response.output_text.delta", "data": {"text": "8"}}
+{"t": 1791410233.976374, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.9764328, "event": "response.output_text.delta", "data": {"text": "7"}}
+{"t": 1791410233.976489, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.976532, "event": "response.output_text.delta", "data": {"text": "6"}}
+{"t": 1791410233.976575, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.976616, "event": "response.output_text.delta", "data": {"text": "5"}}
+{"t": 1791410233.9766579, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.976701, "event": "response.output_text.delta", "data": {"text": "4"}}
+{"t": 1791410233.976744, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.9767869, "event": "response.output_text.delta", "data": {"text": "3"}}
+{"t": 1791410233.9768598, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.976901, "event": "response.output_text.delta", "data": {"text": "2"}}
+{"t": 1791410233.976994, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791410233.9770381, "event": "response.output_text.delta", "data": {"text": "1"}}
+{"t": 1791410233.977082, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410233.977123, "event": "response.output_text.delta", "data": {"text": " across"}}
+{"t": 1791410233.977164, "event": "response.output_text.delta", "data": {"text": " the"}}
+{"t": 1791410233.977205, "event": "response.output_text.delta", "data": {"text": " top"}}
+{"t": 1791410233.977249, "event": "response.output_text.delta", "data": {"text": ";"}}
+{"t": 1791410233.97729, "event": "response.output_text.delta", "data": {"text": " `"}}
+{"t": 1791410233.977331, "event": "response.output_text.delta", "data": {"text": "F"}}
+{"t": 1791410233.977371, "event": "response.output_text.delta", "data": {"text": " E"}}
+{"t": 1791410233.977411, "event": "response.output_text.delta", "data": {"text": " D"}}
+{"t": 1791410233.977452, "event": "response.output_text.delta", "data": {"text": " C"}}
+{"t": 1791410233.977491, "event": "response.output_text.delta", "data": {"text": " B"}}
+{"t": 1791410233.97753, "event": "response.output_text.delta", "data": {"text": " A"}}
+{"t": 1791410233.977569, "event": "response.output_text.delta", "data": {"text": "`"}}
+{"t": 1791410233.9776099, "event": "response.output_text.delta", "data": {"text": " down"}}
+{"t": 1791410233.977652, "event": "response.output_text.delta", "data": {"text": " the"}}
+{"t": 1791410233.9776928, "event": "response.output_text.delta", "data": {"text": " left"}}
+{"t": 1791410233.9777348, "event": "response.output_text.delta", "data": {"text": ".\n\n"}}
+{"t": 1791410233.9777741, "event": "response.output_text.delta", "data": {"text": "**"}}
+{"t": 1791410233.990329, "event": "response.output_text.delta", "data": {"text": "No"}}
+{"t": 1791410233.990515, "event": "response.output_text.delta", "data": {"text": " separate"}}
+{"t": 1791410233.990622, "event": "response.output_text.delta", "data": {"text": " upper"}}
+{"t": 1791410233.9906769, "event": "response.output_text.delta", "data": {"text": "-hole"}}
+{"t": 1791410234.073879, "event": "response.output_text.delta", "data": {"text": "-row"}}
+{"t": 1791410234.0818, "event": "response.output_text.delta", "data": {"text": " offset"}}
+{"t": 1791410234.081957, "event": "response.output_text.delta", "data": {"text": " dimension"}}
+{"t": 1791410234.082017, "event": "response.output_text.delta", "data": {"text": " is"}}
+{"t": 1791410234.20275, "event": "response.output_text.delta", "data": {"text": " printed"}}
+{"t": 1791410234.213707, "event": "response.output_text.delta", "data": {"text": "."}}
+{"t": 1791410234.2138891, "event": "response.output_text.delta", "data": {"text": "**"}}
+{"t": 1791410234.341608, "event": "response.completed", "data": {"output_text": "\n\n## Dimensions and feature callouts\n\nAll linear dimensions are in **inches**. Printed formatting is preserved.\n\n| Location / feature | Printed value |\n|---|---|\n| Overall plate length | `6.000` |\n| Overall plate width | `4.000` |\n| Plate thickness, section view | `1.000` |\n| Pocket length | `3.000` |\n| Pocket width | `2.000` |\n| Left plate edge to left pocket edge | `1.500` |\n| Bottom plate edge to bottom pocket edge | `1.000` |\n| Left edge to lower-left hole center | `.500` |\n| Lower-right hole center to right edge | `.500` |\n| Bottom edge to lower-right hole center | `.500` |\n| Pocket depth, inside pocket | `.500 DEEP` |\n| Pocket depth, section view | `.500` |\n| Hole callout | `4X \u00d8.250 THRU` |\n| Pocket corner radii | `4X R.3125` |\n| Pocket labels | `POCKET`, `FLAT FLOOR` |\n\nView labels: `TOP VIEW`, `SECTION A-A`, and two section-arrow labels `A`.\n\n## Tolerances and manufacturing notes\n\n```text\n1. MATERIAL: ALUMINUM 6061-T6 PLATE.\n2. QUANTITY: 25 PCS.\n3. INTERPRET PER ASME Y14.5-2018.\n4. UNLESS OTHERWISE SPECIFIED:\n   .XXX \u00b1.005     .XX \u00b1.010     ANGLES \u00b10.5\u00b0\n5. ALL SURFACES 125 Ra MAX; POCKET FLOOR 63 Ra.\n6. POCKET WALLS VERTICAL; FLOOR FLAT.\n7. BREAK ALL SHARP EDGES .005-.015.\n8. REMOVE ALL BURRS. NO TOOL MARKS ON TOP FACE.\n9. 3D MODEL PLATE-104.STEP SUPPLIED FOR REFERENCE;\n   THIS DRAWING GOVERNS.\n```\n\nNo four-decimal-place general tolerance is shown for `R.3125`. The roughness units for the `Ra` values are not explicitly stated.\n\n## Title block\n\n| Field | Readable value |\n|---|---|\n| Company | `BAYLINE AUTOMATION, INC.` |\n| Location | `Fremont, CA` |\n| TITLE | `MOUNTING PLATE` |\n| Projection | `THIRD ANGLE PROJECTION` |\n| MATERIAL | `AL 6061-T6` |\n| FINISH | `AS MACHINED` |\n| DWG NO. | `PLATE-104` |\n| REV | `A` |\n| QTY | `25` |\n| UNITS / SCALE | `INCH  1:1` |\n| DRAWN / DATE | `J. ORTEGA  10/02/26` |\n| SHEET | `1 OF 1` |\n\nBorder markings: `8 7 6 5 4 3 2 1` across the top; `F E D C B A` down the left.\n\n**No separate upper-hole-row offset dimension is printed.**", "usage": {"input_tokens": 9, "output_tokens": 821, "cost_usd": 0}, "context": {"used_tokens": 15081, "window_tokens": 256000}, "reasoning_effort": "low"}}

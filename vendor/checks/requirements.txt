@@ -1,0 +1,10 @@
+# checks/ runtime (pure pip wheels on macOS arm64/x86_64 and Windows amd64)
+numpy
+scipy
+numba
+cadquery-ocp
+trimesh
+matplotlib
+# self-test only
+pytest
+cadquery

@@ -1,0 +1,18 @@
+{
+  "instance": "6y9prhe581",
+  "model": "openai/gpt-6.1-sol",
+  "seconds": 182,
+  "agent_final": {
+    "output_text": "\n\nRESULT: PASS after 2 attempts",
+    "usage": {
+      "input_tokens": 66,
+      "output_tokens": 4988,
+      "cost_usd": 0
+    },
+    "context": {
+      "used_tokens": 35442,
+      "window_tokens": 256000
+    },
+    "reasoning_effort": "medium"
+  }
+}

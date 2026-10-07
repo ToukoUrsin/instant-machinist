@@ -1,0 +1,191 @@
+{"t": 1791408127.473272, "event": "response.created", "data": {"id": "b355d2dd3ea14bdfa9f8bcbe6ccd5262", "session_id": "aee02e38ed624627b193f024365a49a2"}}
+{"t": 1791408137.371052, "event": "response.reasoning.delta", "data": {"text": "**Planning code generation**\n\nI"}}
+{"t": 1791408137.405067, "event": "response.reasoning.delta", "data": {"text": " need"}}
+{"t": 1791408137.405227, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408137.405283, "event": "response.reasoning.delta", "data": {"text": " write"}}
+{"t": 1791408137.413725, "event": "response.reasoning.delta", "data": {"text": " code"}}
+{"t": 1791408137.442971, "event": "response.reasoning.delta", "data": {"text": " autonom"}}
+{"t": 1791408137.44319, "event": "response.reasoning.delta", "data": {"text": "ously"}}
+{"t": 1791408137.443229, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408137.449616, "event": "response.reasoning.delta", "data": {"text": " generate"}}
+{"t": 1791408137.449688, "event": "response.reasoning.delta", "data": {"text": " G"}}
+{"t": 1791408137.463417, "event": "response.reasoning.delta", "data": {"text": "-code"}}
+{"t": 1791408137.46351, "event": "response.reasoning.delta", "data": {"text": " using"}}
+{"t": 1791408137.474814, "event": "response.reasoning.delta", "data": {"text": " Python"}}
+{"t": 1791408137.474918, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408137.4932961, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408137.493414, "event": "response.reasoning.delta", "data": {"text": "\u2019ll"}}
+{"t": 1791408137.493461, "event": "response.reasoning.delta", "data": {"text": " save"}}
+{"t": 1791408137.505169, "event": "response.reasoning.delta", "data": {"text": " my"}}
+{"t": 1791408137.5323079, "event": "response.reasoning.delta", "data": {"text": " attempts"}}
+{"t": 1791408137.5552099, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408137.555347, "event": "response.reasoning.delta", "data": {"text": " run"}}
+{"t": 1791408137.555438, "event": "response.reasoning.delta", "data": {"text": " verify"}}
+{"t": 1791408137.639773, "event": "response.reasoning.delta", "data": {"text": ".sh"}}
+{"t": 1791408137.6424918, "event": "response.reasoning.delta", "data": {"text": " repeatedly"}}
+{"t": 1791408137.642575, "event": "response.reasoning.delta", "data": {"text": " until"}}
+{"t": 1791408137.642698, "event": "response.reasoning.delta", "data": {"text": " it"}}
+{"t": 1791408137.701361, "event": "response.reasoning.delta", "data": {"text": " passes"}}
+{"t": 1791408137.7015219, "event": "response.reasoning.delta", "data": {"text": " or"}}
+{"t": 1791408137.712269, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408137.7123861, "event": "response.reasoning.delta", "data": {"text": " hit"}}
+{"t": 1791408137.735855, "event": "response.reasoning.delta", "data": {"text": " six"}}
+{"t": 1791408137.742578, "event": "response.reasoning.delta", "data": {"text": " attempts"}}
+{"t": 1791408137.749564, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408137.754954, "event": "response.reasoning.delta", "data": {"text": " There"}}
+{"t": 1791408137.789224, "event": "response.reasoning.delta", "data": {"text": " are"}}
+{"t": 1791408137.789352, "event": "response.reasoning.delta", "data": {"text": " some"}}
+{"t": 1791408137.8147562, "event": "response.reasoning.delta", "data": {"text": " files"}}
+{"t": 1791408137.8149009, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408137.8150852, "event": "response.reasoning.delta", "data": {"text": " work"}}
+{"t": 1791408137.815145, "event": "response.reasoning.delta", "data": {"text": " with"}}
+{"t": 1791408137.8151941, "event": "response.reasoning.delta", "data": {"text": ":"}}
+{"t": 1791408137.8152409, "event": "response.reasoning.delta", "data": {"text": " job"}}
+{"t": 1791408137.834765, "event": "response.reasoning.delta", "data": {"text": "/spec"}}
+{"t": 1791408137.857436, "event": "response.reasoning.delta", "data": {"text": ".md"}}
+{"t": 1791408137.85968, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408137.859734, "event": "response.reasoning.delta", "data": {"text": " tools"}}
+{"t": 1791408137.87074, "event": "response.reasoning.delta", "data": {"text": ".json"}}
+{"t": 1791408137.870841, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408137.8773592, "event": "response.reasoning.delta", "data": {"text": " which"}}
+{"t": 1791408137.877444, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408137.8939662, "event": "response.reasoning.delta", "data": {"text": "\u2019ll"}}
+{"t": 1791408137.894112, "event": "response.reasoning.delta", "data": {"text": " read"}}
+{"t": 1791408137.9051719, "event": "response.reasoning.delta", "data": {"text": " using"}}
+{"t": 1791408137.90526, "event": "response.reasoning.delta", "data": {"text": " read"}}
+{"t": 1791408137.9420748, "event": "response.reasoning.delta", "data": {"text": "_file"}}
+{"t": 1791408137.942146, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408137.942184, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408137.942216, "event": "response.reasoning.delta", "data": {"text": " also"}}
+{"t": 1791408137.951435, "event": "response.reasoning.delta", "data": {"text": " plan"}}
+{"t": 1791408137.951521, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408137.9594, "event": "response.reasoning.delta", "data": {"text": " list"}}
+{"t": 1791408137.959459, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408137.9898, "event": "response.reasoning.delta", "data": {"text": " directory"}}
+{"t": 1791408137.9899762, "event": "response.reasoning.delta", "data": {"text": " using"}}
+{"t": 1791408137.990038, "event": "response.reasoning.delta", "data": {"text": " terminal"}}
+{"t": 1791408137.9900858, "event": "response.reasoning.delta", "data": {"text": " ls"}}
+{"t": 1791408138.019263, "event": "response.reasoning.delta", "data": {"text": " or"}}
+{"t": 1791408138.028699, "event": "response.reasoning.delta", "data": {"text": " search"}}
+{"t": 1791408138.028783, "event": "response.reasoning.delta", "data": {"text": "_files"}}
+{"t": 1791408138.028836, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408138.04266, "event": "response.reasoning.delta", "data": {"text": " check"}}
+{"t": 1791408138.042772, "event": "response.reasoning.delta", "data": {"text": " existing"}}
+{"t": 1791408138.042804, "event": "response.reasoning.delta", "data": {"text": " files"}}
+{"t": 1791408138.047201, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408138.0672529, "event": "response.reasoning.delta", "data": {"text": " My"}}
+{"t": 1791408138.076899, "event": "response.reasoning.delta", "data": {"text": " workflow"}}
+{"t": 1791408138.076938, "event": "response.reasoning.delta", "data": {"text": " will"}}
+{"t": 1791408138.0770051, "event": "response.reasoning.delta", "data": {"text": " start"}}
+{"t": 1791408138.11729, "event": "response.reasoning.delta", "data": {"text": " by"}}
+{"t": 1791408138.11741, "event": "response.reasoning.delta", "data": {"text": " checking"}}
+{"t": 1791408138.1754408, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408138.175626, "event": "response.reasoning.delta", "data": {"text": " directory"}}
+{"t": 1791408138.175712, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408138.175764, "event": "response.reasoning.delta", "data": {"text": " reading"}}
+{"t": 1791408138.1757991, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408138.175889, "event": "response.reasoning.delta", "data": {"text": " relevant"}}
+{"t": 1791408138.177461, "event": "response.reasoning.delta", "data": {"text": " files"}}
+{"t": 1791408138.186802, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408138.186928, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408138.1869812, "event": "response.reasoning.delta", "data": {"text": " creating"}}
+{"t": 1791408138.212739, "event": "response.reasoning.delta", "data": {"text": " gen"}}
+{"t": 1791408138.2128232, "event": "response.reasoning.delta", "data": {"text": ".py"}}
+{"t": 1791408138.216568, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408138.216618, "event": "response.reasoning.delta", "data": {"text": " Let's"}}
+{"t": 1791408138.456924, "event": "response.reasoning.delta", "data": {"text": " get"}}
+{"t": 1791408138.493533, "event": "response.reasoning.delta", "data": {"text": " going"}}
+{"t": 1791408138.493715, "event": "response.reasoning.delta", "data": {"text": "!"}}
+{"t": 1791408138.593459, "event": "response.reasoning.delta", "data": {"text": "\n\n**Determining toolpaths**\n\nI"}}
+{"t": 1791408138.593638, "event": "response.reasoning.delta", "data": {"text": " need"}}
+{"t": 1791408138.5937002, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408138.593786, "event": "response.reasoning.delta", "data": {"text": " compute"}}
+{"t": 1791408138.593834, "event": "response.reasoning.delta", "data": {"text": " tool"}}
+{"t": 1791408138.593876, "event": "response.reasoning.delta", "data": {"text": "paths"}}
+{"t": 1791408138.59392, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408138.59409, "event": "response.reasoning.delta", "data": {"text": " but"}}
+{"t": 1791408138.6276438, "event": "response.reasoning.delta", "data": {"text": " first"}}
+{"t": 1791408138.627834, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408138.638861, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408138.639081, "event": "response.reasoning.delta", "data": {"text": " have"}}
+{"t": 1791408138.6625469, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408138.662621, "event": "response.reasoning.delta", "data": {"text": " read"}}
+{"t": 1791408138.6664472, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408138.666498, "event": "response.reasoning.delta", "data": {"text": " specifications"}}
+{"t": 1791408138.688273, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408138.6990201, "event": "response.reasoning.delta", "data": {"text": " understand"}}
+{"t": 1791408138.699126, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408138.699192, "event": "response.reasoning.delta", "data": {"text": " part"}}
+{"t": 1791408138.707385, "event": "response.reasoning.delta", "data": {"text": " geometry"}}
+{"t": 1791408138.707448, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408138.712814, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408138.712956, "event": "response.reasoning.delta", "data": {"text": "\u2019ll"}}
+{"t": 1791408138.7522612, "event": "response.reasoning.delta", "data": {"text": " check"}}
+{"t": 1791408138.756238, "event": "response.reasoning.delta", "data": {"text": " spec"}}
+{"t": 1791408138.7563038, "event": "response.reasoning.delta", "data": {"text": ".md"}}
+{"t": 1791408138.756397, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408138.783136, "event": "response.reasoning.delta", "data": {"text": " possibly"}}
+{"t": 1791408138.7834759, "event": "response.reasoning.delta", "data": {"text": " part"}}
+{"t": 1791408138.783552, "event": "response.reasoning.delta", "data": {"text": ".step"}}
+{"t": 1791408138.783607, "event": "response.reasoning.delta", "data": {"text": ";"}}
+{"t": 1791408138.795179, "event": "response.reasoning.delta", "data": {"text": " however"}}
+{"t": 1791408138.809908, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408138.8099809, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408138.8100312, "event": "response.reasoning.delta", "data": {"text": " don"}}
+{"t": 1791408138.843414, "event": "response.reasoning.delta", "data": {"text": "\u2019t"}}
+{"t": 1791408138.849061, "event": "response.reasoning.delta", "data": {"text": " have"}}
+{"t": 1791408138.84916, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408138.8493419, "event": "response.reasoning.delta", "data": {"text": " parse"}}
+{"t": 1791408138.8772259, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408138.8872268, "event": "response.reasoning.delta", "data": {"text": " STEP"}}
+{"t": 1791408138.887331, "event": "response.reasoning.delta", "data": {"text": " file"}}
+{"t": 1791408138.887392, "event": "response.reasoning.delta", "data": {"text": " since"}}
+{"t": 1791408138.910157, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408138.910242, "event": "response.reasoning.delta", "data": {"text": " verify"}}
+{"t": 1791408138.910345, "event": "response.reasoning.delta", "data": {"text": " tool"}}
+{"t": 1791408138.918954, "event": "response.reasoning.delta", "data": {"text": " will"}}
+{"t": 1791408138.971642, "event": "response.reasoning.delta", "data": {"text": " use"}}
+{"t": 1791408138.974634, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408138.974679, "event": "response.reasoning.delta", "data": {"text": " part"}}
+{"t": 1791408138.974713, "event": "response.reasoning.delta", "data": {"text": " model"}}
+{"t": 1791408138.985554, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408138.996789, "event": "response.reasoning.delta", "data": {"text": " My"}}
+{"t": 1791408138.996876, "event": "response.reasoning.delta", "data": {"text": " main"}}
+{"t": 1791408138.996928, "event": "response.reasoning.delta", "data": {"text": " focus"}}
+{"t": 1791408139.038913, "event": "response.reasoning.delta", "data": {"text": " is"}}
+{"t": 1791408139.058048, "event": "response.reasoning.delta", "data": {"text": " on"}}
+{"t": 1791408139.058143, "event": "response.reasoning.delta", "data": {"text": " programming"}}
+{"t": 1791408139.058167, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408139.0582001, "event": "response.reasoning.delta", "data": {"text": " correct"}}
+{"t": 1791408139.0582242, "event": "response.reasoning.delta", "data": {"text": " pocket"}}
+{"t": 1791408139.058291, "event": "response.reasoning.delta", "data": {"text": "ing"}}
+{"t": 1791408139.058309, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408139.1040251, "event": "response.reasoning.delta", "data": {"text": " hole"}}
+{"t": 1791408139.1041, "event": "response.reasoning.delta", "data": {"text": " placements"}}
+{"t": 1791408139.104172, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408139.104195, "event": "response.reasoning.delta", "data": {"text": " which"}}
+{"t": 1791408139.112128, "event": "response.reasoning.delta", "data": {"text": " should"}}
+{"t": 1791408139.122585, "event": "response.reasoning.delta", "data": {"text": " be"}}
+{"t": 1791408139.122613, "event": "response.reasoning.delta", "data": {"text": " outlined"}}
+{"t": 1791408139.122637, "event": "response.reasoning.delta", "data": {"text": " in"}}
+{"t": 1791408139.139389, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408139.150784, "event": "response.reasoning.delta", "data": {"text": " specifications"}}
+{"t": 1791408139.150817, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408139.15084, "event": "response.reasoning.delta", "data": {"text": " including"}}
+{"t": 1791408139.167396, "event": "response.reasoning.delta", "data": {"text": " sizes"}}
+{"t": 1791408139.1788769, "event": "response.reasoning.delta", "data": {"text": " for"}}
+{"t": 1791408139.178984, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408139.179122, "event": "response.reasoning.delta", "data": {"text": " face"}}
+{"t": 1791408139.212616, "event": "response.reasoning.delta", "data": {"text": " top"}}
+{"t": 1791408139.224237, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408139.224323, "event": "response.reasoning.delta", "data": {"text": " pocket"}}
+{"t": 1791408139.224376, "event": "response.reasoning.delta", "data": {"text": " dimensions"}}
+{"t": 1791408139.252505, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408139.2526898, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408139.258801, "event": "response.reasoning.delta", "data": {"text": " hole"}}
+{"t": 1791408139.258875, "event": "response.reasoning.delta", "data": {"text": " locations"}}
+{"t": 1791408139.2772632, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408139.288998, "event": "response.reasoning.delta", "data": {"text": " Let's"}}
+{"t": 1791408139.289104, "event": "response.reasoning.delta", "data": {"text": " proceed"}}
+{"t": 1791408139.2891562, "event": "response.reasoning.delta", "data": {"text": "!"}}
+{"t": 1791408139.3481522, "event": "response.tool_call.generating", "data": {"tool": "terminal"}}

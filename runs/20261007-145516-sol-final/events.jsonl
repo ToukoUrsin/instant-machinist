@@ -1,0 +1,602 @@
+{"t": 1791408816.3643122, "event": "response.created", "data": {"id": "cb38daf0ffd54854a5d7f4eb309e565c", "session_id": "3810cfcbd79f45b8bf76207745a85dd0"}}
+{"t": 1791408836.756831, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408837.659116, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "spec.md L1-2000", "arguments": {"path": "/home/node/cnc/job/spec.md", "offset": 1, "limit": 2000}}}
+{"t": 1791408838.015363, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.3823256492614746}}
+{"t": 1791408841.467329, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408841.467544, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408841.475627, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408841.475696, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408841.475747, "event": "response.tool_call.generating", "data": {"tool": "skill_view"}}
+{"t": 1791408841.6037, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "tools.json L1-2000", "arguments": {"path": "/home/node/cnc/job/tools.json", "offset": 1, "limit": 2000}}}
+{"t": 1791408841.604038, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "job.json L1-2000", "arguments": {"path": "/home/node/cnc/job/job.json", "offset": 1, "limit": 2000}}}
+{"t": 1791408841.609542, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "verify.sh L1-2000", "arguments": {"path": "/home/node/cnc/verify.sh", "offset": 1, "limit": 2000}}}
+{"t": 1791408841.6097438, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "attempt.sh L1-2000", "arguments": {"path": "/home/node/cnc/attempt.sh", "offset": 1, "limit": 2000}}}
+{"t": 1791408841.6746209, "event": "response.tool_call.started", "data": {"tool": "skill_view", "label": "test-driven-development", "arguments": {"name": "test-driven-development", "file_path": ""}}}
+{"t": 1791408841.747531, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.051529645919799805}}
+{"t": 1791408841.749593, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.05668187141418457}}
+{"t": 1791408841.749674, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.05316877365112305}}
+{"t": 1791408841.753176, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.05647397041320801}}
+{"t": 1791408841.768265, "event": "response.tool_call.completed", "data": {"tool": "skill_view", "duration_ms": 0.13089275360107422}}
+{"t": 1791408844.4317188, "event": "response.reasoning.delta", "data": {"text": "**Focusing on clarity**\n\nI"}}
+{"t": 1791408844.441076, "event": "response.reasoning.delta", "data": {"text": " need"}}
+{"t": 1791408844.44123, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408844.4412858, "event": "response.reasoning.delta", "data": {"text": " avoid"}}
+{"t": 1791408844.453776, "event": "response.reasoning.delta", "data": {"text": " making"}}
+{"t": 1791408844.456943, "event": "response.reasoning.delta", "data": {"text": " things"}}
+{"t": 1791408844.457043, "event": "response.reasoning.delta", "data": {"text": " too"}}
+{"t": 1791408844.458861, "event": "response.reasoning.delta", "data": {"text": " complicated"}}
+{"t": 1791408844.464682, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408844.464784, "event": "response.reasoning.delta", "data": {"text": " What"}}
+{"t": 1791408844.464843, "event": "response.reasoning.delta", "data": {"text": " I'm"}}
+{"t": 1791408844.4670908, "event": "response.reasoning.delta", "data": {"text": " thinking"}}
+{"t": 1791408844.493531, "event": "response.reasoning.delta", "data": {"text": " is"}}
+{"t": 1791408844.4936268, "event": "response.reasoning.delta", "data": {"text": " that"}}
+{"t": 1791408844.494671, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408844.4947698, "event": "response.reasoning.delta", "data": {"text": " should"}}
+{"t": 1791408844.6183941, "event": "response.reasoning.delta", "data": {"text": " inspect"}}
+{"t": 1791408844.6186109, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408844.618665, "event": "response.reasoning.delta", "data": {"text": " files"}}
+{"t": 1791408844.618707, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408844.618757, "event": "response.reasoning.delta", "data": {"text": " creating"}}
+{"t": 1791408844.618805, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408844.61884, "event": "response.reasoning.delta", "data": {"text": " brief"}}
+{"t": 1791408844.618874, "event": "response.reasoning.delta", "data": {"text": " list"}}
+{"t": 1791408844.618919, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408844.618964, "event": "response.reasoning.delta", "data": {"text": " checking"}}
+{"t": 1791408844.618999, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408844.619043, "event": "response.reasoning.delta", "data": {"text": " existing"}}
+{"t": 1791408844.619089, "event": "response.reasoning.delta", "data": {"text": " tests"}}
+{"t": 1791408844.622314, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408844.625514, "event": "response.reasoning.delta", "data": {"text": " This"}}
+{"t": 1791408844.6256452, "event": "response.reasoning.delta", "data": {"text": " way"}}
+{"t": 1791408844.653931, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408844.654073, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408844.654109, "event": "response.reasoning.delta", "data": {"text": " can"}}
+{"t": 1791408844.654149, "event": "response.reasoning.delta", "data": {"text": " ensure"}}
+{"t": 1791408844.6954691, "event": "response.reasoning.delta", "data": {"text": " everything"}}
+{"t": 1791408844.6991801, "event": "response.reasoning.delta", "data": {"text": " is"}}
+{"t": 1791408844.699313, "event": "response.reasoning.delta", "data": {"text": " clear"}}
+{"t": 1791408844.69935, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408844.724648, "event": "response.reasoning.delta", "data": {"text": " organized"}}
+{"t": 1791408844.724823, "event": "response.reasoning.delta", "data": {"text": " without"}}
+{"t": 1791408844.724867, "event": "response.reasoning.delta", "data": {"text": " adding"}}
+{"t": 1791408844.7249029, "event": "response.reasoning.delta", "data": {"text": " unnecessary"}}
+{"t": 1791408844.767891, "event": "response.reasoning.delta", "data": {"text": " layers"}}
+{"t": 1791408844.768049, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408844.768088, "event": "response.reasoning.delta", "data": {"text": " I'll"}}
+{"t": 1791408844.76812, "event": "response.reasoning.delta", "data": {"text": " keep"}}
+{"t": 1791408844.8035672, "event": "response.reasoning.delta", "data": {"text": " things"}}
+{"t": 1791408844.80367, "event": "response.reasoning.delta", "data": {"text": " straightforward"}}
+{"t": 1791408844.803711, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408844.803744, "event": "response.reasoning.delta", "data": {"text": " streamline"}}
+{"t": 1791408844.803797, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408844.803825, "event": "response.reasoning.delta", "data": {"text": " process"}}
+{"t": 1791408844.803915, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408844.803946, "event": "response.reasoning.delta", "data": {"text": " It"}}
+{"t": 1791408844.838309, "event": "response.reasoning.delta", "data": {"text": "\u2019s"}}
+{"t": 1791408844.845292, "event": "response.reasoning.delta", "data": {"text": " all"}}
+{"t": 1791408844.8453288, "event": "response.reasoning.delta", "data": {"text": " about"}}
+{"t": 1791408844.845346, "event": "response.reasoning.delta", "data": {"text": " maintaining"}}
+{"t": 1791408844.865403, "event": "response.reasoning.delta", "data": {"text": " simplicity"}}
+{"t": 1791408844.86763, "event": "response.reasoning.delta", "data": {"text": " while"}}
+{"t": 1791408844.875073, "event": "response.reasoning.delta", "data": {"text": " still"}}
+{"t": 1791408844.875193, "event": "response.reasoning.delta", "data": {"text": " getting"}}
+{"t": 1791408844.894808, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408844.894915, "event": "response.reasoning.delta", "data": {"text": " job"}}
+{"t": 1791408844.908393, "event": "response.reasoning.delta", "data": {"text": " done"}}
+{"t": 1791408844.908458, "event": "response.reasoning.delta", "data": {"text": " efficiently"}}
+{"t": 1791408845.2099268, "event": "response.reasoning.delta", "data": {"text": "!"}}
+{"t": 1791408845.690597, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408845.690683, "event": "response.tool_call.generating", "data": {"tool": "search_files"}}
+{"t": 1791408845.841135, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "AGENT_BRIEF.md L1-2000", "arguments": {"path": "/home/node/cnc/AGENT_BRIEF.md", "offset": 1, "limit": 2000}}}
+{"t": 1791408845.841237, "event": "response.tool_call.started", "data": {"tool": "search_files", "label": "*", "arguments": {"pattern": "*", "target": "files", "path": "/home/node/cnc", "file_glob": "", "limit": 60, "offset": 0, "order": "discovery", "output_mode": "content", "context": 0}}}
+{"t": 1791408846.325263, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.017091035842895508}}
+{"t": 1791408846.3276002, "event": "response.tool_call.completed", "data": {"tool": "search_files", "duration_ms": 0.4663841724395752}}
+{"t": 1791408857.208273, "event": "response.tool_call.generating", "data": {"tool": "write_file"}}
+{"t": 1791408860.402155, "event": "response.tool_call.started", "data": {"tool": "write_file", "label": "/home/node/cnc/test_gen.py", "arguments": {"path": "/home/node/cnc/test_gen.py", "content": "from pathlib import Path\nimport unittest\n\nclass GeneratorContract(unittest.TestCase):\n    def test_generator_and_program_contract(self):\n        root = Path(__file__).resolve().parent\n        self.assertTrue((root / 'gen.py').exists(), 'Generator not yet implemented')\n        nc = (root / 'job/1001.nc').read_text()\n        for token in ('O1001', 'G20', 'G54', 'G00 G17 G40 G49 G80 G90',\n                      'T1 M06', 'T2 M06', 'G43 H1 Z1.', 'G43 H2 Z1.',\n                      'M08', 'G83', 'G80', 'M30'):\n            self.assertIn(token, nc)\n        self.assertNotIn('T3 M06', nc)\n        self.assertIn('Z-1.1000', nc)\n        self.assertIn('Z-0.5000', nc)\n\nif __name__ == '__main__':\n    unittest.main()\n"}}}
+{"t": 1791408860.6325881, "event": "response.tool_call.completed", "data": {"tool": "write_file", "duration_ms": 0.2087998390197754}}
+{"t": 1791408862.701174, "event": "response.tool_call.generating", "data": {"tool": "terminal"}}
+{"t": 1791408863.765131, "event": "response.tool_call.started", "data": {"tool": "terminal", "label": "python3 test_gen.py", "arguments": {"command": "python3 test_gen.py", "background": false, "timeout": 30, "workdir": "/home/node/cnc", "pty": false, "notify": false, "heartbeat": 60}}}
+{"t": 1791408863.767288, "event": "response.tool_call.completed", "data": {"tool": "terminal", "duration_ms": 0.0025014877319335938}}
+{"t": 1791408866.527167, "event": "response.tool_call.generating", "data": {"tool": "terminal"}}
+{"t": 1791408867.901014, "event": "response.tool_call.started", "data": {"tool": "terminal", "label": "python3 test_gen.py", "arguments": {"command": "python3 test_gen.py", "background": false, "timeout": 30, "workdir": "/home/node/cnc", "pty": false, "notify": false, "heartbeat": 60}}}
+{"t": 1791408867.926993, "event": "response.tool_call.completed", "data": {"tool": "terminal", "duration_ms": 0.013325214385986328}}
+{"t": 1791408869.623376, "event": "response.tool_call.generating", "data": {"tool": "terminal"}}
+{"t": 1791408871.0025651, "event": "response.tool_call.started", "data": {"tool": "terminal", "label": "python3 test_gen.py", "arguments": {"command": "python3 test_gen.py", "background": false, "timeout": 30, "workdir": "/home/node/cnc", "pty": false, "notify": false, "heartbeat": 60}}}
+{"t": 1791408871.017258, "event": "response.tool_call.completed", "data": {"tool": "terminal", "duration_ms": 0.007942438125610352}}
+{"t": 1791408873.850608, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408876.242908, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "from hermes_tools import terminal print(terminal('python3 test_gen.py', workdir='/home/node/cnc', timeout=30))", "arguments": {"code": "from hermes_tools import terminal\nprint(terminal('python3 test_gen.py', workdir='/home/node/cnc', timeout=30))", "reset": false}}}
+{"t": 1791408876.6598861, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 0.40731358528137207}}
+{"t": 1791408886.453383, "event": "response.tool_call.generating", "data": {"tool": "write_file"}}
+{"t": 1791408903.6381829, "event": "response.tool_call.started", "data": {"tool": "write_file", "label": "/home/node/cnc/gen.py", "arguments": {"path": "/home/node/cnc/gen.py", "content": "\"\"\"PLATE-104: explicit inch tool-center paths for Haas VF-2.\"\"\"\nfrom pathlib import Path\nimport math\n\nROOT = Path(__file__).resolve().parent\nlines = ['%', 'O1001 (PLATE-104 6061-T6)',\n         'G00 G17 G40 G49 G80 G90', 'G20 G54 G94 G98']\n\ndef emit(s):\n    lines.append(s)\n\ndef move(code, x=None, y=None, z=None, f=None, i=None, j=None):\n    words = [code]\n    for letter, value in [('X', x), ('Y', y), ('Z', z), ('I', i), ('J', j)]:\n        if value is not None:\n            words.append(f'{letter}{value:.4f}')\n    if f is not None:\n        words.append(f'F{f:.1f}')\n    emit(' '.join(words))\n\ndef contour(z, allowance, feed):\n    # Exact inward offset of the R0.3125 pocket by tool radius + stock.\n    r = .3125 - .25 - allowance\n    left, right = 1.75 + allowance, 4.25 - allowance\n    bottom, top = 1.25 + allowance, 2.75 - allowance\n    move('G01', left+r, bottom, f=feed)\n    move('G01', right-r, bottom)\n    move('G03', right, bottom+r, i=0, j=r)\n    move('G01', right, top-r)\n    move('G03', right-r, top, i=-r, j=0)\n    move('G01', left+r, top)\n    move('G03', left, top-r, i=0, j=-r)\n    move('G01', left, bottom+r)\n    move('G03', left+r, bottom, i=r, j=0)\n\nemit('(T1 FACE 0.050 TO Z0 - 0.3333 STEPOVER)')\nemit('T1 M06')\nemit('S6000 M03')\nmove('G00', -.30, 0)\nemit('G43 H1 Z1.')\nemit('M08')\nmove('G00', z=.15)\nmove('G01', z=0, f=10)\nfor row in range(13):\n    y = row * 4 / 12\n    end_x = 6.30 if row % 2 == 0 else -.30\n    move('G01', y=y, f=40)\n    move('G01', x=end_x)\nmove('G00', z=1)\n\nemit('(POCKET ROUGH 0.020 WALL/FLOOR STOCK THEN FINISH)')\nprevious = 0\nfor z in [-.12, -.24, -.36, -.48, -.50]:\n    finish = z == -.50\n    emit(f'(POCKET DEPTH {z:.4f})')\n    move('G00', x=1.85, y=1.35)\n    move('G00', z=.15)\n    move('G01', z=previous, f=10)\n    # Ramp into each layer within the cleared central pocket footprint.\n    move('G01', x=4.15, z=z, f=15)\n    move('G01', x=1.85, f=30)\n    for row in range(1, 6):\n        move('G01', y=1.35 + row * .26, f=30)\n        move('G01', x=4.15 if row % 2 else 1.85)\n    contour(z, 0 if finish else .02, 25 if finish else 30)\n    if finish:\n        contour(z, 0, 25)  # Wall spring pass.\n    move('G00', z=1)\n    previous = z\n\nemit('M09')\nemit('M05')\nemit('(T2 FOUR THROUGH HOLES - 118 DEG POINT BREAKTHROUGH)')\nemit('T2 M06')\nemit('S2500 M03')\nmove('G00', x=.5, y=.5)\nemit('G43 H2 Z1.')\nemit('M08')\n# Drill tip extension for full-diameter breakthrough: R / tan(59 deg).\npoint = .125 / math.tan(math.radians(59))\nassert 1.10 > 1 + point and -1.10 >= -1.15\nemit('G98 G83 X0.5000 Y0.5000 Z-1.1000 R0.1000 Q0.2000 F8.0')\nemit('X5.5000 Y0.5000')\nemit('X5.5000 Y3.5000')\nemit('X0.5000 Y3.5000')\nemit('G80')\nmove('G00', z=1)\nemit('M09')\nemit('M05')\nemit('M30')\nemit('%')\n(ROOT / 'job/1001.nc').write_text('\\n'.join(lines) + '\\n')\nprint(f'Wrote job/1001.nc: {len(lines)} blocks')\n"}}}
+{"t": 1791408904.369764, "event": "response.tool_call.completed", "data": {"tool": "write_file", "duration_ms": 0.7070086002349854}}
+{"t": 1791408908.97376, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408909.5372171, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "print(terminal('python3 gen.py && python3 test_gen.py', workdir='/home/node/cnc', timeout=30))", "arguments": {"code": "print(terminal('python3 gen.py && python3 test_gen.py', workdir='/home/node/cnc', timeout=30))", "reset": false}}}
+{"t": 1791408909.94835, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 0.40176820755004883}}
+{"t": 1791408912.651319, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408913.141324, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "print(terminal('bash attempt.sh && bash verify.sh', workdir='/home/node/cnc', timeout=600))", "arguments": {"code": "print(terminal('bash attempt.sh && bash verify.sh', workdir='/home/node/cnc', timeout=600))", "reset": false}}}
+{"t": 1791408917.7459068, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 4.600107192993164}}
+{"t": 1791408921.595243, "event": "response.tool_call.generating", "data": {"tool": "skill_view"}}
+{"t": 1791408921.5953212, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408921.595347, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408921.66997, "event": "response.tool_call.started", "data": {"tool": "skill_view", "label": "systematic-debugging", "arguments": {"name": "systematic-debugging", "file_path": ""}}}
+{"t": 1791408921.674428, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "part_model.py L1-180", "arguments": {"path": "/home/node/cnc/vendor/checks/part_model.py", "offset": 1, "limit": 180}}}
+{"t": 1791408921.6836932, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "check_out.log L1-120", "arguments": {"path": "/home/node/cnc/attempts/01/check_out.log", "offset": 1, "limit": 120}}}
+{"t": 1791408921.830687, "event": "response.tool_call.completed", "data": {"tool": "skill_view", "duration_ms": 0.15793704986572266}}
+{"t": 1791408921.838367, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.05641460418701172}}
+{"t": 1791408921.852373, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.05322122573852539}}
+{"t": 1791408923.915412, "event": "response.reasoning.delta", "data": {"text": "**Reviewing dependency version**\n\nI"}}
+{"t": 1791408923.945131, "event": "response.reasoning.delta", "data": {"text": " need"}}
+{"t": 1791408923.947527, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408923.9505322, "event": "response.reasoning.delta", "data": {"text": " fix"}}
+{"t": 1791408923.950558, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408923.971803, "event": "response.reasoning.delta", "data": {"text": " dependency"}}
+{"t": 1791408923.982523, "event": "response.reasoning.delta", "data": {"text": " version"}}
+{"t": 1791408923.982545, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408923.982558, "event": "response.reasoning.delta", "data": {"text": " as"}}
+{"t": 1791408924.0253692, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408924.025399, "event": "response.reasoning.delta", "data": {"text": " current"}}
+{"t": 1791408924.025415, "event": "response.reasoning.delta", "data": {"text": " settings"}}
+{"t": 1791408924.027678, "event": "response.reasoning.delta", "data": {"text": " are"}}
+{"t": 1791408924.085553, "event": "response.reasoning.delta", "data": {"text": " not"}}
+{"t": 1791408924.0855958, "event": "response.reasoning.delta", "data": {"text": " aligned"}}
+{"t": 1791408924.085622, "event": "response.reasoning.delta", "data": {"text": " with"}}
+{"t": 1791408924.085634, "event": "response.reasoning.delta", "data": {"text": " what"}}
+{"t": 1791408924.085647, "event": "response.reasoning.delta", "data": {"text": " is"}}
+{"t": 1791408924.085662, "event": "response.reasoning.delta", "data": {"text": " allowed"}}
+{"t": 1791408924.091297, "event": "response.reasoning.delta", "data": {"text": " for"}}
+{"t": 1791408924.091319, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408924.123477, "event": "response.reasoning.delta", "data": {"text": " virtual"}}
+{"t": 1791408924.133559, "event": "response.reasoning.delta", "data": {"text": " environment"}}
+{"t": 1791408924.1335921, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408924.133645, "event": "response.reasoning.delta", "data": {"text": " This"}}
+{"t": 1791408924.201051, "event": "response.reasoning.delta", "data": {"text": " is"}}
+{"t": 1791408924.2010822, "event": "response.reasoning.delta", "data": {"text": " important"}}
+{"t": 1791408924.2010932, "event": "response.reasoning.delta", "data": {"text": " because"}}
+{"t": 1791408924.2011032, "event": "response.reasoning.delta", "data": {"text": " having"}}
+{"t": 1791408924.302662, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408924.302722, "event": "response.reasoning.delta", "data": {"text": " right"}}
+{"t": 1791408924.302738, "event": "response.reasoning.delta", "data": {"text": " version"}}
+{"t": 1791408924.30276, "event": "response.reasoning.delta", "data": {"text": " can"}}
+{"t": 1791408924.3027809, "event": "response.reasoning.delta", "data": {"text": " affect"}}
+{"t": 1791408924.3027909, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408924.3028, "event": "response.reasoning.delta", "data": {"text": " functionality"}}
+{"t": 1791408924.3028522, "event": "response.reasoning.delta", "data": {"text": " of"}}
+{"t": 1791408924.305912, "event": "response.reasoning.delta", "data": {"text": " my"}}
+{"t": 1791408924.305938, "event": "response.reasoning.delta", "data": {"text": " project"}}
+{"t": 1791408924.317888, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408924.317929, "event": "response.reasoning.delta", "data": {"text": " I'll"}}
+{"t": 1791408924.333122, "event": "response.reasoning.delta", "data": {"text": " have"}}
+{"t": 1791408924.3331509, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408924.3869061, "event": "response.reasoning.delta", "data": {"text": " look"}}
+{"t": 1791408924.3869581, "event": "response.reasoning.delta", "data": {"text": " into"}}
+{"t": 1791408924.386981, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408924.387028, "event": "response.reasoning.delta", "data": {"text": " allowed"}}
+{"t": 1791408924.387041, "event": "response.reasoning.delta", "data": {"text": " versions"}}
+{"t": 1791408924.387052, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408924.422694, "event": "response.reasoning.delta", "data": {"text": " ensure"}}
+{"t": 1791408924.4315798, "event": "response.reasoning.delta", "data": {"text": " my"}}
+{"t": 1791408924.4327412, "event": "response.reasoning.delta", "data": {"text": " setup"}}
+{"t": 1791408924.4327612, "event": "response.reasoning.delta", "data": {"text": " complies"}}
+{"t": 1791408924.46353, "event": "response.reasoning.delta", "data": {"text": " with"}}
+{"t": 1791408924.463563, "event": "response.reasoning.delta", "data": {"text": " those"}}
+{"t": 1791408924.463577, "event": "response.reasoning.delta", "data": {"text": " requirements"}}
+{"t": 1791408924.4663858, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408924.494899, "event": "response.reasoning.delta", "data": {"text": " It"}}
+{"t": 1791408924.5004952, "event": "response.reasoning.delta", "data": {"text": " seems"}}
+{"t": 1791408924.510624, "event": "response.reasoning.delta", "data": {"text": " like"}}
+{"t": 1791408924.5106401, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408924.529106, "event": "response.reasoning.delta", "data": {"text": " simple"}}
+{"t": 1791408924.535337, "event": "response.reasoning.delta", "data": {"text": " adjustment"}}
+{"t": 1791408924.535375, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408924.535388, "event": "response.reasoning.delta", "data": {"text": " but"}}
+{"t": 1791408924.5590432, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408924.575339, "event": "response.reasoning.delta", "data": {"text": " want"}}
+{"t": 1791408924.575368, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408924.57538, "event": "response.reasoning.delta", "data": {"text": " make"}}
+{"t": 1791408924.584505, "event": "response.reasoning.delta", "data": {"text": " sure"}}
+{"t": 1791408924.5925062, "event": "response.reasoning.delta", "data": {"text": " everything"}}
+{"t": 1791408924.592521, "event": "response.reasoning.delta", "data": {"text": " runs"}}
+{"t": 1791408924.592532, "event": "response.reasoning.delta", "data": {"text": " smoothly"}}
+{"t": 1791408924.647445, "event": "response.reasoning.delta", "data": {"text": " moving"}}
+{"t": 1791408924.6720488, "event": "response.reasoning.delta", "data": {"text": " forward"}}
+{"t": 1791408924.672072, "event": "response.reasoning.delta", "data": {"text": "!"}}
+{"t": 1791408924.6899478, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408926.2096362, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "print(terminal('.venv/bin/python -c \"import importlib.metadata as m; from OCP.TopoDS import TopoDS; from OCP.BRep import BRep_Tool; print([(d.metadata[\\\"Name\\\"],d.version) for d in m.distributions() if \\\"ocp\\\" in d.metadata[\\\"Name\\\"].lower()]); print(TopoDS,hasattr(TopoDS,\\\"Face_s\\\")); print(hasattr(BRep_Tool,\\\"Triangulation_s\\\"))\"', workdir='/home/node/cnc', timeout=30)) print(terminal('command -v uv; .venv/bin/python -m pip --version', workdir='/home/node/cnc', timeout=30))", "arguments": {"code": "print(terminal('.venv/bin/python -c \"import importlib.metadata as m; from OCP.TopoDS import TopoDS; from OCP.BRep import BRep_Tool; print([(d.metadata[\\\"Name\\\"],d.version) for d in m.distributions() if \\\"ocp\\\" in d.metadata[\\\"Name\\\"].lower()]); print(TopoDS,hasattr(TopoDS,\\\"Face_s\\\")); print(hasattr(BRep_Tool,\\\"Triangulation_s\\\"))\"', workdir='/home/node/cnc', timeout=30))\nprint(terminal('command -v uv; .venv/bin/python -m pip --version', workdir='/home/node/cnc', timeout=30))", "reset": false}}}
+{"t": 1791408927.5309892, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 1.325883388519287}}
+{"t": 1791408930.116061, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408932.682936, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "import shlex probe = '''import importlib.metadata as m from OCP.TopoDS import TopoDS from OCP.BRep import BRep_Tool print([(d.metadata['Name'], d.version) for d in m.distributions() if 'ocp' in d.metadata['Name'].lower()]) print(TopoDS, hasattr(TopoDS, 'Face_s')) print(hasattr(BRep_Tool, 'Triangulation_s'))''' print(terminal('.venv/bin/python -c '+shlex.quote(probe), workdir='/home/node/cnc', timeout=30)) print(terminal('uv pip index versions cadquery-ocp', workdir='/home/node/cnc', timeout=60))", "arguments": {"code": "import shlex\nprobe = '''import importlib.metadata as m\nfrom OCP.TopoDS import TopoDS\nfrom OCP.BRep import BRep_Tool\nprint([(d.metadata['Name'], d.version) for d in m.distributions() if 'ocp' in d.metadata['Name'].lower()])\nprint(TopoDS, hasattr(TopoDS, 'Face_s'))\nprint(hasattr(BRep_Tool, 'Triangulation_s'))'''\nprint(terminal('.venv/bin/python -c '+shlex.quote(probe), workdir='/home/node/cnc', timeout=30))\nprint(terminal('uv pip index versions cadquery-ocp', workdir='/home/node/cnc', timeout=60))", "reset": false}}}
+{"t": 1791408934.675442, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 2.046773672103882}}
+{"t": 1791408937.1292758, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408938.213931, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "probe = \"import json,urllib.request; d=json.load(urllib.request.urlopen('https://pypi.org/pypi/cadquery-ocp/json')); print(sorted(d['releases']))\" print(terminal('.venv/bin/python -c '+shlex.quote(probe), workdir='/home/node/cnc', timeout=60))", "arguments": {"code": "probe = \"import json,urllib.request; d=json.load(urllib.request.urlopen('https://pypi.org/pypi/cadquery-ocp/json')); print(sorted(d['releases']))\"\nprint(terminal('.venv/bin/python -c '+shlex.quote(probe), workdir='/home/node/cnc', timeout=60))", "reset": false}}}
+{"t": 1791408938.361471, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 0.17425918579101562}}
+{"t": 1791408940.542597, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408941.285374, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "print(terminal('uv pip install --python .venv/bin/python \"cadquery-ocp==7.8.1.1.post1\"', workdir='/home/node/cnc', timeout=180))", "arguments": {"code": "print(terminal('uv pip install --python .venv/bin/python \"cadquery-ocp==7.8.1.1.post1\"', workdir='/home/node/cnc', timeout=180))", "reset": false}}}
+{"t": 1791408943.427798, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 1.9853057861328125}}
+{"t": 1791408944.954591, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408946.7352908, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "probe = \"from OCP.TopoDS import TopoDS; from OCP.BRep import BRep_Tool; assert hasattr(TopoDS,'Face_s'); assert hasattr(BRep_Tool,'Triangulation_s'); from checks.part_model import load_triangles; t=load_triangles('job/part.step'); print('STEP mesh:',t.shape)\" print(terminal('PYTHONPATH=vendor .venv/bin/python -c '+shlex.quote(probe), workdir='/home/node/cnc', timeout=60))", "arguments": {"code": "probe = \"from OCP.TopoDS import TopoDS; from OCP.BRep import BRep_Tool; assert hasattr(TopoDS,'Face_s'); assert hasattr(BRep_Tool,'Triangulation_s'); from checks.part_model import load_triangles; t=load_triangles('job/part.step'); print('STEP mesh:',t.shape)\"\nprint(terminal('PYTHONPATH=vendor .venv/bin/python -c '+shlex.quote(probe), workdir='/home/node/cnc', timeout=60))", "reset": false}}}
+{"t": 1791408947.725436, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 0.9799838066101074}}
+{"t": 1791408951.027199, "event": "response.reasoning.delta", "data": {"text": "**Evaluating connector gouge dimensions**\n\nI"}}
+{"t": 1791408951.038841, "event": "response.reasoning.delta", "data": {"text": " need"}}
+{"t": 1791408951.0455282, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408951.046687, "event": "response.reasoning.delta", "data": {"text": " determine"}}
+{"t": 1791408951.058259, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408951.085263, "event": "response.reasoning.delta", "data": {"text": " dimensions"}}
+{"t": 1791408951.085284, "event": "response.reasoning.delta", "data": {"text": " for"}}
+{"t": 1791408951.085311, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408951.086671, "event": "response.reasoning.delta", "data": {"text": " potential"}}
+{"t": 1791408951.124359, "event": "response.reasoning.delta", "data": {"text": " rough"}}
+{"t": 1791408951.124416, "event": "response.reasoning.delta", "data": {"text": " contour"}}
+{"t": 1791408951.1244311, "event": "response.reasoning.delta", "data": {"text": " connector"}}
+{"t": 1791408951.1244428, "event": "response.reasoning.delta", "data": {"text": " gou"}}
+{"t": 1791408951.169929, "event": "response.reasoning.delta", "data": {"text": "ge"}}
+{"t": 1791408951.1813068, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408951.181346, "event": "response.reasoning.delta", "data": {"text": " The"}}
+{"t": 1791408951.203233, "event": "response.reasoning.delta", "data": {"text": " points"}}
+{"t": 1791408951.260257, "event": "response.reasoning.delta", "data": {"text": " I'll"}}
+{"t": 1791408951.260316, "event": "response.reasoning.delta", "data": {"text": " work"}}
+{"t": 1791408951.260332, "event": "response.reasoning.delta", "data": {"text": " from"}}
+{"t": 1791408951.260345, "event": "response.reasoning.delta", "data": {"text": " are"}}
+{"t": 1791408951.312566, "event": "response.reasoning.delta", "data": {"text": " 4"}}
+{"t": 1791408951.312608, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408951.331412, "event": "response.reasoning.delta", "data": {"text": "15"}}
+{"t": 1791408951.3314629, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408951.367948, "event": "response.reasoning.delta", "data": {"text": " 2"}}
+{"t": 1791408951.397886, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408951.3979409, "event": "response.reasoning.delta", "data": {"text": "65"}}
+{"t": 1791408951.397992, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408951.427784, "event": "response.reasoning.delta", "data": {"text": " 1"}}
+{"t": 1791408951.427836, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408951.427852, "event": "response.reasoning.delta", "data": {"text": "812"}}
+{"t": 1791408951.427865, "event": "response.reasoning.delta", "data": {"text": "5"}}
+{"t": 1791408951.471509, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408951.471561, "event": "response.reasoning.delta", "data": {"text": " 1"}}
+{"t": 1791408951.5522702, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408951.552317, "event": "response.reasoning.delta", "data": {"text": "27"}}
+{"t": 1791408951.552375, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408951.5523882, "event": "response.reasoning.delta", "data": {"text": " moving"}}
+{"t": 1791408951.552398, "event": "response.reasoning.delta", "data": {"text": " diagon"}}
+{"t": 1791408951.5524092, "event": "response.reasoning.delta", "data": {"text": "ally"}}
+{"t": 1791408951.598735, "event": "response.reasoning.delta", "data": {"text": " within"}}
+{"t": 1791408951.598798, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408951.601065, "event": "response.reasoning.delta", "data": {"text": " safe"}}
+{"t": 1791408951.604217, "event": "response.reasoning.delta", "data": {"text": " pocket"}}
+{"t": 1791408951.6588411, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408951.6721878, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408951.672249, "event": "response.reasoning.delta", "data": {"text": "\u2019ll"}}
+{"t": 1791408951.672262, "event": "response.reasoning.delta", "data": {"text": " raster"}}
+{"t": 1791408951.761481, "event": "response.reasoning.delta", "data": {"text": " from"}}
+{"t": 1791408951.761528, "event": "response.reasoning.delta", "data": {"text": " y"}}
+{"t": 1791408951.763324, "event": "response.reasoning.delta", "data": {"text": "="}}
+{"t": 1791408951.763343, "event": "response.reasoning.delta", "data": {"text": "2"}}
+{"t": 1791408951.8806999, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408951.890083, "event": "response.reasoning.delta", "data": {"text": "65"}}
+{"t": 1791408951.89011, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408951.890125, "event": "response.reasoning.delta", "data": {"text": " adding"}}
+{"t": 1791408951.961292, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408951.972885, "event": "response.reasoning.delta", "data": {"text": " radius"}}
+{"t": 1791408951.9729102, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408951.9729211, "event": "response.reasoning.delta", "data": {"text": " 2"}}
+{"t": 1791408951.9944682, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408952.0767171, "event": "response.reasoning.delta", "data": {"text": "9"}}
+{"t": 1791408952.07676, "event": "response.reasoning.delta", "data": {"text": " for"}}
+{"t": 1791408952.076774, "event": "response.reasoning.delta", "data": {"text": " wall"}}
+{"t": 1791408952.0767958, "event": "response.reasoning.delta", "data": {"text": " safety"}}
+{"t": 1791408952.076812, "event": "response.reasoning.delta", "data": {"text": " at"}}
+{"t": 1791408952.076823, "event": "response.reasoning.delta", "data": {"text": " 3"}}
+{"t": 1791408952.076836, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408952.097844, "event": "response.reasoning.delta", "data": {"text": "0"}}
+{"t": 1791408952.099922, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408952.0999382, "event": "response.reasoning.delta", "data": {"text": " There"}}
+{"t": 1791408952.1020238, "event": "response.reasoning.delta", "data": {"text": "\u2019s"}}
+{"t": 1791408952.160105, "event": "response.reasoning.delta", "data": {"text": " some"}}
+{"t": 1791408952.1674728, "event": "response.reasoning.delta", "data": {"text": " left"}}
+{"t": 1791408952.16749, "event": "response.reasoning.delta", "data": {"text": " margin"}}
+{"t": 1791408952.1675022, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408952.21584, "event": "response.reasoning.delta", "data": {"text": " consider"}}
+{"t": 1791408952.218688, "event": "response.reasoning.delta", "data": {"text": " with"}}
+{"t": 1791408952.2187068, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408952.218719, "event": "response.reasoning.delta", "data": {"text": " radius"}}
+{"t": 1791408952.2635672, "event": "response.reasoning.delta", "data": {"text": " of"}}
+{"t": 1791408952.2725801, "event": "response.reasoning.delta", "data": {"text": " 1"}}
+{"t": 1791408952.2726002, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408952.2726111, "event": "response.reasoning.delta", "data": {"text": "6"}}
+{"t": 1791408952.328865, "event": "response.reasoning.delta", "data": {"text": " greater"}}
+{"t": 1791408952.328907, "event": "response.reasoning.delta", "data": {"text": " than"}}
+{"t": 1791408952.328919, "event": "response.reasoning.delta", "data": {"text": " 1"}}
+{"t": 1791408952.3289301, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408952.368489, "event": "response.reasoning.delta", "data": {"text": "5"}}
+{"t": 1791408952.368541, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408952.368556, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408952.368573, "event": "response.reasoning.delta", "data": {"text": " rough"}}
+{"t": 1791408952.493663, "event": "response.reasoning.delta", "data": {"text": " margin"}}
+{"t": 1791408952.493711, "event": "response.reasoning.delta", "data": {"text": " of"}}
+{"t": 1791408952.4937248, "event": "response.reasoning.delta", "data": {"text": " 0"}}
+{"t": 1791408952.493736, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408952.629598, "event": "response.reasoning.delta", "data": {"text": "02"}}
+{"t": 1791408952.629649, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408952.6296651, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408952.629678, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408952.629737, "event": "response.reasoning.delta", "data": {"text": "\u2019ll"}}
+{"t": 1791408952.640901, "event": "response.reasoning.delta", "data": {"text": " finish"}}
+{"t": 1791408952.64093, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408952.640945, "event": "response.reasoning.delta", "data": {"text": " ramp"}}
+{"t": 1791408952.6883368, "event": "response.reasoning.delta", "data": {"text": " with"}}
+{"t": 1791408952.700321, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408952.700346, "event": "response.reasoning.delta", "data": {"text": " clearance"}}
+{"t": 1791408952.7003698, "event": "response.reasoning.delta", "data": {"text": " of"}}
+{"t": 1791408952.7095912, "event": "response.reasoning.delta", "data": {"text": " 0"}}
+{"t": 1791408952.70961, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408952.709623, "event": "response.reasoning.delta", "data": {"text": "02"}}
+{"t": 1791408952.709634, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408952.742024, "event": "response.reasoning.delta", "data": {"text": " Everything"}}
+{"t": 1791408952.7420611, "event": "response.reasoning.delta", "data": {"text": " seems"}}
+{"t": 1791408952.742075, "event": "response.reasoning.delta", "data": {"text": " good"}}
+{"t": 1791408952.742087, "event": "response.reasoning.delta", "data": {"text": "!"}}
+{"t": 1791408952.790814, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408953.125036, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "print(terminal('python3 gen.py && bash attempt.sh && bash verify.sh', workdir='/home/node/cnc', timeout=600))", "arguments": {"code": "print(terminal('python3 gen.py && bash attempt.sh && bash verify.sh', workdir='/home/node/cnc', timeout=600))", "reset": false}}}
+{"t": 1791408968.1557848, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 15.04332685470581}}
+{"t": 1791408972.6956632, "event": "response.reasoning.delta", "data": {"text": "**Evaluating safety and workflow**\n\nI"}}
+{"t": 1791408972.695814, "event": "response.reasoning.delta", "data": {"text": " need"}}
+{"t": 1791408972.7050838, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408972.705177, "event": "response.reasoning.delta", "data": {"text": " focus"}}
+{"t": 1791408972.715282, "event": "response.reasoning.delta", "data": {"text": " on"}}
+{"t": 1791408972.715339, "event": "response.reasoning.delta", "data": {"text": " ensuring"}}
+{"t": 1791408972.7271192, "event": "response.reasoning.delta", "data": {"text": " that"}}
+{"t": 1791408972.7271838, "event": "response.reasoning.delta", "data": {"text": " we"}}
+{"t": 1791408972.74844, "event": "response.reasoning.delta", "data": {"text": " have"}}
+{"t": 1791408972.7568698, "event": "response.reasoning.delta", "data": {"text": " acceptable"}}
+{"t": 1791408972.756963, "event": "response.reasoning.delta", "data": {"text": " warnings"}}
+{"t": 1791408972.7570078, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408972.7570481, "event": "response.reasoning.delta", "data": {"text": " that"}}
+{"t": 1791408972.788065, "event": "response.reasoning.delta", "data": {"text": " we"}}
+{"t": 1791408972.78829, "event": "response.reasoning.delta", "data": {"text": "\u2019re"}}
+{"t": 1791408972.7883599, "event": "response.reasoning.delta", "data": {"text": " stopping"}}
+{"t": 1791408972.788415, "event": "response.reasoning.delta", "data": {"text": " any"}}
+{"t": 1791408972.813534, "event": "response.reasoning.delta", "data": {"text": " changes"}}
+{"t": 1791408972.823442, "event": "response.reasoning.delta", "data": {"text": " necessary"}}
+{"t": 1791408972.823522, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408972.823575, "event": "response.reasoning.delta", "data": {"text": " It"}}
+{"t": 1791408972.840883, "event": "response.reasoning.delta", "data": {"text": "\u2019s"}}
+{"t": 1791408972.8410728, "event": "response.reasoning.delta", "data": {"text": " crucial"}}
+{"t": 1791408972.8664691, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408972.866577, "event": "response.reasoning.delta", "data": {"text": " summarize"}}
+{"t": 1791408972.8666072, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408972.8666291, "event": "response.reasoning.delta", "data": {"text": " drilling"}}
+{"t": 1791408972.866652, "event": "response.reasoning.delta", "data": {"text": " allowances"}}
+{"t": 1791408972.886276, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408972.900898, "event": "response.reasoning.delta", "data": {"text": " machin"}}
+{"t": 1791408972.911034, "event": "response.reasoning.delta", "data": {"text": "ist"}}
+{"t": 1791408972.911079, "event": "response.reasoning.delta", "data": {"text": " checks"}}
+{"t": 1791408972.911096, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408972.935731, "event": "response.reasoning.delta", "data": {"text": " while"}}
+{"t": 1791408972.935789, "event": "response.reasoning.delta", "data": {"text": " avoiding"}}
+{"t": 1791408972.935807, "event": "response.reasoning.delta", "data": {"text": " any"}}
+{"t": 1791408972.935822, "event": "response.reasoning.delta", "data": {"text": " assumptions"}}
+{"t": 1791408972.963677, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408972.963736, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408972.963753, "event": "response.reasoning.delta", "data": {"text": " should"}}
+{"t": 1791408972.963766, "event": "response.reasoning.delta", "data": {"text": " save"}}
+{"t": 1791408972.972585, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408973.0451992, "event": "response.reasoning.delta", "data": {"text": " work"}}
+{"t": 1791408973.04527, "event": "response.reasoning.delta", "data": {"text": " flow"}}
+{"t": 1791408973.045289, "event": "response.reasoning.delta", "data": {"text": " mandated"}}
+{"t": 1791408973.045307, "event": "response.reasoning.delta", "data": {"text": " for"}}
+{"t": 1791408973.0453272, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408973.0453498, "event": "response.reasoning.delta", "data": {"text": " user"}}
+{"t": 1791408973.045367, "event": "response.reasoning.delta", "data": {"text": " in"}}
+{"t": 1791408973.0573921, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408973.057437, "event": "response.reasoning.delta", "data": {"text": " concise"}}
+{"t": 1791408973.057454, "event": "response.reasoning.delta", "data": {"text": " line"}}
+{"t": 1791408973.057469, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408973.080213, "event": "response.reasoning.delta", "data": {"text": " Additionally"}}
+{"t": 1791408973.083738, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408973.0837681, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408973.0837839, "event": "response.reasoning.delta", "data": {"text": " might"}}
+{"t": 1791408973.100249, "event": "response.reasoning.delta", "data": {"text": " want"}}
+{"t": 1791408973.10027, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408973.106457, "event": "response.reasoning.delta", "data": {"text": " document"}}
+{"t": 1791408973.106494, "event": "response.reasoning.delta", "data": {"text": " learning"}}
+{"t": 1791408973.1314828, "event": "response.reasoning.delta", "data": {"text": " experiences"}}
+{"t": 1791408973.1393778, "event": "response.reasoning.delta", "data": {"text": " related"}}
+{"t": 1791408973.1394088, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408973.139426, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408973.150321, "event": "response.reasoning.delta", "data": {"text": " new"}}
+{"t": 1791408973.1503758, "event": "response.reasoning.delta", "data": {"text": " CNC"}}
+{"t": 1791408973.150393, "event": "response.reasoning.delta", "data": {"text": " tasks"}}
+{"t": 1791408973.161251, "event": "response.reasoning.delta", "data": {"text": " and"}}
+{"t": 1791408973.1768398, "event": "response.reasoning.delta", "data": {"text": " verify"}}
+{"t": 1791408973.2512362, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408973.2512882, "event": "response.reasoning.delta", "data": {"text": " exact"}}
+{"t": 1791408973.251314, "event": "response.reasoning.delta", "data": {"text": " reports"}}
+{"t": 1791408973.25135, "event": "response.reasoning.delta", "data": {"text": " by"}}
+{"t": 1791408973.251372, "event": "response.reasoning.delta", "data": {"text": " comparing"}}
+{"t": 1791408973.251411, "event": "response.reasoning.delta", "data": {"text": " artifacts"}}
+{"t": 1791408973.251443, "event": "response.reasoning.delta", "data": {"text": " with"}}
+{"t": 1791408973.2514718, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408973.2515368, "event": "response.reasoning.delta", "data": {"text": " hashing"}}
+{"t": 1791408973.25156, "event": "response.reasoning.delta", "data": {"text": " tool"}}
+{"t": 1791408973.251585, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408973.569031, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408973.569237, "event": "response.tool_call.generating", "data": {"tool": "read_file"}}
+{"t": 1791408973.705235, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "report.md L1-200", "arguments": {"path": "/home/node/cnc/attempts/02/check_out/report.md", "offset": 1, "limit": 200}}}
+{"t": 1791408973.705557, "event": "response.tool_call.started", "data": {"tool": "read_file", "label": "1001.nc L1-220", "arguments": {"path": "/home/node/cnc/job/1001.nc", "offset": 1, "limit": 220}}}
+{"t": 1791408973.713343, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.008759021759033203}}
+{"t": 1791408973.713452, "event": "response.tool_call.completed", "data": {"tool": "read_file", "duration_ms": 0.008758544921875}}
+{"t": 1791408976.8296452, "event": "response.reasoning.delta", "data": {"text": "**Summarizing workflow considerations**\n\nI"}}
+{"t": 1791408976.8393412, "event": "response.reasoning.delta", "data": {"text": " don"}}
+{"t": 1791408976.839506, "event": "response.reasoning.delta", "data": {"text": "\u2019t"}}
+{"t": 1791408976.839574, "event": "response.reasoning.delta", "data": {"text": " need"}}
+{"t": 1791408976.858528, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408976.858707, "event": "response.reasoning.delta", "data": {"text": " make"}}
+{"t": 1791408976.912576, "event": "response.reasoning.delta", "data": {"text": " any"}}
+{"t": 1791408976.912746, "event": "response.reasoning.delta", "data": {"text": " extra"}}
+{"t": 1791408976.9128451, "event": "response.reasoning.delta", "data": {"text": " modifications"}}
+{"t": 1791408976.912896, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408976.9129422, "event": "response.reasoning.delta", "data": {"text": " as"}}
+{"t": 1791408976.913004, "event": "response.reasoning.delta", "data": {"text": " requested"}}
+{"t": 1791408976.913144, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408976.913192, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408976.9132428, "event": "response.reasoning.delta", "data": {"text": " should"}}
+{"t": 1791408976.9132879, "event": "response.reasoning.delta", "data": {"text": " include"}}
+{"t": 1791408976.944747, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408976.955679, "event": "response.reasoning.delta", "data": {"text": " warning"}}
+{"t": 1791408976.9558458, "event": "response.reasoning.delta", "data": {"text": " about"}}
+{"t": 1791408976.955914, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408976.9629881, "event": "response.reasoning.delta", "data": {"text": " startup"}}
+{"t": 1791408976.9631512, "event": "response.reasoning.delta", "data": {"text": " cave"}}
+{"t": 1791408976.9631941, "event": "response.reasoning.delta", "data": {"text": "at"}}
+{"t": 1791408976.9632242, "event": "response.reasoning.delta", "data": {"text": " regarding"}}
+{"t": 1791408976.9772742, "event": "response.reasoning.delta", "data": {"text": " physical"}}
+{"t": 1791408976.979986, "event": "response.reasoning.delta", "data": {"text": " fixtures"}}
+{"t": 1791408976.989116, "event": "response.reasoning.delta", "data": {"text": " that"}}
+{"t": 1791408976.9892218, "event": "response.reasoning.delta", "data": {"text": " aren"}}
+{"t": 1791408977.005166, "event": "response.reasoning.delta", "data": {"text": "\u2019t"}}
+{"t": 1791408977.01262, "event": "response.reasoning.delta", "data": {"text": " modeled"}}
+{"t": 1791408977.012764, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408977.012804, "event": "response.reasoning.delta", "data": {"text": " It's"}}
+{"t": 1791408977.027642, "event": "response.reasoning.delta", "data": {"text": " mandatory"}}
+{"t": 1791408977.027807, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408977.0278442, "event": "response.reasoning.delta", "data": {"text": " save"}}
+{"t": 1791408977.027872, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408977.050025, "event": "response.reasoning.delta", "data": {"text": " workflow"}}
+{"t": 1791408977.0625029, "event": "response.reasoning.delta", "data": {"text": " skill"}}
+{"t": 1791408977.062616, "event": "response.reasoning.delta", "data": {"text": " since"}}
+{"t": 1791408977.062644, "event": "response.reasoning.delta", "data": {"text": " it"}}
+{"t": 1791408977.066336, "event": "response.reasoning.delta", "data": {"text": "\u2019s"}}
+{"t": 1791408977.066398, "event": "response.reasoning.delta", "data": {"text": " non"}}
+{"t": 1791408977.066422, "event": "response.reasoning.delta", "data": {"text": "tr"}}
+{"t": 1791408977.066441, "event": "response.reasoning.delta", "data": {"text": "ivial"}}
+{"t": 1791408977.100385, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408977.104876, "event": "response.reasoning.delta", "data": {"text": " but"}}
+{"t": 1791408977.1049201, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408977.1049469, "event": "response.reasoning.delta", "data": {"text": "\u2019m"}}
+{"t": 1791408977.119712, "event": "response.reasoning.delta", "data": {"text": " wondering"}}
+{"t": 1791408977.119751, "event": "response.reasoning.delta", "data": {"text": " if"}}
+{"t": 1791408977.119773, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408977.129796, "event": "response.reasoning.delta", "data": {"text": " author"}}
+{"t": 1791408977.149781, "event": "response.reasoning.delta", "data": {"text": "\u2019s"}}
+{"t": 1791408977.165653, "event": "response.reasoning.delta", "data": {"text": " minimal"}}
+{"t": 1791408977.1657379, "event": "response.reasoning.delta", "data": {"text": " skill"}}
+{"t": 1791408977.165757, "event": "response.reasoning.delta", "data": {"text": " is"}}
+{"t": 1791408977.26209, "event": "response.reasoning.delta", "data": {"text": " necessary"}}
+{"t": 1791408977.262201, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408977.262224, "event": "response.reasoning.delta", "data": {"text": " If"}}
+{"t": 1791408977.262246, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408977.2622862, "event": "response.reasoning.delta", "data": {"text": " need"}}
+{"t": 1791408977.262305, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408977.262329, "event": "response.reasoning.delta", "data": {"text": " create"}}
+{"t": 1791408977.2623491, "event": "response.reasoning.delta", "data": {"text": " triggers"}}
+{"t": 1791408977.262372, "event": "response.reasoning.delta", "data": {"text": ","}}
+{"t": 1791408977.262398, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408977.262416, "event": "response.reasoning.delta", "data": {"text": " might"}}
+{"t": 1791408977.262432, "event": "response.reasoning.delta", "data": {"text": " have"}}
+{"t": 1791408977.262511, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408977.26253, "event": "response.reasoning.delta", "data": {"text": " load"}}
+{"t": 1791408977.266827, "event": "response.reasoning.delta", "data": {"text": " something"}}
+{"t": 1791408977.266855, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408977.277416, "event": "response.reasoning.delta", "data": {"text": " Maybe"}}
+{"t": 1791408977.2774642, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408977.277487, "event": "response.reasoning.delta", "data": {"text": " can"}}
+{"t": 1791408977.2775402, "event": "response.reasoning.delta", "data": {"text": " skip"}}
+{"t": 1791408977.300801, "event": "response.reasoning.delta", "data": {"text": " offering"}}
+{"t": 1791408977.300865, "event": "response.reasoning.delta", "data": {"text": " skills"}}
+{"t": 1791408977.300887, "event": "response.reasoning.delta", "data": {"text": " if"}}
+{"t": 1791408977.300907, "event": "response.reasoning.delta", "data": {"text": " they"}}
+{"t": 1791408977.3207738, "event": "response.reasoning.delta", "data": {"text": " conflict"}}
+{"t": 1791408977.330962, "event": "response.reasoning.delta", "data": {"text": " with"}}
+{"t": 1791408977.331029, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408977.331054, "event": "response.reasoning.delta", "data": {"text": " final"}}
+{"t": 1791408977.366994, "event": "response.reasoning.delta", "data": {"text": " summary"}}
+{"t": 1791408977.3671381, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408977.3920279, "event": "response.tool_call.generating", "data": {"tool": "write_file"}}
+{"t": 1791408989.924221, "event": "response.tool_call.started", "data": {"tool": "write_file", "label": "/home/node/cnc/out/summary.md", "arguments": {"path": "/home/node/cnc/out/summary.md", "content": "# PLATE-104 \u2014 verified simulation package\n\n- Program: `job/1001.nc` (O1001); generator: `gen.py`. Haas inch/G54, absolute XY/Z, explicit tool-center paths, flood coolant. T3 unused.\n- **Face \u2014 T1 \u00d80.500 flat, 3 flutes:** 6,000 rpm, 40 ipm; 13 raster passes, nominal 0.3333 in stepover, remove 0.050 in to Z0. Feed approach 10 ipm.\n- **Pocket \u2014 T1:** ramp entry 15 ipm; raster roughing 30 ipm to Z-0.120/-0.240/-0.360/-0.480, leaving 0.020 in wall/floor stock. Finish floor at Z-0.500 with 30 ipm raster; walls at 25 ipm, exact G03 corner offsets (tool-center R0.0625), followed by a wall spring pass. Z approach 10 ipm.\n- **Four through holes \u2014 T2 \u00d80.250, 118\u00b0 drill:** 2,500 rpm, 8 ipm, G98 G83, R0.100, Q0.200, tip Z-1.100. Full-diameter breakthrough accounts for the drill point; tip remains above the Z-1.150 setup limit. Retract to Z1 between holes.\n\n## Attempts and result\n1. **FAIL (verifier dependency, not an NC finding):** STEP loading crashed because installed cadquery-ocp 8.0.1.1.0 lacked `TopoDS.Face_s`. No material-removal report was produced. Installed compatible cadquery-ocp 7.8.1.1.post1 in the existing `.venv` (vtk 9.3.1 dependency); independently confirmed real STEP tessellation yielded 2,572 triangles. No protected source, model, or job/tool data was changed. NC geometry was unchanged.\n2. **PASS:** `attempts/02/check_out/report.md`; 244 simulated moves at 0.010 in resolution. Reported gouge and leftover maxima both 0.0; zero rapids through stock, holder hits, beyond-flute events, or thread-tool-in-solid events. Estimated cycle **8.58 min per part** (not setup/load time). Generator contract test also passed.\n\n## Machinist double-checks\n- Confirm G54 zero at the finished top's lower-left corner, H1/H2 offsets, actual tool diameters/stickout, center-cutting/ramp capability of T1, coolant and chip evacuation.\n- Confirm real vise/jaw/parallels clearance, particularly underside hole breakthrough and off-edge facing. Stock-model simulation is not proof of unmodeled fixture or machine-travel clearance. Establish a safe starting machine position before initial XY positioning.\n- Report has one non-failing warning at NC line 196: no G28/G53 home-Z retract before M30. Program ends at G54 Z1.000; it does not home the machine. Retained exactly as verified.\n- Simulation resolution is 0.010 in; inspect actual pocket size/radius, floor depth, finish, hole diameter and breakthrough against the customer's requirements. No finer dimensional tolerance was supplied.\n"}}}
+{"t": 1791408990.4937449, "event": "response.tool_call.completed", "data": {"tool": "write_file", "duration_ms": 0.556859016418457}}
+{"t": 1791408993.8607738, "event": "response.reasoning.delta", "data": {"text": "**Considering workflow saving**\n\nI"}}
+{"t": 1791408993.861047, "event": "response.reasoning.delta", "data": {"text": "\u2019m"}}
+{"t": 1791408993.861121, "event": "response.reasoning.delta", "data": {"text": " thinking"}}
+{"t": 1791408993.861175, "event": "response.reasoning.delta", "data": {"text": " about"}}
+{"t": 1791408993.937369, "event": "response.reasoning.delta", "data": {"text": " creating"}}
+{"t": 1791408993.937592, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408993.937705, "event": "response.reasoning.delta", "data": {"text": " concise"}}
+{"t": 1791408993.9379048, "event": "response.reasoning.delta", "data": {"text": " rule"}}
+{"t": 1791408993.940073, "event": "response.reasoning.delta", "data": {"text": " for"}}
+{"t": 1791408993.940207, "event": "response.reasoning.delta", "data": {"text": " saving"}}
+{"t": 1791408993.940257, "event": "response.reasoning.delta", "data": {"text": " non"}}
+{"t": 1791408993.940306, "event": "response.reasoning.delta", "data": {"text": "tr"}}
+{"t": 1791408993.944063, "event": "response.reasoning.delta", "data": {"text": "ivial"}}
+{"t": 1791408993.9441931, "event": "response.reasoning.delta", "data": {"text": " workflows"}}
+{"t": 1791408994.0197198, "event": "response.reasoning.delta", "data": {"text": " without"}}
+{"t": 1791408994.019916, "event": "response.reasoning.delta", "data": {"text": " needing"}}
+{"t": 1791408994.02002, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408994.020092, "event": "response.reasoning.delta", "data": {"text": " alter"}}
+{"t": 1791408994.02014, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408994.0201862, "event": "response.reasoning.delta", "data": {"text": " user"}}
+{"t": 1791408994.020254, "event": "response.reasoning.delta", "data": {"text": "\u2019s"}}
+{"t": 1791408994.020301, "event": "response.reasoning.delta", "data": {"text": " skills"}}
+{"t": 1791408994.020463, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408994.020512, "event": "response.reasoning.delta", "data": {"text": " The"}}
+{"t": 1791408994.036608, "event": "response.reasoning.delta", "data": {"text": " goal"}}
+{"t": 1791408994.038733, "event": "response.reasoning.delta", "data": {"text": " is"}}
+{"t": 1791408994.0387971, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408994.038826, "event": "response.reasoning.delta", "data": {"text": " avoid"}}
+{"t": 1791408994.083101, "event": "response.reasoning.delta", "data": {"text": " unnecessary"}}
+{"t": 1791408994.083319, "event": "response.reasoning.delta", "data": {"text": " overhead"}}
+{"t": 1791408994.083352, "event": "response.reasoning.delta", "data": {"text": " while"}}
+{"t": 1791408994.083377, "event": "response.reasoning.delta", "data": {"text": " providing"}}
+{"t": 1791408994.090212, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408994.101511, "event": "response.reasoning.delta", "data": {"text": " straightforward"}}
+{"t": 1791408994.1015449, "event": "response.reasoning.delta", "data": {"text": " solution"}}
+{"t": 1791408994.101569, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408994.144075, "event": "response.reasoning.delta", "data": {"text": " I"}}
+{"t": 1791408994.153135, "event": "response.reasoning.delta", "data": {"text": " should"}}
+{"t": 1791408994.153468, "event": "response.reasoning.delta", "data": {"text": " verify"}}
+{"t": 1791408994.153545, "event": "response.reasoning.delta", "data": {"text": " that"}}
+{"t": 1791408994.159604, "event": "response.reasoning.delta", "data": {"text": " this"}}
+{"t": 1791408994.16231, "event": "response.reasoning.delta", "data": {"text": " skill"}}
+{"t": 1791408994.162443, "event": "response.reasoning.delta", "data": {"text": " accurately"}}
+{"t": 1791408994.163427, "event": "response.reasoning.delta", "data": {"text": " matches"}}
+{"t": 1791408994.178856, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408994.1908412, "event": "response.reasoning.delta", "data": {"text": " previous"}}
+{"t": 1791408994.191006, "event": "response.reasoning.delta", "data": {"text": " attempts"}}
+{"t": 1791408994.191127, "event": "response.reasoning.delta", "data": {"text": " using"}}
+{"t": 1791408994.221382, "event": "response.reasoning.delta", "data": {"text": " a"}}
+{"t": 1791408994.221689, "event": "response.reasoning.delta", "data": {"text": " hash"}}
+{"t": 1791408994.22177, "event": "response.reasoning.delta", "data": {"text": " tool"}}
+{"t": 1791408994.2218251, "event": "response.reasoning.delta", "data": {"text": " for"}}
+{"t": 1791408994.2786539, "event": "response.reasoning.delta", "data": {"text": " consistency"}}
+{"t": 1791408994.280619, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408994.2807622, "event": "response.reasoning.delta", "data": {"text": " It"}}
+{"t": 1791408994.2807949, "event": "response.reasoning.delta", "data": {"text": " might"}}
+{"t": 1791408994.297733, "event": "response.reasoning.delta", "data": {"text": " require"}}
+{"t": 1791408994.309939, "event": "response.reasoning.delta", "data": {"text": " some"}}
+{"t": 1791408994.3100789, "event": "response.reasoning.delta", "data": {"text": " testing"}}
+{"t": 1791408994.312853, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408994.322954, "event": "response.reasoning.delta", "data": {"text": " ensure"}}
+{"t": 1791408994.323114, "event": "response.reasoning.delta", "data": {"text": " everything"}}
+{"t": 1791408994.3231502, "event": "response.reasoning.delta", "data": {"text": " aligns"}}
+{"t": 1791408994.323176, "event": "response.reasoning.delta", "data": {"text": " correctly"}}
+{"t": 1791408994.372494, "event": "response.reasoning.delta", "data": {"text": "."}}
+{"t": 1791408994.3728042, "event": "response.reasoning.delta", "data": {"text": " I'm"}}
+{"t": 1791408994.3728771, "event": "response.reasoning.delta", "data": {"text": " curious"}}
+{"t": 1791408994.372929, "event": "response.reasoning.delta", "data": {"text": " about"}}
+{"t": 1791408994.436398, "event": "response.reasoning.delta", "data": {"text": " how"}}
+{"t": 1791408994.4365408, "event": "response.reasoning.delta", "data": {"text": " to"}}
+{"t": 1791408994.436576, "event": "response.reasoning.delta", "data": {"text": " streamline"}}
+{"t": 1791408994.4366279, "event": "response.reasoning.delta", "data": {"text": " this"}}
+{"t": 1791408994.4366632, "event": "response.reasoning.delta", "data": {"text": " process"}}
+{"t": 1791408994.436687, "event": "response.reasoning.delta", "data": {"text": " for"}}
+{"t": 1791408994.447721, "event": "response.reasoning.delta", "data": {"text": " the"}}
+{"t": 1791408994.4478688, "event": "response.reasoning.delta", "data": {"text": " user"}}
+{"t": 1791408994.4673128, "event": "response.reasoning.delta", "data": {"text": "!"}}
+{"t": 1791408994.544183, "event": "response.tool_call.generating", "data": {"tool": "execute_code"}}
+{"t": 1791408994.9466171, "event": "response.tool_call.started", "data": {"tool": "execute_code", "label": "print(terminal('cmp job/1001.nc attempts/02/1001.nc && cmp gen.py attempts/02/gen.py && python3 test_gen.py && sha256sum job/1001.nc attempts/02/1001.nc', workdir='/home/node/cnc', timeout=30))", "arguments": {"code": "print(terminal('cmp job/1001.nc attempts/02/1001.nc && cmp gen.py attempts/02/gen.py && python3 test_gen.py && sha256sum job/1001.nc attempts/02/1001.nc', workdir='/home/node/cnc', timeout=30))", "reset": false}}}
+{"t": 1791408995.083437, "event": "response.tool_call.completed", "data": {"tool": "execute_code", "duration_ms": 0.11743807792663574}}
+{"t": 1791408997.506023, "event": "response.output_text.delta", "data": {"text": "\n\nRESULT"}}
+{"t": 1791408997.904315, "event": "response.output_text.delta", "data": {"text": ":"}}
+{"t": 1791408997.904487, "event": "response.output_text.delta", "data": {"text": " PASS"}}
+{"t": 1791408997.904553, "event": "response.output_text.delta", "data": {"text": " after"}}
+{"t": 1791408997.904611, "event": "response.output_text.delta", "data": {"text": " "}}
+{"t": 1791408997.904659, "event": "response.output_text.delta", "data": {"text": "2"}}
+{"t": 1791408997.904741, "event": "response.output_text.delta", "data": {"text": " attempts"}}
+{"t": 1791408997.92809, "event": "response.completed", "data": {"output_text": "\n\nRESULT: PASS after 2 attempts", "usage": {"input_tokens": 66, "output_tokens": 4988, "cost_usd": 0}, "context": {"used_tokens": 35442, "window_tokens": 256000}, "reasoning_effort": "medium"}}
